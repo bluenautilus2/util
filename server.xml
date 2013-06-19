@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Server port="8005" shutdown="SHUTDOWN">
+	<Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
+
+	<GlobalNamingResources>
+		<Environment name="simpleValue" type="java.lang.Integer"
+			value="30" />
+		<Resource auth="Container" description="User database that can be updated and saved"
+			factory="org.apache.catalina.users.MemoryUserDatabaseFactory" name="UserDatabase"
+			pathname="conf/tomcat-users.xml" type="org.apache.catalina.UserDatabase" />
+	</GlobalNamingResources>
+
+	<Service name="Catalina">
+		<Connector acceptCount="100" connectionTimeout="0"
+			disableUploadTimeout="true" enableLookups="false" maxSpareThreads="75"
+			maxThreads="150" minSpareThreads="25" port="8080" redirectPort="8443"/>
+
+		<Connector 
+			port="8443" minProcessors="5" maxProcessors="75" enableLookups="true"
+			disableUploadTimeout="true" acceptCount="100" debug="0" scheme="https"
+			secure="true" clientAuth="false" sslProtocol="TLS" SSLEnabled="true"/>
+
+		<Engine defaultHost="localhost" name="Catalina">
+			<Realm className="org.apache.catalina.realm.UserDatabaseRealm"
+				resourceName="UserDatabase" />
+
+			<Host appBase="webapps" autoDeploy="true" name="localhost"
+
+				unpackWARs="true" xmlNamespaceAware="false" xmlValidation="false">
+
+				<!-- Update this to point to a directory in your workspace -->
+				<Context docBase="/home/bstevens/workspace/docBase" path="/" />
+
+				<!-- The main PA website -->
+				<!-- Set docbase to Tomcat_PA/WebRoot, wherever you cloned your repo 
+					to -->
+				<Context crossContext="false" debug="1"
+					docBase="/home/bstevens/repo/Tomcat_PA/WebRoot" fileEncoding="utf8"
+					path="/pa" reloadable="false">
+					<Logger className="org.apache.catalina.logger.FileLogger"
+						prefix="pa_log." suffix=".txt" timestamp="true" verbosity="1" />
+
+					<!-- Set databaseURL to jdbc:sqlserver://10.10.10.52:1433;DatabaseName=panswersJosh 
+						replacing the ip address and DatabaseName. You don't need to change the port, 
+						login, password, or crypto information -->
+					<Environment name="databaseURL" type="java.lang.String"
+						value="jdbc:sqlserver://10.10.10.52:1433;DatabaseName=panswersBeth" />
+					<Environment name="databaseUser" type="java.lang.String"
+						value="common" />
+					<Environment name="databasePassword" type="java.lang.String"
+						value="xxxPA50" />
+					<Environment name="cryptographyKey" type="java.lang.String"
+						value="InEvLnRgAePAzUuOglqiQg==" />
+					<Environment name="cryptographyKey256" type="java.lang.String"
+						value="InEvLnRgAePAzUuOglqiQg==" />
+					<Environment name="restrictedLoginCryptographyKey256"
+						type="java.lang.String" value="dDKul2Qp1hiSHlFDNXxCdE4rtTAae9vob71MBoxWm0Y=" />
+					<Environment name="jdbc.dbDriverName" type="java.lang.String"
+						value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+					<Environment name="applicationTag" type="java.lang.String"
+						value="pa" />
+					<Environment name="inProduction" type="java.lang.String"
+						value="false" />
+					<Environment name="canBeReportServer" type="java.lang.String"
+						value="false" />
+					<Environment name="grabReportServer" type="java.lang.String"
+						value="false" />
+					<Environment name="userBasePath" type="java.lang.String"
+						value="/home/bstevens/" />
+					<Environment name="systemUserBasePath" type="java.lang.String"
+						value="/home/bstevens/" />
+					<Environment name="remoteFileStoreCryptographyKey256" type="java.lang.String"
+						value="/home/bstevens/" />
+					<Environment name="marketingSiteTag" type="java.lang.String"
+						value="/home/bstevens/" />
+					<Environment name="database2URL" type="java.lang.String"
+						value="" />
+					<Environment name="inStaging" type="java.lang.String"
+						value="false" />
+					<Environment name="inDevelopment" type="java.lang.String"
+						value="true" />
+					<Environment name="reportServerIPAddress" type="java.lang.String"
+						value="localhost" />
+					<Environment name="useReportServer" type="java.lang.String"
+						value="false" />
+					<Environment name="reportURL" type="java.lang.String"
+						value="http://localhost:8080" />
+
+	                <Environment name="sharedDataMulticastAddr" type="java.lang.String"
+		                value="224.0.0.228" />
+	                <Environment name="sharedDataMulticastPort" type="java.lang.String"
+		                value="05228" />
+                    <Environment name="httpPortNumber" type="java.lang.Integer"
+		                value="8080" />
+
+					<!-- Set this to a folder in your workspace -->
+					<Environment name="reportBasePath" type="java.lang.String"
+						value="/home/bstevens/workspace/reports" />
+
+					<Environment name="openOfficeBinDir" type="java.lang.String"
+						value="/usr/bin" />
+					<Environment name="libreOfficePath" type="java.lang.String"
+						value="/usr/bin" />
+
+					<!-- set this to a temporary folder in your workspace or home dir -->
+					<Environment name="libreOfficeTempOutputDirectory"
+						type="java.lang.String" value="/home/bstevens/workspace/libre/out" />
+
+					<!-- set this to a temporary folder in your workspace or home dir -->
+					<Environment name="libreOfficeTempInputDirectory" type="java.lang.String"
+						value="/home/bstevens/workspace/libre/in" />
+
+					<Environment name="grabPrimaryServer" type="java.lang.String"
+						value="true" />
+					<Environment name="canBePrimaryServer" type="java.lang.String"
+						value="true" />
+					<Environment name="turnOffProcessThreadsOnDevelopment"
+						type="java.lang.String" value="true" />
+					<Environment name="siteURL" type="java.lang.String"
+						value="https://localhost:8443" />
+
+
+					<!-- @todo figure out what this path is -->
+					<Environment name="siteBasePath" type="java.lang.String"
+						value="/home/bstevens/workspace/siteBasePath" />
+					<Environment name="canSwitchProtocols" type="java.lang.String"
+						value="true" />
+					<Environment name="showStackTraces" type="java.lang.Boolean"
+						value="true" />
+					<Environment name="SMTPServerIPAddress" type="java.lang.String"
+						value="74.125.148.12" />
+
+					<!-- set this to your work email address -->
+					<Environment name="developmentTestEmail" type="java.lang.String"
+						value="bstevens@peopleanswers.com" />
+
+					<Environment name="integrateWithNewArchitecture" type="java.lang.Boolean"
+						value="true" />
+					<Environment name="forceAllTestingToUseMobile" type="java.lang.Boolean"
+						value="false" />
+					<Environment name="timeBasedOneTimeCodeGeneratorKey"
+						type="java.lang.String" value="fc26ce20a3505c751b9711b5b5771da13eaec9bc" />
+					<Environment name="mobileUrlPrefix" type="java.lang.String"
+						value="https://10.10.10.97:9443/pa-testing-web" />
+					<Environment name="cacheBridgeActive" type="java.lang.Boolean"
+						value="false" />
+					<Environment name="cacheBridgeHostName1" type="java.lang.String"
+						value="localhost" />
+					<Environment name="cacheBridgeHostName2" type="java.lang.String"
+						value="localhost" />
+					<Environment name="cacheBridgePort" type="java.lang.Integer"
+						value="5672" />
+					<Environment name="cacheBridgeUserName" type="java.lang.String"
+						value="pa" />
+					<Environment name="cacheBridgePassword" type="java.lang.String"
+						value="catfox" />
+					<Environment name="cacheBridgeLoadTest" type="java.lang.Boolean"
+						value="false" />
+				</Context>
+
+				<!-- The Marketing Site -->
+				<!-- Set docbase to Tomcat_Marketing/WebRoot, wherever you cloned your 
+					repo to -->
+				<Context crossContext="false" debug="1"
+					docBase="/home/bstevens/repo/Tomcat_Marketing/WebRoot"
+					fileEncoding="utf8" path="/site" reloadable="false">
+
+					<Resource description="TesterApp DataSource Reference"
+						driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+						factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
+						maxActive="200" maxIdle="30" maxWait="20000" name="jdbc/PeepDB"
+						type="javax.sql.DataSource"
+						url="jdbc:sqlserver://10.10.10.51:1433;DatabaseName=marketing;username=mark;password=mark;" />
+					<!-- @todo figure out what this path is -->
+					<Environment name="siteBasePath" type="java.lang.String"
+						value="/home/josh/dev/workspace1.0/peopleanswers.com/dynamic" />
+					<Environment name="applicationTag" type="java.lang.String"
+						value="pa" />
+					<Environment name="marketingSiteTag" type="java.lang.String"
+						value="site" />
+					<Environment name="inProduction" type="java.lang.String"
+						value="false" />
+					<Environment name="inStaging" type="java.lang.String"
+						value="false" />
+					<Environment name="inDevelopment" type="java.lang.String"
+						value="true" />
+					<Environment name="siteBaseURLName" type="java.lang.String"
+						value="localhost:8080/site" />
+				</Context>
+			</Host>
+		</Engine>
+	</Service>
+</Server>
+
