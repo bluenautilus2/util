@@ -116,7 +116,7 @@
 					<Environment name="canBePrimaryServer" type="java.lang.String"
 						value="true" />
 					<Environment name="turnOffProcessThreadsOnDevelopment"
-						type="java.lang.String" value="true" />
+						type="java.lang.String" value="false" />
 					<Environment name="siteURL" type="java.lang.String"
 						value="https://localhost:8443" />
 
@@ -131,7 +131,10 @@
 					<Environment name="SMTPServerIPAddress" type="java.lang.String"
 						value="74.125.148.12" />
 
-					<!-- set this to your work email address -->
+                                        <!-- turn this on or off if you want stub mode -->
+                                        <Environment name="useStubWebServicesLayer" type="java.lang.String" value="true"/>
+				
+                                	<!-- set this to your work email address -->
 					<Environment name="developmentTestEmail" type="java.lang.String"
 						value="bstevens@peopleanswers.com" />
 
