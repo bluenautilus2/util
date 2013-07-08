@@ -45,7 +45,7 @@
 						replacing the ip address and DatabaseName. You don't need to change the port, 
 						login, password, or crypto information -->
 					<Environment name="databaseURL" type="java.lang.String"
-						value="jdbc:sqlserver://10.10.10.52:1433;DatabaseName=panswersBeth" />
+						value="jdbc:sqlserver://10.10.10.53:1433;DatabaseName=panswersBeth" />
 					<Environment name="databaseUser" type="java.lang.String"
 						value="common" />
 					<Environment name="databasePassword" type="java.lang.String"
@@ -136,7 +136,7 @@
 				
                                 	<!-- set this to your work email address -->
 					<Environment name="developmentTestEmail" type="java.lang.String"
-						value="bstevens@peopleanswers.com" />
+						value="cephalo22@gmail.com" />
 
 					<Environment name="integrateWithNewArchitecture" type="java.lang.Boolean"
 						value="true" />
