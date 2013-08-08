@@ -44,6 +44,9 @@
 					<!-- Set databaseURL to jdbc:sqlserver://10.10.10.52:1433;DatabaseName=panswersJosh 
 						replacing the ip address and DatabaseName. You don't need to change the port, 
 						login, password, or crypto information -->
+                                       <Environment name="log4JPropertyFileName" type="java.lang.String"
+                                                value="/bethrepo/log4j.properties"/>
+
 					<Environment name="databaseURL" type="java.lang.String"
 						value="jdbc:sqlserver://10.10.10.52:1433;DatabaseName=panswersBeth" />
 					<Environment name="databaseUser" type="java.lang.String"
