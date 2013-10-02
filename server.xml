@@ -94,7 +94,10 @@
 		                value="224.0.0.228" />
 	                <Environment name="sharedDataMulticastPort" type="java.lang.String"
 		                value="05228" />
-                    <Environment name="httpPortNumber" type="java.lang.Integer"
+                        <Environment name="sharedInternalDataMulticastAddr" type="java.lang.String" value="224.0.0.7"/>
+                        <Environment name="sharedInternalDataMulticastPort" type="java.lang.String" value="05228"/>
+
+                        <Environment name="httpPortNumber" type="java.lang.Integer"
 		                value="8080" />
 
 					<!-- Set this to a folder in your workspace -->
@@ -145,7 +148,7 @@
 					<Environment name="mobileUrlPrefix" type="java.lang.String"
 						value="https://10.10.10.97:9443/pa-testing-web" />
 			
-                                        <Environment name="messageBrokerActive" type="java.lang.Boolean" value="true"/>
+                                        <Environment name="messageBrokerActive" type="java.lang.Boolean" value="false"/>
                                         <Environment name="messageBrokerHostName1" type="java.lang.String" value="localhost"/>
                                         <Environment name="messageBrokerHostName2" type="java.lang.String" value="localhost"/>
                                         <Environment name="messageBrokerPort" type="java.lang.Integer" value="5672"/>
