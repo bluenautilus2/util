@@ -45,7 +45,7 @@
 						replacing the ip address and DatabaseName. You don't need to change the port, 
 						login, password, or crypto information -->
                                        <Environment name="log4JPropertyFileName" type="java.lang.String"
-                                                value="/bethrepo/log4j.properties"/>
+                                                value="/home/bstevens/bethrepo/log4j.properties"/>
 
 					<Environment name="databaseURL" type="java.lang.String"
 						value="jdbc:sqlserver://10.10.10.52:1433;DatabaseName=panswersBeth" />
@@ -118,8 +118,6 @@
 						value="true" />
 					<Environment name="canBePrimaryServer" type="java.lang.String"
 						value="true" />
-					<Environment name="turnOffProcessThreadsOnDevelopment"
-						type="java.lang.String" value="false" />
 					<Environment name="siteURL" type="java.lang.String"
 						value="https://localhost:8443" />
 
@@ -134,9 +132,6 @@
 					<Environment name="SMTPServerIPAddress" type="java.lang.String"
 						value="74.125.148.12" />
 
-                                        <!-- turn this on or off if you want stub mode -->
-                                        <Environment name="useStubWebServicesLayer" type="java.lang.String" value="true"/>
-				
                                 	<!-- set this to your work email address -->
 					<Environment name="developmentTestEmail" type="java.lang.String"
 						value="cephalo22@gmail.com" />
@@ -149,20 +144,19 @@
 						type="java.lang.String" value="fc26ce20a3505c751b9711b5b5771da13eaec9bc" />
 					<Environment name="mobileUrlPrefix" type="java.lang.String"
 						value="https://10.10.10.97:9443/pa-testing-web" />
-					<Environment name="cacheBridgeActive" type="java.lang.Boolean"
-						value="false" />
-					<Environment name="cacheBridgeHostName1" type="java.lang.String"
-						value="localhost" />
-					<Environment name="cacheBridgeHostName2" type="java.lang.String"
-						value="localhost" />
-					<Environment name="cacheBridgePort" type="java.lang.Integer"
-						value="5672" />
-					<Environment name="cacheBridgeUserName" type="java.lang.String"
-						value="pa" />
-					<Environment name="cacheBridgePassword" type="java.lang.String"
-						value="catfox" />
-					<Environment name="cacheBridgeLoadTest" type="java.lang.Boolean"
-						value="false" />
+			
+                                        <Environment name="messageBrokerActive" type="java.lang.Boolean" value="true"/>
+                                        <Environment name="messageBrokerHostName1" type="java.lang.String" value="localhost"/>
+                                        <Environment name="messageBrokerHostName2" type="java.lang.String" value="localhost"/>
+                                        <Environment name="messageBrokerPort" type="java.lang.Integer" value="5672"/>
+                                        <Environment name="messageBrokerUserName" type="java.lang.String" value="pa"/>
+                                        <Environment name="messageBrokerPassword" type="java.lang.String" value="catfox"/>	
+                                        <Environment name="cacheBridgeLoadTest" type="java.lang.Boolean" value="false" />
+                                        
+                                        <!-- development mode flags -->
+                                        <Environment name="turnOffProcessThreadsOnDevelopment" type="java.lang.String" value="false"/>
+					<Environment name="allowFtpProcessThreadsInDevelopment" type="java.lang.String" value="true"/>
+					<Environment name="useStubWebServicesLayer" type="java.lang.String" value="true"/>
 				</Context>
 
 				<!-- The Marketing Site -->
