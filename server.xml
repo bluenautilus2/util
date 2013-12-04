@@ -160,6 +160,8 @@
                                         <Environment name="turnOffProcessThreadsOnDevelopment" type="java.lang.String" value="false"/>
 					<Environment name="allowFtpProcessThreadsInDevelopment" type="java.lang.String" value="true"/>
 					<Environment name="useStubWebServicesLayer" type="java.lang.String" value="true"/>
+
+                                       <Environment name="memcachedServerPort1" type="java.lang.String" value="nucleus:11211"/>
 				</Context>
 
 				<!-- The Marketing Site -->
