@@ -140,7 +140,7 @@
 						value="cephalo22@gmail.com" />
 
 					<Environment name="integrateWithNewArchitecture" type="java.lang.Boolean"
-						value="true" />
+						value="false" />
 					<Environment name="forceAllTestingToUseMobile" type="java.lang.Boolean"
 						value="false" />
 					<Environment name="timeBasedOneTimeCodeGeneratorKey"
@@ -192,6 +192,8 @@
 						value="true" />
 					<Environment name="siteBaseURLName" type="java.lang.String"
 						value="localhost:8080/site" />
+                                        <Environment name="cacheBridgeActive" type="java.lang.Boolean" value="false" />
+
 				</Context>
 			</Host>
 		</Engine>
