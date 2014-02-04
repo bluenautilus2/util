@@ -156,12 +156,25 @@
                                         <Environment name="messageBrokerPassword" type="java.lang.String" value="catfox"/>	
                                         <Environment name="cacheBridgeLoadTest" type="java.lang.Boolean" value="false" />
                                         
+
                                         <!-- development mode flags -->
                                         <Environment name="turnOffProcessThreadsOnDevelopment" type="java.lang.String" value="false"/>
 					<Environment name="allowFtpProcessThreadsInDevelopment" type="java.lang.String" value="true"/>
 					<Environment name="useStubWebServicesLayer" type="java.lang.String" value="true"/>
 
-                                       <Environment name="memcachedServerPort1" type="java.lang.String" value="nucleus:11211"/>
+                                        <!-- 2.0 settings -->
+                                        <Environment name="cacheBridgeActive" type="java.lang.Boolean" value="true" />
+                                        <Environment name="memcachedServerPort1" type="java.lang.String" value="172.16.0.90:11211"/>
+                                        <Environment name="memcachedServerPort2" type="java.lang.String" value="172.16.0.90:11211"/>
+                                        
+                                        <Environment name="cassandraServer1" type="java.lang.String" value="172.16.0.90" />
+                                        <Environment name="cassandraServer2" type="java.lang.String" value=" 172.16.0.90 " />
+                                        <Environment name="cassandraPort" type="java.lang.Integer" value="9042" />
+                                        <Environment name="cassandraKeyspace" type="java.lang.String" value="pa" />
+                                        <Environment name="cassandraCryptographyKey" type="java.lang.String" value="zu613V2CRGXvGL1KvB5MqN1D6dEGefMlyZ1atpcuBHY=" />
+
+
+                                      <!-- <Environment name="memcachedServerPort1" type="java.lang.String" value="nucleus:11211"/>-->
 				</Context>
 
 				<!-- The Marketing Site -->
@@ -192,7 +205,6 @@
 						value="true" />
 					<Environment name="siteBaseURLName" type="java.lang.String"
 						value="localhost:8080/site" />
-                                        <Environment name="cacheBridgeActive" type="java.lang.Boolean" value="false" />
 
 				</Context>
 			</Host>
