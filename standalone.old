@@ -35,22 +35,22 @@
         <property name="com.pa.common.email.behavior" value="LOG"/>
         <property name="com.pa.common.email.redirect.address" value=""/>
         <property name="com.pa.common.message.bus.active" value="true"/>
-        <property name="com.pa.common.message.bus.hostname1" value="127.0.0.1"/>
-        <property name="com.pa.common.message.bus.hostname2" value="vmubuntu"/>
+        <property name="com.pa.common.message.bus.hostname1" value="nucleus"/>
+        <property name="com.pa.common.message.bus.hostname2" value="nucleus"/>
         <property name="com.pa.common.message.bus.port" value="5672"/>
         <property name="com.pa.common.message.bus.username" value="pa"/>
-        <property name="com.pa.common.message.bus.password" value="activemqsux"/>
+        <property name="com.pa.common.message.bus.password" value="catfox"/>
         <property name="com.pa.persistence.cache.bridge.active" value="true"/>
         <property name="com.pa.persistence.cache.listener.log.detail" value="NONE"/>
         <property name="com.pa.persistence.cryptography.aes.key" value="InEvLnRgAePAzUuOglqiQg=="/>
         <property name="com.pa.persistence.database.driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-        <property name="com.pa.persistence.database.url" value="jdbc\:sqlserver\://vmsql\:1433;databaseName=panswersDarrell1"/>
-        <property name="com.pa.persistence.database.username" value="sa"/>
-        <property name="com.pa.persistence.database.password" value="sa1"/>
-        <property name="com.pa.persistence.ehcache.jgroups.multicast.addr" value="231.12.22.111"/>
-        <property name="com.pa.persistence.ehcache.jgroups.multicast.port" value="45530"/>
+        <property name="com.pa.persistence.database.url" value="jdbc\:sqlserver\://vmsql\:1433;databaseName=panswersBeth"/>
+        <property name="com.pa.persistence.database.username" value="common"/>
+        <property name="com.pa.persistence.database.password" value="xxxPA50"/>
+        <property name="com.pa.persistence.ehcache.jgroups.multicast.addr" value="231.12.87.222"/>
+        <property name="com.pa.persistence.ehcache.jgroups.multicast.port" value="45492"/>
         <property name="com.pa.services.authenticityAlert.activeVersion" value="2"/>
-        <property name="com.pa.services.legacy.services.url.prefix" value="http://127.0.0.1:9080/pa"/>
+        <property name="com.pa.services.legacy.services.url.prefix" value="http://127.0.0.1:8080/pa"/>
         <property name="com.pa.services.legacy.services.security.token" value="6qFUm0zxtcNG0W4YJBfEToKrw9Gz1sGYbRLahLypbecNdF5QlKouzckTnV09y3NH"/>
         <property name="com.pa.services.legacy.services.use.stubs" value="true"/>
         <property name="com.pa.web.testing.invalid.session.url" value="https://localhost:9443/pa/testLogOut.do"/>
@@ -62,8 +62,8 @@
         <property name="com.pa.web.company.message.email.numberOfHandlerThreads" value="3"/>
         <property name="com.pa.web.company.message.email.handlerQueueSize" value="10000"/>
         <property name="com.pa.web.testing.thawteseal.hostname" value="rc1.peopleanswers.com"/>
-        <property name="com.pa.web.testing.ehcache.jgroups.multicast.addr" value="231.12.22.111"/>
-        <property name="com.pa.web.testing.ehcache.jgroups.multicast.port" value="45520"/>
+        <property name="com.pa.web.testing.ehcache.jgroups.multicast.addr" value="231.12.87.222"/>
+        <property name="com.pa.web.testing.ehcache.jgroups.multicast.port" value="45202"/>
         <property name="com.pa.web.internal.message.email.numberOfListenerThreads" value="1"/>
         <property name="com.pa.web.internal.message.email.numberOfHandlerThreads" value="3"/>
         <property name="com.pa.web.internal.message.email.handlerQueueSize" value="10000"/>
@@ -168,58 +168,58 @@
             <datasources>
                 <xa-datasource jndi-name="java:jboss/datasources/commonShardDS" pool-name="commonShardDS_Pool" enabled="true" use-java-context="true" use-ccm="true">
                     <xa-datasource-property name="ServerName">
-                        vmsql
+                        10.10.10.52
                     </xa-datasource-property>
                     <xa-datasource-property name="DatabaseName">
-                        panswersDarrell1
+                        panswersBeth
                     </xa-datasource-property>
                     <driver>mssql</driver>
                     <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
                     <security>
-                        <user-name>sa</user-name>
-                        <password>sa1</password>
+                        <user-name>common</user-name>
+                        <password>xxxPA50</password>
                     </security>
                 </xa-datasource>
                 <xa-datasource jndi-name="java:jboss/datasources/commonSecondaryShardDS" pool-name="commonSecondaryShardDS_Pool" enabled="true" use-java-context="true" use-ccm="true">
                     <xa-datasource-property name="ServerName">
-                        vmsql
+                        10.10.10.52
                     </xa-datasource-property>
                     <xa-datasource-property name="DatabaseName">
-                        panswersDarrell1
+                        panswersBeth
                     </xa-datasource-property>
                     <driver>mssql</driver>
                     <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
                     <security>
-                        <user-name>sa</user-name>
-                        <password>sa1</password>
+                        <user-name>common</user-name>
+                        <password>xxxPA50</password>
                     </security>
                 </xa-datasource>
                 <xa-datasource jndi-name="java:jboss/datasources/companyShard1DS" pool-name="companyShard1DS_Pool" enabled="true" use-java-context="true" use-ccm="true">
                     <xa-datasource-property name="ServerName">
-                        vmsql
+                       10.10.10.52 
                     </xa-datasource-property>
                     <xa-datasource-property name="DatabaseName">
-                        panswersDarrell1
+                        panswersBeth
                     </xa-datasource-property>
                     <driver>mssql</driver>
                     <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
                     <security>
-                        <user-name>sa</user-name>
-                        <password>sa1</password>
+                        <user-name>common</user-name>
+                        <password>xxxPA50</password>
                     </security>
                 </xa-datasource>
                 <xa-datasource jndi-name="java:jboss/datasources/companyShard2DS" pool-name="companyShard2DS_Pool" enabled="true" use-java-context="true" use-ccm="true">
                     <xa-datasource-property name="ServerName">
-                        vmsql
+                        10.10.10.52
                     </xa-datasource-property>
                     <xa-datasource-property name="DatabaseName">
-                        panswersDarrell1
+                        panswersBeth
                     </xa-datasource-property>
                     <driver>mssql</driver>
                     <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
                     <security>
-                        <user-name>sa</user-name>
-                        <password>sa1</password>
+                        <user-name>common</user-name>
+                        <password>xxxPA50</password>
                     </security>
                 </xa-datasource>
                 <drivers>
