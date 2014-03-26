@@ -32,7 +32,7 @@
         <property name="java.net.preferIPv4Stack" value="true"/>
         <property name="spring.profiles.active" value="local"/>
         <property name="com.pa.common.email.behavior" value="REDIRECT"/>
-        <property name="com.pa.common.email.redirect.address" value="cephalo22@gmail.com"/>
+        <property name="com.pa.common.email.redirect.address" value="mraquet@peopleanswers.com"/>
         <property name="com.pa.common.email.session.jndi.name" value="java:jboss/mail/Default"/>
         <property name="com.pa.common.message.bus.active" value="true"/>
         <property name="com.pa.common.message.bus.hostname1" value="nucleus"/>
@@ -56,11 +56,11 @@
         <property name="com.pa.persistence.cassandra.aes.key" value=" zu613V2CRGXvGL1KvB5MqN1D6dEGefMlyZ1atpcuBHY= "/>
         <property name="com.pa.persistence.cryptography.aes.key" value="InEvLnRgAePAzUuOglqiQg=="/>
         <property name="com.pa.persistence.database.driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-        <property name="com.pa.persistence.database.url" value="jdbc\:sqlserver\://10.10.10.52\:1433;databaseName=panswersBeth"/>
+        <property name="com.pa.persistence.database.url" value="jdbc\:sqlserver\://10.10.10.51\:1433;databaseName=panswersMichael"/>
         <property name="com.pa.persistence.database.username" value="common"/>
         <property name="com.pa.persistence.database.password" value="xxxPA50"/>
-        <property name="com.pa.persistence.ehcache.jgroups.multicast.addr" value="230.64.4.4"/>
-        <property name="com.pa.persistence.ehcache.jgroups.multicast.port" value="45228"/>
+        <property name="com.pa.persistence.ehcache.jgroups.multicast.addr" value="230.64.19.150"/>
+        <property name="com.pa.persistence.ehcache.jgroups.multicast.port" value="45560"/>
         <property name="com.pa.persistence.hibernate.debug" value="false"/>
         <property name="com.pa.persistence.solr.zookeeper.hosts" value="nucleus:2181"/>
         <property name="com.pa.persistence.solr.maxQueryTimeMillis" value="30000"/>
@@ -82,19 +82,19 @@
         <property name="com.pa.web.company.message.email.numberOfListenerThreads" value="1"/>
         <property name="com.pa.web.company.message.email.numberOfHandlerThreads" value="3"/>
         <property name="com.pa.web.company.message.email.handlerQueueSize" value="10000"/>
-        <property name="com.pa.web.company.shared_data.jgroups.udp.mcast_addr" value="230.64.4.5"/>
-        <property name="com.pa.web.company.shared_data.jgroups.udp.mcast_port" value="45228"/>
+        <property name="com.pa.web.company.shared_data.jgroups.udp.mcast_addr" value="230.64.19.101"/>
+        <property name="com.pa.web.company.shared_data.jgroups.udp.mcast_port" value="45501"/>
         <property name="com.pa.web.company.sharedSession.server1" value="nucleus:11211"/>
         <property name="com.pa.web.internal.arch1.url" value="https://localhost:8443/pa"/>
         <property name="com.pa.web.internal.arch1.login.url" value="https://localhost:8443/pa/adminLogIn.do"/>
         <property name="com.pa.web.internal.message.email.numberOfListenerThreads" value="1"/>
         <property name="com.pa.web.internal.message.email.numberOfHandlerThreads" value="3"/>
         <property name="com.pa.web.internal.message.email.handlerQueueSize" value="10000"/>
-        <property name="com.pa.web.internal.shared_data.jgroups.udp.mcast_addr" value="230.64.4.6"/>
-        <property name="com.pa.web.internal.shared_data.jgroups.udp.mcast_port" value="45228"/>
+        <property name="com.pa.web.internal.shared_data.jgroups.udp.mcast_addr" value="230.64.19.201"/>
+        <property name="com.pa.web.internal.shared_data.jgroups.udp.mcast_port" value="45502"/>
         <property name="com.pa.web.internal.sharedSession.server1" value="nucleus:11211"/>
-        <property name="com.pa.web.testing.ehcache.jgroups.multicast.addr" value="230.64.4.7"/>
-        <property name="com.pa.web.testing.ehcache.jgroups.multicast.port" value="45228"/>
+        <property name="com.pa.web.testing.ehcache.jgroups.multicast.addr" value="230.64.19.250"/>
+        <property name="com.pa.web.testing.ehcache.jgroups.multicast.port" value="45560"/>
         <property name="com.pa.web.testing.thawteseal.hostname" value="rc1.peopleanswers.com"/>
         <property name="com.pa.web.testing.invalid.session.url" value="http://localhost:8080/pa/testLogOut.do"/>
         <property name="com.pa.web.testing.legacy.logout.url" value="http://localhost:8080/pa/testLogOut.do"/>
@@ -158,7 +158,7 @@
                     <property name="fromPersonal" value="PeopleAnswers"/>
                     <property name="replytoAddress" value="DO_NOT_REPLY@peopleanswers.com"/>
                     <property name="replytoPersonal" value="PeopleAnswers"/>
-                    <property name="toAddress" value="dburgan@peopleanswers.com"/>
+                    <property name="toAddress" value="mraquet@peopleanswers.com"/>
                     <property name="toPersonal" value="PeopleAnswers"/>
                     <property name="subject" value="Error In Dev"/>
                     <property name="enableEmail" value="false"/>
@@ -215,7 +215,7 @@
         <subsystem xmlns="urn:jboss:domain:datasources:1.1">
             <datasources>
                 <datasource jta="false" jndi-name="java:jboss/datasources/commonShardDS" pool-name="commonShardDS_Pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
-                    <connection-url>jdbc:sqlserver://10.10.10.52:1433;DatabaseName=panswersBeth</connection-url>
+                    <connection-url>jdbc:sqlserver://10.10.10.52:1433;DatabaseName=panswersOstiaryMichael</connection-url>
                     <driver>mssql</driver>
                     <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
                     <pool>
@@ -234,7 +234,7 @@
                     </validation>
                 </datasource>
                 <datasource jta="false" jndi-name="java:jboss/datasources/commonSecondaryShardDS" pool-name="commonSecondaryShardDS_Pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
-                    <connection-url>jdbc:sqlserver://10.10.10.52:1433;DatabaseName=panswersBeth</connection-url>
+                    <connection-url>jdbc:sqlserver://10.10.10.52:1433;DatabaseName=panswersOstiaryMichael</connection-url>
                     <driver>mssql</driver>
                     <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
                     <pool>
@@ -253,7 +253,7 @@
                     </validation>
                 </datasource>
                 <datasource jta="false" jndi-name="java:jboss/datasources/companyShard1DS" pool-name="companyShard1DS_Pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
-                    <connection-url>jdbc:sqlserver://10.10.10.52:1433;DatabaseName=panswersBeth</connection-url>
+                    <connection-url>jdbc:sqlserver://10.10.10.52:1433;DatabaseName=panswersOstiaryMichael</connection-url>
                     <driver>mssql</driver>
                     <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
                     <pool>
@@ -272,7 +272,7 @@
                     </validation>
                 </datasource>
                 <datasource jta="false" jndi-name="java:jboss/datasources/companyShard2DS" pool-name="companyShard2DS_Pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
-                    <connection-url>jdbc:sqlserver://10.10.10.52:1433;DatabaseName=panswersBeth</connection-url>
+                    <connection-url>jdbc:sqlserver://10.10.10.52:1433;DatabaseName=panswersOstiaryMichael</connection-url>
                     <driver>mssql</driver>
                     <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
                     <pool>
@@ -498,9 +498,4 @@
         </outbound-socket-binding>
     </socket-binding-group>
 
-    <deployments>
-        <deployment name="pa-ear.ear" runtime-name="pa-ear.ear">
-            <fs-exploded path="/home/bstevens/repos/pa/pa-ear/target/pa-ear.ear"/>
-        </deployment>
-    </deployments>
 </server>

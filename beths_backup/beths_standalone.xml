@@ -31,8 +31,8 @@
     <system-properties>
         <property name="java.net.preferIPv4Stack" value="true"/>
         <property name="spring.profiles.active" value="local"/>
-        <property name="com.pa.common.email.behavior" value="REDIRECT"/>
-        <property name="com.pa.common.email.redirect.address" value="cephalo22@gmail.com"/>
+        <property name="com.pa.common.email.behavior" value="LOG"/>
+        <property name="com.pa.common.email.redirect.address" value=""/>
         <property name="com.pa.common.email.session.jndi.name" value="java:jboss/mail/Default"/>
         <property name="com.pa.common.message.bus.active" value="true"/>
         <property name="com.pa.common.message.bus.hostname1" value="nucleus"/>
@@ -40,6 +40,56 @@
         <property name="com.pa.common.message.bus.port" value="5672"/>
         <property name="com.pa.common.message.bus.username" value="pa"/>
         <property name="com.pa.common.message.bus.password" value="catfox"/>
+        <property name="com.pa.persistence.cache.bridge.active" value="true"/>
+        <property name="com.pa.persistence.cache.listener.log.detail" value="NONE"/>
+        <property name="com.pa.persistence.cryptography.aes.key" value="InEvLnRgAePAzUuOglqiQg=="/>
+        <property name="com.pa.persistence.database.driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+        <property name="com.pa.persistence.database.url" value="jdbc\:sqlserver\://10.10.10.52\:1433;databaseName=panswersBeth"/>
+        <property name="com.pa.persistence.database.username" value="common"/>
+        <property name="com.pa.persistence.database.password" value="xxxPA50"/>
+        <property name="com.pa.persistence.ehcache.jgroups.multicast.addr" value="230.64.4.1"/>
+        <property name="com.pa.persistence.ehcache.jgroups.multicast.port" value="05228"/>
+        <property name="com.pa.services.authenticityAlert.activeVersion" value="2"/>
+        <property name="com.pa.services.legacy.services.url.prefix" value="http://127.0.0.1:8080/pa"/>
+        <property name="com.pa.services.legacy.services.security.token" value="6qFUm0zxtcNG0W4YJBfEToKrw9Gz1sGYbRLahLypbecNdF5QlKouzckTnV09y3NH"/>
+        <property name="com.pa.services.legacy.services.use.stubs" value="true"/>
+        <property name="com.pa.web.company.message.email.numberOfListenerThreads" value="1"/>
+        <property name="com.pa.web.company.message.email.numberOfHandlerThreads" value="3"/>
+        <property name="com.pa.web.company.message.email.handlerQueueSize" value="10000"/>
+        <property name="com.pa.web.internal.message.email.numberOfListenerThreads" value="1"/>
+        <property name="com.pa.web.internal.message.email.numberOfHandlerThreads" value="3"/>
+        <property name="com.pa.web.internal.message.email.handlerQueueSize" value="10000"/>
+        <property name="com.pa.web.testing.ehcache.jgroups.multicast.addr" value="230.64.4.1"/>
+        <property name="com.pa.web.testing.ehcache.jgroups.multicast.port" value="05229"/>
+        <property name="com.pa.web.testing.invalid.session.url" value="http://localhost:8080/pa/testLogOut.do"/>
+        <property name="com.pa.web.testing.legacy.logout.url" value="http://localhost:8080/pa/testLogOut.do"/>
+        <property name="com.pa.web.testing.message.email.numberOfListenerThreads" value="1"/>
+        <property name="com.pa.web.testing.message.email.numberOfHandlerThreads" value="3"/>
+        <property name="com.pa.web.testing.message.email.handlerQueueSize" value="10000"/>
+        <property name="com.pa.web.testing.thawteseal.hostname" value="rc1.peopleanswers.com"/>
+        <property name="com.pa.web.testing.totp.key" value="fc26ce20a3505c751b9711b5b5771da13eaec9bc"/>
+        <property name="com.pa.web.testing.totp.interval.length" value="300000"/>
+        <property name="com.pa.web.testing.totp.code.length" value="8"/>
+        <property name="com.pa.web.testing.user.session.cryptography.aes.key" value="SJvPMsTx6TgwHp0+MyFzvw=="/>
+        <property name="org.apache.catalina.connector.URI_ENCODING" value="UTF-8"/>
+        <property name="org.apache.catalina.connector.USE_BODY_ENCODING_FOR_QUERY_STRING" value="true"/>
+        <property name="com.pa.web.company.businessUnitLogo.url.base" value="https://rc1.peopleanswers.com"/>
+        <property name="com.pa.web.company.arch1.url" value="https://localhost:8443/pa"/>
+        <property name="com.pa.web.company.arch1.login.url" value="https://localhost:8443/pa/companyLogIn.do"/>
+        <property name="com.pa.services.scheduler.threadCount" value="50"/>
+        <property name="com.pa.services.scheduler.queueSize" value="1000"/>
+        <property name="com.pa.services.scheduler.millisToSleepAtStartup" value="30000"/>
+        <property name="com.pa.services.scheduler.millisToSleepBetweenSchedulingRuns" value="15000"/>
+        <property name="com.pa.persistence.cassandra.cluster.port" value="9042"/>
+        <property name="com.pa.persistence.cassandra.cluster.member1" value="nucleus"/>
+        <property name="com.pa.persistence.cassandra.cluster.member2" value="nucleus"/>
+        <property name="com.pa.persistence.cassandra.keyspace" value="pa"/>
+        <property name="com.pa.persistence.cassandra.aes.key" value=" zu613V2CRGXvGL1KvB5MqN1D6dEGefMlyZ1atpcuBHY= "/>
+        <property name="com.pa.persistence.solr.zookeeper.hosts" value="nucleus:2181"/>
+        <property name="com.pa.persistence.solr.maxQueryTimeMillis" value="30000"/>
+        <property name="com.pa.services.resume.parsing.hostname1" value="girt"/>
+        <property name="com.pa.services.resume.parsing.hostname2" value="girt"/>
+        <property name="com.pa.services.resume.parsing.port" value="2010"/>
         <property name="com.pa.persistence.blofeld.clusterName" value="blofeld"/>
         <property name="com.pa.persistence.blofeld.authenticationToken" value="catfox"/>
         <property name="com.pa.persistence.blofeld.ipAddress1" value="nucleus"/>
@@ -47,68 +97,12 @@
         <property name="com.pa.persistence.blofeld.ipAddress2" value="nucleus"/>
         <property name="com.pa.persistence.blofeld.port2" value="6811"/>
         <property name="com.pa.persistence.blofeld.aes.key" value="HyzVYAgFn3CWG7imtuzmxPBVEjA3IH01J8saQz6RtII="/>
-        <property name="com.pa.persistence.cache.bridge.active" value="true"/>
-        <property name="com.pa.persistence.cache.listener.log.detail" value="NONE"/>
-        <property name="com.pa.persistence.cassandra.cluster.port" value="9042"/>
-        <property name="com.pa.persistence.cassandra.cluster.member1" value="nucleus"/>
-        <property name="com.pa.persistence.cassandra.cluster.member2" value="nucleus"/>
-        <property name="com.pa.persistence.cassandra.keyspace" value="pa"/>
-        <property name="com.pa.persistence.cassandra.aes.key" value=" zu613V2CRGXvGL1KvB5MqN1D6dEGefMlyZ1atpcuBHY= "/>
-        <property name="com.pa.persistence.cryptography.aes.key" value="InEvLnRgAePAzUuOglqiQg=="/>
-        <property name="com.pa.persistence.database.driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-        <property name="com.pa.persistence.database.url" value="jdbc\:sqlserver\://10.10.10.52\:1433;databaseName=panswersBeth"/>
-        <property name="com.pa.persistence.database.username" value="common"/>
-        <property name="com.pa.persistence.database.password" value="xxxPA50"/>
-        <property name="com.pa.persistence.ehcache.jgroups.multicast.addr" value="230.64.4.4"/>
-        <property name="com.pa.persistence.ehcache.jgroups.multicast.port" value="45228"/>
-        <property name="com.pa.persistence.hibernate.debug" value="false"/>
-        <property name="com.pa.persistence.solr.zookeeper.hosts" value="nucleus:2181"/>
-        <property name="com.pa.persistence.solr.maxQueryTimeMillis" value="30000"/>
-        <property name="com.pa.services.authenticityAlert.activeVersion" value="2"/>
-        <property name="com.pa.services.legacy.services.url.prefix" value="http://localhost:8080/pa"/>
-        <property name="com.pa.services.legacy.services.security.token" value="6qFUm0zxtcNG0W4YJBfEToKrw9Gz1sGYbRLahLypbecNdF5QlKouzckTnV09y3NH"/>
-        <property name="com.pa.services.scheduler.threadCount" value="50"/>
-        <property name="com.pa.services.scheduler.queueSize" value="1000"/>
-        <property name="com.pa.services.scheduler.millisToSleepAtStartup" value="30000"/>
-        <property name="com.pa.services.scheduler.millisToSleepBetweenSchedulingRuns" value="30000"/>
-        <property name="com.pa.services.scheduler.daysToKeepWorkerTriggerExecutionHistory" value="14"/>
-        <property name="com.pa.services.resume.parsing.server.connection.timeout" value="60000"/>
-        <property name="com.pa.services.resume.parsing.hostname1" value="girt"/>
-        <property name="com.pa.services.resume.parsing.hostname2" value="girt"/>
-        <property name="com.pa.services.resume.parsing.port" value="2010"/>
-        <property name="com.pa.web.company.arch1.login.url" value="https://localhost:8443/pa/companyLogIn.do"/>
-        <property name="com.pa.web.company.arch1.url" value="https://localhost:8443/pa"/>
-        <property name="com.pa.web.company.businessUnitLogo.url.base" value="https://rc1.peopleanswers.com"/>
-        <property name="com.pa.web.company.message.email.numberOfListenerThreads" value="1"/>
-        <property name="com.pa.web.company.message.email.numberOfHandlerThreads" value="3"/>
-        <property name="com.pa.web.company.message.email.handlerQueueSize" value="10000"/>
-        <property name="com.pa.web.company.shared_data.jgroups.udp.mcast_addr" value="230.64.4.5"/>
-        <property name="com.pa.web.company.shared_data.jgroups.udp.mcast_port" value="45228"/>
-        <property name="com.pa.web.company.sharedSession.server1" value="nucleus:11211"/>
         <property name="com.pa.web.internal.arch1.url" value="https://localhost:8443/pa"/>
         <property name="com.pa.web.internal.arch1.login.url" value="https://localhost:8443/pa/adminLogIn.do"/>
-        <property name="com.pa.web.internal.message.email.numberOfListenerThreads" value="1"/>
-        <property name="com.pa.web.internal.message.email.numberOfHandlerThreads" value="3"/>
-        <property name="com.pa.web.internal.message.email.handlerQueueSize" value="10000"/>
-        <property name="com.pa.web.internal.shared_data.jgroups.udp.mcast_addr" value="230.64.4.6"/>
-        <property name="com.pa.web.internal.shared_data.jgroups.udp.mcast_port" value="45228"/>
+        <property name="com.pa.web.company.sharedSession.server1" value="nucleus:11211"/>
         <property name="com.pa.web.internal.sharedSession.server1" value="nucleus:11211"/>
-        <property name="com.pa.web.testing.ehcache.jgroups.multicast.addr" value="230.64.4.7"/>
-        <property name="com.pa.web.testing.ehcache.jgroups.multicast.port" value="45228"/>
-        <property name="com.pa.web.testing.thawteseal.hostname" value="rc1.peopleanswers.com"/>
-        <property name="com.pa.web.testing.invalid.session.url" value="http://localhost:8080/pa/testLogOut.do"/>
-        <property name="com.pa.web.testing.legacy.logout.url" value="http://localhost:8080/pa/testLogOut.do"/>
-        <property name="com.pa.web.testing.message.email.numberOfListenerThreads" value="1"/>
-        <property name="com.pa.web.testing.message.email.numberOfHandlerThreads" value="3"/>
-        <property name="com.pa.web.testing.message.email.handlerQueueSize" value="10000"/>
         <property name="com.pa.web.testing.sharedSession.server1" value="nucleus:11211"/>
-        <property name="com.pa.web.testing.totp.key" value="fc26ce20a3505c751b9711b5b5771da13eaec9bc"/>
-        <property name="com.pa.web.testing.totp.interval.length" value="300000"/>
-        <property name="com.pa.web.testing.totp.code.length" value="8"/>
-        <property name="com.pa.web.testing.user.session.cryptography.aes.key" value="SJvPMsTx6TgwHp0+MyFzvw=="/>
-        <property name="org.apache.catalina.connector.URI_ENCODING" value="UTF-8"/>
-        <property name="org.apache.catalina.connector.USE_BODY_ENCODING_FOR_QUERY_STRING" value="true"/>
-        <property name="org.apache.coyote.http11.Http11Protocol.COMPRESSION" value="on"/>
+        <property name="com.pa.web.testing.sharedSession.server2" value=""/>
     </system-properties>
 
 
@@ -145,7 +139,7 @@
             <console-handler name="CONSOLE">
                 <level name="INFO"/>
                 <formatter>
-                    <pattern-formatter pattern="%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%E%n"/>
+                    <pattern-formatter pattern="%d{yyyy-mm-dd HH:mm:ss,SSS} %-5p [%c] (%t) %s%E%n"/>
                 </formatter>
             </console-handler>
             <custom-handler name="EMAIL" class="com.pa.jboss.logging.SmtpLogger" module="com.pa.jboss.logging">
@@ -168,23 +162,16 @@
                 </properties>
             </custom-handler>
             <periodic-rotating-file-handler name="FILE">
-                <level name="INFO"/>
                 <formatter>
-                    <pattern-formatter pattern="%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%E%n"/>
+                    <pattern-formatter pattern="%d{yyyy-mm-dd HH:mm:ss,SSS} %-5p [%c] (%t) %s%E%n"/>
                 </formatter>
                 <file relative-to="jboss.server.log.dir" path="server.log"/>
                 <suffix value=".yyyy-MM-dd"/>
                 <append value="true"/>
             </periodic-rotating-file-handler>
-            <periodic-rotating-file-handler name="sql.FILE">
-                <level name="TRACE"/>
-                <formatter>
-                    <pattern-formatter pattern="%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%E%n"/>
-                </formatter>
-                <file relative-to="jboss.server.log.dir" path="sqlOutput.log"/>
-                <suffix value=".yyyy-MM-dd"/>
-                <append value="true"/>
-            </periodic-rotating-file-handler>
+            <logger category="com.arjuna">
+                <level name="WARN"/>
+            </logger>
             <logger category="org.apache.tomcat.util.modeler">
                 <level name="WARN"/>
             </logger>
@@ -197,101 +184,84 @@
             <logger category="jacorb.config">
                 <level name="ERROR"/>
             </logger>
-            <logger category="jboss.jdbc.spy">
-                <level name="DEBUG"/>
-                <handlers>
-                    <handler name="sql.FILE"/>
-                </handlers>
+            <logger category="com.microsoft.sqlserver.jdbc">
+                <level name="INFO"/>
             </logger>
             <root-logger>
                 <level name="INFO"/>
                 <handlers>
                     <handler name="CONSOLE"/>
                     <handler name="FILE"/>
+                    <handler name="EMAIL"/>
                 </handlers>
             </root-logger>
         </subsystem>
         <subsystem xmlns="urn:jboss:domain:configadmin:1.0"/>
         <subsystem xmlns="urn:jboss:domain:datasources:1.1">
             <datasources>
-                <datasource jta="false" jndi-name="java:jboss/datasources/commonShardDS" pool-name="commonShardDS_Pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
-                    <connection-url>jdbc:sqlserver://10.10.10.52:1433;DatabaseName=panswersBeth</connection-url>
+                <xa-datasource jndi-name="java:jboss/datasources/commonShardDS" pool-name="commonShardDS_Pool" enabled="true" use-java-context="true" use-ccm="true">
+                    <xa-datasource-property name="ServerName">
+                        10.10.10.52
+                    </xa-datasource-property>
+                    <xa-datasource-property name="DatabaseName">
+                        panswersBeth
+                    </xa-datasource-property>
                     <driver>mssql</driver>
                     <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
-                    <pool>
-                        <min-pool-size>10</min-pool-size>
-                        <max-pool-size>300</max-pool-size>
-                        <prefill>true</prefill>
-                    </pool>
                     <security>
                         <user-name>common</user-name>
                         <password>xxxPA50</password>
                     </security>
-                    <validation>
-                        <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.mssql.MSSQLValidConnectionChecker"/>
-                        <check-valid-connection-sql>SELECT 1</check-valid-connection-sql>
-                        <background-validation>true</background-validation>
-                    </validation>
-                </datasource>
-                <datasource jta="false" jndi-name="java:jboss/datasources/commonSecondaryShardDS" pool-name="commonSecondaryShardDS_Pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
-                    <connection-url>jdbc:sqlserver://10.10.10.52:1433;DatabaseName=panswersBeth</connection-url>
+                </xa-datasource>
+                <xa-datasource jndi-name="java:jboss/datasources/commonSecondaryShardDS" pool-name="commonSecondaryShardDS_Pool" enabled="true" use-java-context="true" use-ccm="true">
+                    <xa-datasource-property name="ServerName">
+                        10.10.10.52
+                    </xa-datasource-property>
+                    <xa-datasource-property name="DatabaseName">
+                        panswersBeth
+                    </xa-datasource-property>
                     <driver>mssql</driver>
                     <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
-                    <pool>
-                        <min-pool-size>10</min-pool-size>
-                        <max-pool-size>300</max-pool-size>
-                        <prefill>true</prefill>
-                    </pool>
                     <security>
                         <user-name>common</user-name>
                         <password>xxxPA50</password>
                     </security>
-                    <validation>
-                        <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.mssql.MSSQLValidConnectionChecker"/>
-                        <check-valid-connection-sql>SELECT 1</check-valid-connection-sql>
-                        <background-validation>true</background-validation>
-                    </validation>
-                </datasource>
-                <datasource jta="false" jndi-name="java:jboss/datasources/companyShard1DS" pool-name="companyShard1DS_Pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
-                    <connection-url>jdbc:sqlserver://10.10.10.52:1433;DatabaseName=panswersBeth</connection-url>
+                </xa-datasource>
+                <xa-datasource jndi-name="java:jboss/datasources/companyShard1DS" pool-name="companyShard1DS_Pool" enabled="true" use-java-context="true" use-ccm="true">
+                    <xa-datasource-property name="ServerName">
+                        10.10.10.52
+                    </xa-datasource-property>
+                    <xa-datasource-property name="DatabaseName">
+                        panswersBeth
+                    </xa-datasource-property>
                     <driver>mssql</driver>
                     <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
-                    <pool>
-                        <min-pool-size>10</min-pool-size>
-                        <max-pool-size>300</max-pool-size>
-                        <prefill>true</prefill>
-                    </pool>
                     <security>
                         <user-name>common</user-name>
                         <password>xxxPA50</password>
                     </security>
-                    <validation>
-                        <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.mssql.MSSQLValidConnectionChecker"/>
-                        <check-valid-connection-sql>SELECT 1</check-valid-connection-sql>
-                        <background-validation>true</background-validation>
-                    </validation>
-                </datasource>
-                <datasource jta="false" jndi-name="java:jboss/datasources/companyShard2DS" pool-name="companyShard2DS_Pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
-                    <connection-url>jdbc:sqlserver://10.10.10.52:1433;DatabaseName=panswersBeth</connection-url>
+                </xa-datasource>
+                <xa-datasource jndi-name="java:jboss/datasources/companyShard2DS" pool-name="companyShard2DS_Pool" enabled="true" use-java-context="true" use-ccm="true">
+                    <xa-datasource-property name="ServerName">
+                        10.10.10.52
+                    </xa-datasource-property>
+                    <xa-datasource-property name="DatabaseName">
+                        panswersBeth
+                    </xa-datasource-property>
                     <driver>mssql</driver>
                     <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
-                    <pool>
-                        <min-pool-size>10</min-pool-size>
-                        <max-pool-size>300</max-pool-size>
-                        <prefill>true</prefill>
-                    </pool>
                     <security>
                         <user-name>common</user-name>
                         <password>xxxPA50</password>
                     </security>
-                    <validation>
-                        <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.mssql.MSSQLValidConnectionChecker"/>
-                        <check-valid-connection-sql>SELECT 1</check-valid-connection-sql>
-                        <background-validation>true</background-validation>
-                    </validation>
-                </datasource>
+                </xa-datasource>
                 <drivers>
-                    <driver name="mssql" module="com.microsoft.sqlserver"/>
+                    <driver name="mssql" module="com.microsoft.sqlserver">
+                        <xa-datasource-class>com.microsoft.sqlserver.jdbc.SQLServerXADataSource</xa-datasource-class>
+                    </driver>
+                    <driver name="h2" module="com.h2database.h2">
+                        <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
+                    </driver>
                 </drivers>
             </datasources>
         </subsystem>
@@ -445,9 +415,6 @@
             <coordinator-environment default-timeout="300"/>
         </subsystem>
         <subsystem xmlns="urn:jboss:domain:web:1.2" default-virtual-server="default-host" native="false">
-            <configuration>
-                <jsp-configuration development="true"/>
-            </configuration>
             <connector name="http" protocol="HTTP/1.1" scheme="http" socket-binding="http"/>
             <connector name="https" protocol="HTTP/1.1" scheme="https" socket-binding="https" secure="true">
                 <ssl/>
@@ -475,7 +442,7 @@
             <inet-address value="${jboss.bind.address.management:127.0.0.1}"/>
         </interface>
         <interface name="public">
-            <any-address/>
+            <inet-address value="${jboss.bind.address:127.0.0.1}"/>
         </interface>
         <interface name="unsecure">
             <inet-address value="${jboss.bind.address.unsecure:127.0.0.1}"/>
@@ -494,7 +461,7 @@
         <socket-binding name="txn-recovery-environment" port="4712"/>
         <socket-binding name="txn-status-manager" port="4713"/>
         <outbound-socket-binding name="mail-smtp">
-            <remote-destination host="74.125.148.12" port="25"/>
+            <remote-destination host="localhost" port="25"/>
         </outbound-socket-binding>
     </socket-binding-group>
 
