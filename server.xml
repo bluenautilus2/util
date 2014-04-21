@@ -46,8 +46,8 @@
 					<Environment name="reportBasePath" type="java.lang.String" value="/home/bstevens/workspace" />
 					<Environment name="databaseUpdatesPath" type="java.lang.String" value="/home/bstevens/workspace" />
 
-					<Environment name="databaseURL" type="java.lang.String" value="jdbc:sqlserver://10.10.10.52:1433;DatabaseName=panswersBeth" />
-					<Environment name="database2URL" type="java.lang.String" value="jdbc:sqlserver:/10.10.10.52:1433;DatabaseName=panswersBeth" />
+					<Environment name="databaseURL" type="java.lang.String" value="jdbc:sqlserver://10.48.24.77:1433;DatabaseName=panswersBeth" />
+				       <Environment name="database2URL" type="java.lang.String" value="jdbc:sqlserver://10.48.24.77:1433;DatabaseName=panswersBeth" />
 					<Environment name="databaseUser" type="java.lang.String" value="common" />
 					<Environment name="databasePassword" type="java.lang.String" value="xxxPA50" />
 

@@ -56,7 +56,7 @@
         <property name="com.pa.persistence.cassandra.aes.key" value=" zu613V2CRGXvGL1KvB5MqN1D6dEGefMlyZ1atpcuBHY= "/>
         <property name="com.pa.persistence.cryptography.aes.key" value="InEvLnRgAePAzUuOglqiQg=="/>
         <property name="com.pa.persistence.database.driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-        <property name="com.pa.persistence.database.url" value="jdbc\:sqlserver\://10.10.10.52\:1433;databaseName=panswersBeth"/>
+        <property name="com.pa.persistence.database.url" value="jdbc\:sqlserver\://10.48.24.77\:1433;databaseName=panswersBeth"/>
         <property name="com.pa.persistence.database.username" value="common"/>
         <property name="com.pa.persistence.database.password" value="xxxPA50"/>
         <property name="com.pa.persistence.ehcache.jgroups.multicast.addr" value="230.64.4.4"/>
@@ -215,7 +215,7 @@
         <subsystem xmlns="urn:jboss:domain:datasources:1.1">
             <datasources>
                 <datasource jta="false" jndi-name="java:jboss/datasources/commonShardDS" pool-name="commonShardDS_Pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
-                    <connection-url>jdbc:sqlserver://10.10.10.52:1433;DatabaseName=panswersBeth</connection-url>
+                    <connection-url>jdbc:sqlserver://10.48.24.77:1433;DatabaseName=panswersBeth</connection-url>
                     <driver>mssql</driver>
                     <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
                     <pool>
@@ -234,7 +234,7 @@
                     </validation>
                 </datasource>
                 <datasource jta="false" jndi-name="java:jboss/datasources/commonSecondaryShardDS" pool-name="commonSecondaryShardDS_Pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
-                    <connection-url>jdbc:sqlserver://10.10.10.52:1433;DatabaseName=panswersBeth</connection-url>
+                    <connection-url>jdbc:sqlserver://10.48.24.77:1433;DatabaseName=panswersBeth</connection-url>
                     <driver>mssql</driver>
                     <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
                     <pool>
@@ -253,7 +253,7 @@
                     </validation>
                 </datasource>
                 <datasource jta="false" jndi-name="java:jboss/datasources/companyShard1DS" pool-name="companyShard1DS_Pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
-                    <connection-url>jdbc:sqlserver://10.10.10.52:1433;DatabaseName=panswersBeth</connection-url>
+                    <connection-url>jdbc:sqlserver://10.48.24.77:1433;DatabaseName=panswersBeth</connection-url>
                     <driver>mssql</driver>
                     <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
                     <pool>
@@ -272,7 +272,7 @@
                     </validation>
                 </datasource>
                 <datasource jta="false" jndi-name="java:jboss/datasources/companyShard2DS" pool-name="companyShard2DS_Pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
-                    <connection-url>jdbc:sqlserver://10.10.10.52:1433;DatabaseName=panswersBeth</connection-url>
+                    <connection-url>jdbc:sqlserver://10.48.24.77:1433;DatabaseName=panswersBeth</connection-url>
                     <driver>mssql</driver>
                     <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
                     <pool>
@@ -498,9 +498,4 @@
         </outbound-socket-binding>
     </socket-binding-group>
 
-    <deployments>
-        <deployment name="pa-ear.ear" runtime-name="pa-ear.ear">
-            <fs-exploded path="/home/bstevens/repos/pa/pa-ear/target/pa-ear.ear"/>
-        </deployment>
-    </deployments>
 </server>
