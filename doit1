@@ -1,0 +1,29 @@
+#!/bin/sh
+
+if test "$#" != "1"; then
+        echo "USAGE $0 keystorepassword"
+        exit 1
+fi
+
+cd ~tomcat/sslKeystore
+PEMS="`/bin/ls *.pem`"
+
+rm paKeystore
+for i in $PEMS; do
+    X="`basename $i .pem`"
+    echo $X
+    /usr/local/jdk/jre/bin/keytool -import -alias $X -keystore paKeystore -file $i -storepass $1 -noprompt
+#            /usr/local/jdk/jre/bin/keytool -import -alias $X -keystore paKeystore -file $i <<EOF
+#$1
+#yes
+#EOF
+done
+
+CRTS="`/bin/ls /tmp/clark/*.crt`"
+for j in $CRTS
+	do
+    X="`basename $j .crt`"
+    echo $X
+		# openssl x509 -in mycert.crt -out mycert.pem -outform PEM – 
+    /usr/local/jdk/jre/bin/keytool -import -trustcacerts -alias $X -keystore paKeystore -file $j -storepass $1 -noprompt
+	done

@@ -35,7 +35,7 @@
 					<Environment name="inStaging" type="java.lang.String" value="false" />
 					<Environment name="inDevelopment" type="java.lang.String" value="true" />
 					<Environment name="developmentTestEmail" type="java.lang.String" value="cephalo22@gmail.com" />
-					<Environment name="developmentForceEmailsToSend" type="java.lang.String" value="false" />
+					<Environment name="developmentForceEmailsToSend" type="java.lang.String" value="true" />
 					<Environment name="showStackTraces" type="java.lang.Boolean" value="true" />
 					<Environment name="marketingSiteTag" type="java.lang.String" value="site" />
 					<Environment name="applicationTag" type="java.lang.String" value="pa" />
