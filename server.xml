@@ -36,6 +36,7 @@
 					<Environment name="inDevelopment" type="java.lang.String" value="true" />
 					<Environment name="developmentTestEmail" type="java.lang.String" value="cephalo22@gmail.com" />
 					<Environment name="developmentForceEmailsToSend" type="java.lang.String" value="true" />
+                                        <Environment name="SMTPServerIPAddress" type="java.lang.String" value="smtp-relay.infor.com"/>
 					<Environment name="showStackTraces" type="java.lang.Boolean" value="true" />
 					<Environment name="marketingSiteTag" type="java.lang.String" value="site" />
 					<Environment name="applicationTag" type="java.lang.String" value="pa" />
