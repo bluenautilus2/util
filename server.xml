@@ -103,12 +103,12 @@
           <Environment name="architecture2CompanyContextRoot" type="java.lang.String" value="pa-company-web"/>
           <Environment name="architecture2InternalContextRoot" type="java.lang.String" value="pa-internal-web"/>
           <Environment name="podNumber" type="java.lang.Integer" value="1"/>
-          <Environment name="databaseURLCommon" type="java.lang.String" value="jdbc:sqlserver://PA-DEV-DB2.infor.com:1433;DatabaseName=panswersBeth"/>
-          <Environment name="databaseURLPodMain" type="java.lang.String" value="jdbc:sqlserver://PA-DEV-DB2.infor.com:1433;DatabaseName=panswersBeth"/>
-          <Environment name="databaseURLPodLogging" type="java.lang.String" value="jdbc:sqlserver://PA-DEV-DB2.infor.com:1433;DatabaseName=panswersBeth"/>
-          <Environment name="databaseUserCommon" type="java.lang.String" value="common"/>
-          <Environment name="databaseUserPodMain" type="java.lang.String" value="common"/>
-          <Environment name="databaseUserPodLogging" type="java.lang.String" value="common"/>
+          <Environment name="databaseURLCommon" type="java.lang.String" value="jdbc:sqlserver://54.186.169.182:1433;DatabaseName=panswersBeth"/>
+          <Environment name="databaseURLPodMain" type="java.lang.String" value="jdbc:sqlserver://54.186.169.182:1433;DatabaseName=panswersBeth"/>
+          <Environment name="databaseURLPodLogging" type="java.lang.String" value="jdbc:sqlserver://54.186.169.182:1433;DatabaseName=panswersBeth"/>
+          <Environment name="databaseUserCommon" type="java.lang.String" value="common_dev"/>
+          <Environment name="databaseUserPodMain" type="java.lang.String" value="common_dev"/>
+          <Environment name="databaseUserPodLogging" type="java.lang.String" value="common_dev"/>
         </Context>
       </Host>
     </Engine>
