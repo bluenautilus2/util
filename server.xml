@@ -18,97 +18,17 @@
       </Realm>
       <Host appBase="webapps" autoDeploy="true" name="localhost" unpackWARs="true">
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log." suffix=".txt"/>
-        <Context docBase="/home/dburgan/work/Marketing/Marketing Site" path=""/>
-        <Context crossContext="false" debug="1" docBase="/home/dburgan/work/1/Tomcat_PA/WebRoot" fileEncoding="utf8" path="/pa" reloadable="false">
-          <Logger className="org.apache.catalina.logger.FileLogger" prefix="pa_log." suffix=".txt" timestamp="true" verbosity="1"/>
-          <Environment name="inProduction" type="java.lang.String" value="false"/>
-          <Environment name="inStaging" type="java.lang.String" value="false"/>
-          <Environment name="inDevelopment" type="java.lang.String" value="true"/>
-          <Environment name="developmentTestEmail" type="java.lang.String" value="cephalo22@gmail.com"/>
-          <Environment name="developmentForceEmailsToSend" type="java.lang.String" value="true"/>
-          <Environment name="SMTPServerIPAddress" type="java.lang.String" value="smtp-relay.infor.com"/>
-          <Environment name="showStackTraces" type="java.lang.Boolean" value="true"/>
-          <Environment name="turnOffProcessThreadsOnDevelopment" type="java.lang.String" value="false"/>
-          <Environment name="siteBasePath" type="java.lang.String" value="/home/dburgan/work/Marketing/Marketing Site"/>
-          <Environment name="reportURL" type="java.lang.String" value="http://localhost:8080/"/>
-          <Environment name="reportBasePath" type="java.lang.String" value="/home/bstevens/workspace"/>
-          <Environment name="databaseUpdatesPath" type="java.lang.String" value="/home/bstevens/workspace"/>
-          <Environment name="databasePassword" type="java.lang.String" value="xxxPA50"/>
-          <Environment name="jdbc.dbDriverName" type="java.lang.String" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-          <Environment name="canSwitchProtocols" type="java.lang.String" value="false"/>
-          <Environment name="useStubWebServicesLayer" type="java.lang.String" value="true"/>
-          <Environment name="userBasePath" type="java.lang.String" value="/home/bstevens/workspace"/>
-          <Environment name="systemUserBasePath" type="java.lang.String" value="/home/bstevens/workspace"/>
-          <Environment name="cryptographyKey" type="java.lang.String" value="InEvLnRgAePAzUuOglqiQg=="/>
-          <Environment name="cryptographyKey256" type="java.lang.String" value="InEvLnRgAePAzUuOglqiQg=="/>
-          <Environment name="pgpSecretKeyRingFile" type="java.lang.String" value="/home/dburgan/work/.gnupg/secring.gpg"/>
-          <Environment name="pgpSecretKeyPassword" type="java.lang.String" value="peopleanswers"/>
-          <Environment name="log4JPropertyFileName" type="java.lang.String" value="/home/bstevens/bethrepo/log4j.properties"/>
-          <Environment name="legacyServicesSecurityToken" type="java.lang.String" value="6qFUm0zxtcNG0W4YJBfEToKrw9Gz1sGYbRLahLypbecNdF5QlKouzckTnV09y3NH"/>
-          <Environment name="restrictedLoginCryptographyKey256" type="java.lang.String" value="dDKul2Qp1hiSHlFDNXxCdE4rtTAae9vob71MBoxWm0Y="/>
-          <!-- below are the lines useful in setting up multi-node tests -->
-          <Environment name="useReportServer" type="java.lang.String" value="true"/>
-          <Environment name="datagridIPAddress" type="java.lang.String" value="230.64.4.1"/>
-          <Environment name="datagridPort" type="java.lang.Integer" value="45228"/>
-          <Environment name="dataGridNoLazyLoad" type="java.lang.Boolean" value="false"/>
-          <Environment name="loadTestDataGrid" type="java.lang.Boolean" value="false"/>
-          <Environment name="bindRMINames" type="java.lang.String" value="false"/>
-          <Environment name="includeServerNameInRMINaming" type="java.lang.Boolean" value="false"/>
-          <Environment name="grabPrimaryServer" type="java.lang.String" value="false"/>
-          <Environment name="canBePrimaryServer" type="java.lang.String" value="false"/>
-          <Environment name="grabReportServer" type="java.lang.String" value="false"/>
-          <Environment name="canBeReportServer" type="java.lang.String" value="false"/>
-          <!-- blofeld settings -->
-          <Environment name="remoteFileStoreCryptographyKey256" type="java.lang.String" value="HyzVYAgFn3CWG7imtuzmxPBVEjA3IH01J8saQz6RtII="/>
-          <Environment name="remoteFileStoreClusterName" type="java.lang.String" value="blofeld"/>
-          <Environment name="remoteFileStoreAuthenticationToken" type="java.lang.String" value="catfox"/>
-          <Environment name="remoteFileStoreIpAddress1" type="java.lang.String" value="nucleus"/>
-          <Environment name="remoteFileStorePort1" type="java.lang.Integer" value="6811"/>
-          <Environment name="remoteFileStoreIpAddress2" type="java.lang.String" value="nucleus"/>
-          <Environment name="remoteFileStorePort2" type="java.lang.Integer" value="6811"/>
-          <Environment name="useSubstituteFiles" type="java.lang.String" value="true"/>
-          <!-- cassandra settings -->
+        <Context reloadable="false" docBase="pa"/>
+          <!-- POD settings --> 
+          <Environment name="podNumber" type="java.lang.Integer" value="1"/>
+          <Environment name="serverName" type="java.lang.String" value="pa"/>
+
+<!-- cassandra settings -->
           <Environment name="cassandraServer1" type="java.lang.String" value="nucleus"/>
           <Environment name="cassandraServer2" type="java.lang.String" value="nucleus"/>
           <Environment name="cassandraPort" type="java.lang.Integer" value="9042"/>
           <Environment name="cassandraKeyspace" type="java.lang.String" value="pa"/>
           <Environment name="cassandraCryptographyKey" type="java.lang.String" value="zu613V2CRGXvGL1KvB5MqN1D6dEGefMlyZ1atpcuBHY="/>
-          <!-- settings for new architecture -->
-          <Environment name="integrateWithNewArchitecture" type="java.lang.Boolean" value="true"/>
-          <Environment name="forceAllTestingToUseMobile" type="java.lang.Boolean" value="false"/>
-          <Environment name="timeBasedOneTimeCodeGeneratorKey" type="java.lang.String" value="fc26ce20a3505c751b9711b5b5771da13eaec9bc"/>
-          <Environment name="messageBrokerActive" type="java.lang.Boolean" value="true"/>
-          <Environment name="messageBrokerHostName1" type="java.lang.String" value="nucleus"/>
-          <Environment name="messageBrokerHostName2" type="java.lang.String" value="nucleus"/>
-          <Environment name="messageBrokerPort" type="java.lang.Integer" value="5672"/>
-          <Environment name="messageBrokerUserName" type="java.lang.String" value="pa"/>
-          <Environment name="messageBrokerPassword" type="java.lang.String" value="catfox"/>
-          <Environment name="cacheBridgeLoadTest" type="java.lang.Boolean" value="false"/>
-          <Environment name="sharedDataMulticastAddr" type="java.lang.String" value="230.64.4.5"/>
-          <Environment name="sharedDataMulticastPort" type="java.lang.String" value="45228"/>
-          <Environment name="sharedInternalDataMulticastAddr" type="java.lang.String" value="230.64.4.6"/>
-          <Environment name="sharedInternalDataMulticastPort" type="java.lang.String" value="45228"/>
-          <!-- settings for shared session cache -->
-          <Environment name="memcachedServerPort1" type="java.lang.String" value="nucleus:11211"/>
-          <Environment name="memcachedServerPort2" type="java.lang.String" value=""/>
-          <!-- settings introduced with the Pod code -->
-          <Environment name="architecture1Subdomain" type="java.lang.String" value=""/>
-          <Environment name="architecture2Subdomain" type="java.lang.String" value=""/>
-          <Environment name="siteBaseDomain" type="java.lang.String" value="localhost"/>
-          <Environment name="architecture1TomcatPort" type="java.lang.String" value="8080"/>
-          <Environment name="architecture1TLSPort" type="java.lang.String" value="8443"/>
-          <Environment name="architecture2TLSPort" type="java.lang.String" value="9443"/>
-          <Environment name="architecture1ContextRoot" type="java.lang.String" value="pa"/>
-          <Environment name="architecture2TestingContextRoot" type="java.lang.String" value="pa-testing-web"/>
-          <Environment name="architecture2CompanyContextRoot" type="java.lang.String" value="pa-company-web"/>
-          <Environment name="architecture2InternalContextRoot" type="java.lang.String" value="pa-internal-web"/>
-          <Environment name="podNumber" type="java.lang.Integer" value="1"/>
-          <Environment name="databaseURLCommon" type="java.lang.String" value="jdbc:sqlserver://54.186.169.182:1433;DatabaseName=panswersBeth"/>
-          <Environment name="databaseURLPodMain" type="java.lang.String" value="jdbc:sqlserver://54.186.169.182:1433;DatabaseName=panswersBeth"/>
-          <Environment name="databaseURLPodLogging" type="java.lang.String" value="jdbc:sqlserver://54.186.169.182:1433;DatabaseName=panswersBeth"/>
-          <Environment name="databaseUserCommon" type="java.lang.String" value="common_dev"/>
-          <Environment name="databaseUserPodMain" type="java.lang.String" value="common_dev"/>
-          <Environment name="databaseUserPodLogging" type="java.lang.String" value="common_dev"/>
         </Context>
       </Host>
     </Engine>
