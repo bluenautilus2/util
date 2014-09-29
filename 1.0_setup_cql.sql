@@ -33,40 +33,40 @@ VALUES ('architecture1TomcatPort', '8080', 'HTTP port for architecture 1.0', 1, 
 
 -- Required: needs user config
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('siteBasePath', '%CHANGE_ME%/peopleanswers.com/dynamic', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('siteBasePath', '/home/bstevens', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -- Required: needs user config
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('reportBasePath', '%CHANGE_ME%/Reports', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('reportBasePath', '/home/bstevens/Reports', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('log4JPropertyFileName', '%CHANGE_ME%/log4jDebug.properties', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('log4JPropertyFileName', '/home/bstevens/bethrepo/log4j.properties', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -- database
 -- Required: needs user config
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('databaseURLCommon', 'jdbc:sqlserver://%CHANGE_ME%:%CHANGE_ME%;DatabaseName=%CHANGE_ME%', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('databaseURLCommon', 'jdbc:sqlserver://54.186.169.182:1433;DatabaseName=panswersBeth', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -- Required: needs user config
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('databaseURLPodMain', 'jdbc:sqlserver://%CHANGE_ME%:%CHANGE_ME%;DatabaseName=%CHANGE_ME%', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('databaseURLPodMain', 'jdbc:sqlserver://54.186.169.182:1433;DatabaseName=panswersBeth', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -- Required: needs user config
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
 VALUES
-  ('databaseURLPodLogging', 'jdbc:sqlserver://%CHANGE_ME%:%CHANGE_ME%;DatabaseName=%CHANGE_ME%', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+  ('databaseURLPodLogging', 'jdbc:sqlserver://54.186.169.182:1433;DatabaseName=panswersBeth', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -- Required
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('databaseUserCommon', 'common', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('databaseUserCommon', 'common_dev', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -- Required
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('databaseUserPodMain', 'common', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('databaseUserPodMain', 'common_dev', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -- Required
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('databaseUserPodLogging', 'common', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('databaseUserPodLogging', 'common_dev', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -- Required
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
@@ -75,37 +75,37 @@ VALUES ('databasePassword', 'xxxPA50', '', 1, '18214998', DATEOF(NOW()), '182149
 -- datagrid
 -- Optional  user config needed
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('datagridIPAddress', '%CHANGE_ME%', 'Must match', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('datagridIPAddress', '230.64.4.1', 'Must match', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -- Optional  user config needed
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('datagridPort', '%CHANGE_ME%', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('datagridPort', '45228', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 
 -- virtual company admin
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
 VALUES
-  ('sharedDataMulticastAddr', '%CHANGE_ME%', 'Must match [com.pa.web.company.shared_data.jgroups.udp.mcast_addr] in 2.0 config', 1, '18214998', DATEOF(NOW()),
+  ('sharedDataMulticastAddr', '230.64.4.5', 'Must match [com.pa.web.company.shared_data.jgroups.udp.mcast_addr] in 2.0 config', 1, '18214998', DATEOF(NOW()),
    '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
 VALUES
-  ('sharedDataMulticastPort', '%CHANGE_ME%', 'Must match [com.pa.web.company.shared_data.jgroups.udp.mcast_port] in 2.0 config', 1, '18214998', DATEOF(NOW()),
+  ('sharedDataMulticastPort', '45228', 'Must match [com.pa.web.company.shared_data.jgroups.udp.mcast_port] in 2.0 config', 1, '18214998', DATEOF(NOW()),
    '18214998', DATEOF(NOW()));
 
 
 -- virtual internal admin
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('sharedInternalDataMulticastAddr', '%CHANGE_ME%', 'Must match [com.pa.web.internal.shared_data.jgroups.udp.mcast_addr] in 2.0 config', 1, '18214998',
+VALUES ('sharedInternalDataMulticastAddr', '230.64.4.6', 'Must match [com.pa.web.internal.shared_data.jgroups.udp.mcast_addr] in 2.0 config', 1, '18214998',
         DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('sharedInternalDataMulticastPort', '%CHANGE_ME%', 'Must match [com.pa.web.internal.shared_data.jgroups.udp.mcast_port] in 2.0 config', 1, '18214998',
+VALUES ('sharedInternalDataMulticastPort', '45228', 'Must match [com.pa.web.internal.shared_data.jgroups.udp.mcast_port] in 2.0 config', 1, '18214998',
         DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -- Defaults to email_not_set@infor.com if not specified.  User config needed.
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('developmentTestEmail', '%CHANGE_ME%', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('developmentTestEmail', 'cephalo22@gmail.com', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 ------------------------------------------------------
 --  END COMMON USER SPECIFIC CONFIGURATION SECTION  --
