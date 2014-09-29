@@ -494,13 +494,8 @@
         <socket-binding name="txn-recovery-environment" port="4712"/>
         <socket-binding name="txn-status-manager" port="4713"/>
         <outbound-socket-binding name="mail-smtp">
-            <remote-destination host="74.125.148.12" port="25"/>
+            <remote-destination host="smtp-relay.infor.com" port="25"/>
         </outbound-socket-binding>
     </socket-binding-group>
 
-    <deployments>
-        <deployment name="pa-ear.ear" runtime-name="pa-ear.ear">
-            <fs-exploded path="/home/bstevens/repos/pa/pa-ear/target/pa-ear.ear"/>
-        </deployment>
-    </deployments>
 </server>
