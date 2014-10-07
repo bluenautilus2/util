@@ -20,7 +20,7 @@
 -- to allow for successful execution.                   --
 ----------------------------------------------------------
 
--- USE pa;
+USE pa;
 
 -- Default to null if not specified
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)

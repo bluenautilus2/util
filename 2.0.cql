@@ -10,7 +10,7 @@
 -- SQLRUNNER:NO_RUN
 -- DEVELOPER ONLY SCRIPT
 
---USE pa;
+USE pa;
 
 
 ----------------------------------------------------------
@@ -22,40 +22,40 @@
 -- to allow for successful execution.                   --
 ----------------------------------------------------------
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('com.pa.common.email.redirect.address', '%CHANGE_ME%', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('com.pa.common.email.redirect.address', 'cephalo22@gmail.com', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('com.pa.persistence.ehcache.jgroups.multicast.addr', '%CHANGE_ME%', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('com.pa.persistence.ehcache.jgroups.multicast.addr', '230.64.4.4', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('com.pa.persistence.ehcache.jgroups.multicast.port', '%CHANGE_ME%', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('com.pa.persistence.ehcache.jgroups.multicast.port', '45228', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('com.pa.web.testing.ehcache.jgroups.multicast.addr', '%CHANGE_ME%', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('com.pa.web.testing.ehcache.jgroups.multicast.addr', '230.64.4.7', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('com.pa.web.testing.ehcache.jgroups.multicast.port', '%CHANGE_ME%', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('com.pa.web.testing.ehcache.jgroups.multicast.port', '45228', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
 VALUES
-  ('com.pa.web.company.shared_data.jgroups.udp.mcast_addr', '%CHANGE_ME%', 'Must match [sharedDataMulticastAddr] in 1.0 config', 2, '18214998', DATEOF(NOW()),
+  ('com.pa.web.company.shared_data.jgroups.udp.mcast_addr', '230.64.4.5', 'Must match [sharedDataMulticastAddr] in 1.0 config', 2, '18214998', DATEOF(NOW()),
    '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
 VALUES
-  ('com.pa.web.company.shared_data.jgroups.udp.mcast_port', '%CHANGE_ME%', 'Must match [sharedDataMulticastPort] in 1.0 config', 2, '18214998', DATEOF(NOW()),
+  ('com.pa.web.company.shared_data.jgroups.udp.mcast_port', '45228', 'Must match [sharedDataMulticastPort] in 1.0 config', 2, '18214998', DATEOF(NOW()),
    '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('com.pa.web.internal.shared_data.jgroups.udp.mcast_addr', '%CHANGE_ME%', 'Must match [sharedInternalDataMulticastAddr] in 1.0 config', 2, '18214998',
+VALUES ('com.pa.web.internal.shared_data.jgroups.udp.mcast_addr', '230.64.4.6', 'Must match [sharedInternalDataMulticastAddr] in 1.0 config', 2, '18214998',
         DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('com.pa.web.internal.shared_data.jgroups.udp.mcast_port', '%CHANGE_ME%', 'Must match [sharedInternalDataMulticastPort] in 1.0 config', 2, '18214998',
+VALUES ('com.pa.web.internal.shared_data.jgroups.udp.mcast_port', '45228', 'Must match [sharedInternalDataMulticastPort] in 1.0 config', 2, '18214998',
         DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('com.pa.permalink.domainName', '%CHANGE_ME%', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('com.pa.permalink.domainName', 'pa', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 ------------------------------------------------------
 --  END COMMON USER SPECIFIC CONFIGURATION SECTION  --
 ------------------------------------------------------

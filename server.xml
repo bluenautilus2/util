@@ -18,10 +18,13 @@
       </Realm>
       <Host appBase="webapps" autoDeploy="true" name="localhost" unpackWARs="true">
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log." suffix=".txt"/>
-        <Context reloadable="false" docBase="pa"/>
-          <!-- POD settings --> 
+          
+        <Context docBase="/home/bstevens/" path=""/>
+        <Context crossContext="false" debug="1" docBase="/home/bstevens/" fileEncoding="utf8" path="/pa" reloadable="false">
+
+<!-- POD settings --> 
           <Environment name="podNumber" type="java.lang.Integer" value="1"/>
-          <Environment name="serverName" type="java.lang.String" value="pa"/>
+          <Environment name="serverName" type="java.lang.String" value="localhost"/>
 
 <!-- cassandra settings -->
           <Environment name="cassandraServer1" type="java.lang.String" value="nucleus"/>

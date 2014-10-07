@@ -29,21 +29,17 @@
     </extensions>
 
     <system-properties>
-        <!-- required stuff--> 
         <property name="com.pa.pod.podNumber" value="1"/>
         <property name="com.pa.persistence.cassandra.cluster.member1" value="nucleus"/>
         <property name="com.pa.persistence.cassandra.cluster.member2" value="nucleus"/>
         <property name="com.pa.persistence.cassandra.cluster.port" value="9042"/>
         <property name="com.pa.persistence.cassandra.keyspace" value="pa"/>
         <property name="com.pa.persistence.cassandra.aes.key" value=" zu613V2CRGXvGL1KvB5MqN1D6dEGefMlyZ1atpcuBHY= "/>
-
-        <!-- other needed stuff or something-->
         <property name="java.net.preferIPv4Stack" value="true"/>
         <property name="spring.profiles.active" value="local"/>
         <property name="org.apache.catalina.connector.URI_ENCODING" value="UTF-8"/>
         <property name="org.apache.catalina.connector.USE_BODY_ENCODING_FOR_QUERY_STRING" value="true"/>
         <property name="org.jboss.as.logging.per-deployment" value="false"/>
-
     </system-properties>
 
 
@@ -149,7 +145,7 @@
         <subsystem xmlns="urn:jboss:domain:configadmin:1.0"/>
         <subsystem xmlns="urn:jboss:domain:datasources:1.1">
             <datasources>
-                <datasource jta="false" jndi-name="java:jboss/datasources/commonShardDS" pool-name="commonShardDS_Pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
+                <datasource jta="false" jndi-name="java:jboss/datasources/commonDS" pool-name="commonDS_Pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
                     <connection-url>jdbc:sqlserver://54.186.169.182:1433;DatabaseName=panswersBeth</connection-url>
                     <driver>mssql</driver>
                     <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
@@ -168,7 +164,7 @@
                         <background-validation>true</background-validation>
                     </validation>
                 </datasource>
-                <datasource jta="false" jndi-name="java:jboss/datasources/commonSecondaryShardDS" pool-name="commonSecondaryShardDS_Pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
+                <datasource jta="false" jndi-name="java:jboss/datasources/podMainDS" pool-name="podMainDS_Pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
                     <connection-url>jdbc:sqlserver://54.186.169.182:1433;DatabaseName=panswersBeth</connection-url>
                     <driver>mssql</driver>
                     <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
@@ -187,26 +183,7 @@
                         <background-validation>true</background-validation>
                     </validation>
                 </datasource>
-                <datasource jta="false" jndi-name="java:jboss/datasources/companyShard1DS" pool-name="companyShard1DS_Pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
-                    <connection-url>jdbc:sqlserver://54.186.169.182:1433;DatabaseName=panswersBeth</connection-url>
-                    <driver>mssql</driver>
-                    <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
-                    <pool>
-                        <min-pool-size>10</min-pool-size>
-                        <max-pool-size>300</max-pool-size>
-                        <prefill>true</prefill>
-                    </pool>
-                    <security>
-                        <user-name>common_dev</user-name>
-                        <password>xxxPA50</password>
-                    </security>
-                    <validation>
-                        <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.mssql.MSSQLValidConnectionChecker"/>
-                        <check-valid-connection-sql>SELECT 1</check-valid-connection-sql>
-                        <background-validation>true</background-validation>
-                    </validation>
-                </datasource>
-                <datasource jta="false" jndi-name="java:jboss/datasources/companyShard2DS" pool-name="companyShard2DS_Pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
+                <datasource jta="false" jndi-name="java:jboss/datasources/podLoggingDS" pool-name="podLoggingDS_Pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
                     <connection-url>jdbc:sqlserver://54.186.169.182:1433;DatabaseName=panswersBeth</connection-url>
                     <driver>mssql</driver>
                     <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
@@ -433,4 +410,9 @@
         </outbound-socket-binding>
     </socket-binding-group>
 
+    <deployments>
+        <deployment name="pa-ear.ear" runtime-name="pa-ear.ear">
+            <fs-exploded path="/home/bstevens/repos/pa/pa-ear/target/pa-ear.ear"/>
+        </deployment>
+    </deployments>
 </server>
