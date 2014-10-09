@@ -146,7 +146,7 @@
         <subsystem xmlns="urn:jboss:domain:datasources:1.1">
             <datasources>
                 <datasource jta="false" jndi-name="java:jboss/datasources/commonDS" pool-name="commonDS_Pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
-                    <connection-url>jdbc:sqlserver://54.186.169.182:1433;DatabaseName=panswersBeth</connection-url>
+                    <connection-url>jdbc:sqlserver://10.48.48.200:1794;DatabaseName=panswersBeth</connection-url>
                     <driver>mssql</driver>
                     <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
                     <pool>
@@ -155,7 +155,7 @@
                         <prefill>true</prefill>
                     </pool>
                     <security>
-                        <user-name>common_dev</user-name>
+                        <user-name>common</user-name>
                         <password>xxxPA50</password>
                     </security>
                     <validation>
@@ -165,7 +165,7 @@
                     </validation>
                 </datasource>
                 <datasource jta="false" jndi-name="java:jboss/datasources/podMainDS" pool-name="podMainDS_Pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
-                    <connection-url>jdbc:sqlserver://54.186.169.182:1433;DatabaseName=panswersBeth</connection-url>
+                    <connection-url>jdbc:sqlserver://10.48.48.200:1794;DatabaseName=panswersBeth</connection-url>
                     <driver>mssql</driver>
                     <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
                     <pool>
@@ -174,7 +174,7 @@
                         <prefill>true</prefill>
                     </pool>
                     <security>
-                        <user-name>common_dev</user-name>
+                        <user-name>common</user-name>
                         <password>xxxPA50</password>
                     </security>
                     <validation>
@@ -184,7 +184,7 @@
                     </validation>
                 </datasource>
                 <datasource jta="false" jndi-name="java:jboss/datasources/podLoggingDS" pool-name="podLoggingDS_Pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
-                    <connection-url>jdbc:sqlserver://54.186.169.182:1433;DatabaseName=panswersBeth</connection-url>
+                    <connection-url>jdbc:sqlserver://10.48.48.200:1794;DatabaseName=panswersBeth</connection-url>
                     <driver>mssql</driver>
                     <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
                     <pool>
@@ -193,7 +193,7 @@
                         <prefill>true</prefill>
                     </pool>
                     <security>
-                        <user-name>common_dev</user-name>
+                        <user-name>common</user-name>
                         <password>xxxPA50</password>
                     </security>
                     <validation>
@@ -411,7 +411,7 @@
     </socket-binding-group>
 
     <deployments>
-        <deployment name="pa-ear.ear" runtime-name="pa-ear.ear">
+        <deployment name="pa-ear.ear" runtime-name="pa-ear.ear" enabled="false">
             <fs-exploded path="/home/bstevens/repos/pa/pa-ear/target/pa-ear.ear"/>
         </deployment>
     </deployments>

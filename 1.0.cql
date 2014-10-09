@@ -45,28 +45,28 @@ VALUES ('log4JPropertyFileName', '/home/bstevens/bethrepo/log4j.properties', '',
 -- database
 -- Required: needs user config
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('databaseURLCommon', 'jdbc:sqlserver://54.186.169.182:1433;DatabaseName=panswersBeth', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('databaseURLCommon', 'jdbc:sqlserver://10.48.48.200:1794;DatabaseName=panswersBeth', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -- Required: needs user config
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('databaseURLPodMain', 'jdbc:sqlserver://54.186.169.182:1433;DatabaseName=panswersBeth', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('databaseURLPodMain', 'jdbc:sqlserver://10.48.48.200:1794;DatabaseName=panswersBeth', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -- Required: needs user config
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
 VALUES
-  ('databaseURLPodLogging', 'jdbc:sqlserver://54.186.169.182:1433;DatabaseName=panswersBeth', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+  ('databaseURLPodLogging', 'jdbc:sqlserver://10.48.48.200:1794;DatabaseName=panswersBeth', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -- Required
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('databaseUserCommon', 'common_dev', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('databaseUserCommon', 'common', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -- Required
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('databaseUserPodMain', 'common_dev', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('databaseUserPodMain', 'common', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -- Required
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('databaseUserPodLogging', 'common_dev', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('databaseUserPodLogging', 'common', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -- Required
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
