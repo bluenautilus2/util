@@ -410,9 +410,4 @@
         </outbound-socket-binding>
     </socket-binding-group>
 
-    <deployments>
-        <deployment name="pa-ear.ear" runtime-name="pa-ear.ear" enabled="false">
-            <fs-exploded path="/home/bstevens/repos/pa/pa-ear/target/pa-ear.ear"/>
-        </deployment>
-    </deployments>
 </server>
