@@ -479,6 +479,7 @@ VALUES ('sharedDataCookieDomain', '', 1, '18214998', DATEOF(NOW()), '18214998', 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
 VALUES ('cacheBridgeLoadTest', 'false', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
-
+INSERT INTO server_specific_system_configuration_properties ( name,  value,  description,  server_name,  categories,  created_by,  created_date,  last_updated_by,  last_updated_date)
+VALUES ('hostAddress', 'localhost', 'Server host address','localhost',null,'29769918',DATEOF(NOW()), '29769918', DATEOF(NOW()));
 -- housekeeping
 INSERT INTO cql_script_executions (year, tag, last_date_applied) VALUES (2014, '2014-10-02_14111607921_DEVELOPER_ONLY', DATEOF(NOW()));
