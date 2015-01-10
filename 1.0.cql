@@ -496,6 +496,17 @@ INSERT INTO default_system_configuration_properties (name, value, description, a
 VALUES ('userBasePath', '/usr/local/web/peopleanswers.com/private/integrations', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 
+--Additions for multiple pods. this is the domain setup
 
--- housekeeping
-INSERT INTO cql_script_executions (year, tag, last_date_applied) VALUES (2014, '2014-10-02_14111607921_DEVELOPER_ONLY', DATEOF(NOW()));
+--INSERT INTO pods (pod_number, architecture1_port, architecture1_sub_domain, architecture1_tls_port, architecture2_port, architecture2_sub_domain, architecture2_tls_port, created_by, created_date, last_updated_by, last_updated_date, web_services_sub_domain, webservices_port) 
+--VALUES (1,8080,'squid',8443,9080,'squid',9443,'3',1409467201983,'18214998',1411410282265,'',8444);
+
+--INSERT INTO pods (pod_number, architecture1_port, architecture1_sub_domain, architecture1_tls_port, architecture2_port, architecture2_sub_domain, architecture2_tls_port, created_by, created_date, last_updated_by, last_updated_date, web_services_sub_domain, webservices_port) 
+--VALUES (2,28080,'buffalo',28443,9080,'buffalo',9443,'3',1409467201983,'18214998',1411410282265,'',8444);
+
+--Update Default_System_Configuration_Properties with a valid domain.  Something like below.
+
+--INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
+--VALUES ('siteBaseDomain', 'bluenautilus.org', 'site base domain (typically localhost in development or peopleanswers.com in production)', 1, '18214998', DATEOF(NOW()),
+        '18214998', DATEOF(NOW()));
+
