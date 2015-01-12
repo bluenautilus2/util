@@ -328,8 +328,6 @@ INSERT INTO default_system_configuration_properties (name, value, description, a
 VALUES ('com.pa.services.document.converter.port', '10704', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 
--- housekeeping
-INSERT INTO cql_script_executions (year, tag, last_date_applied) VALUES (2014, '2014-10-02_14111608017_DEVELOPER_ONLY', DATEOF(NOW()));
 
 
 

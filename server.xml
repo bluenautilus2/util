@@ -23,7 +23,7 @@
         <Context crossContext="false" debug="1" docBase="/home/bstevens/" fileEncoding="utf8" path="/pa" reloadable="false">
 
 <!-- POD settings --> 
-          <Environment name="podNumber" type="java.lang.Integer" value="1"/>
+         <Environment name="podNumber" type="java.lang.Integer" value="1"/>
           <Environment name="serverName" type="java.lang.String" value="localhost"/>
 
 <!-- cassandra settings -->
