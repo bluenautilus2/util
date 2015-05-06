@@ -496,21 +496,21 @@ INSERT INTO default_system_configuration_properties (name, value, description, a
 VALUES ('userBasePath', '/usr/local/web/peopleanswers.com/private/integrations', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 --sets up only one pod!
-INSERT INTO pods (pod_number, architecture1_port, architecture1_sub_domain, architecture1_tls_port, architecture2_port, architecture2_sub_domain, architecture2_tls_port, created_by, created_date, last_updated_by, last_updated_date, web_services_sub_domain, webservices_port) 
-VALUES (1,8080,'',8443,9080,'',9443,'3',1409467201983,'18214998',1411410282265,'',8444);
+--INSERT INTO pods (pod_number, architecture1_port, architecture1_sub_domain, architecture1_tls_port, architecture2_port, architecture2_sub_domain, architecture2_tls_port, created_by, created_date, last_updated_by, last_updated_date, web_services_sub_domain, webservices_port) 
+--VALUES (1,8080,'',8443,9080,'',9443,'3',1409467201983,'18214998',1411410282265,'',8444);
 
 
 --Additions for multiple pods. this is the domain setup
 
---INSERT INTO pods (pod_number, architecture1_port, architecture1_sub_domain, architecture1_tls_port, architecture2_port, architecture2_sub_domain, architecture2_tls_port, created_by, created_date, last_updated_by, last_updated_date, web_services_sub_domain, webservices_port) 
---VALUES (1,8080,'squid',8443,9080,'squid',9443,'3',1409467201983,'18214998',1411410282265,'',8444);
+INSERT INTO pods (pod_number, architecture1_port, architecture1_sub_domain, architecture1_tls_port, architecture2_port, architecture2_sub_domain, architecture2_tls_port, created_by, created_date, last_updated_by, last_updated_date, web_services_sub_domain, webservices_port) 
+VALUES (1,8080,'squid',8443,9080,'squid',9443,'3',1409467201983,'18214998',1411410282265,'',8444);
 
---INSERT INTO pods (pod_number, architecture1_port, architecture1_sub_domain, architecture1_tls_port, architecture2_port, architecture2_sub_domain, architecture2_tls_port, created_by, created_date, last_updated_by, last_updated_date, web_services_sub_domain, webservices_port) 
---VALUES (2,28080,'buffalo',28443,9080,'buffalo',9443,'3',1409467201983,'18214998',1411410282265,'',8444);
+INSERT INTO pods (pod_number, architecture1_port, architecture1_sub_domain, architecture1_tls_port, architecture2_port, architecture2_sub_domain, architecture2_tls_port, created_by, created_date, last_updated_by, last_updated_date, web_services_sub_domain, webservices_port) 
+VALUES (2,28080,'buffalo',28443,9080,'buffalo',9443,'3',1409467201983,'18214998',1411410282265,'',8444);
 
---Update Default_System_Configuration_Properties with a valid domain.  Something like below.
+Update Default_System_Configuration_Properties with a valid domain.  Something like below.
 
---INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
---VALUES ('siteBaseDomain', 'bluenautilus.org', 'site base domain (typically localhost in development or peopleanswers.com in production)', 1, '18214998', DATEOF(NOW()),
+INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
+VALUES ('siteBaseDomain', 'bluenautilus.org', 'site base domain (typically localhost in development or peopleanswers.com in production)', 1, '18214998', DATEOF(NOW()),
         '18214998', DATEOF(NOW()));
 
