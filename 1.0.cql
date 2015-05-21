@@ -1,31 +1,25 @@
 --
--- 2014-10-02_14111607921_DEVELOPER_ONLY.cql  - DEVELOPER ONLY SCRIPT
--- PA-XXXXX                                   - DEVELOPER ONLY SCRIPT
--- Michael Raquet                             - DEVELOPER ONLY SCRIPT
--- DDL                                        - DEVELOPER ONLY SCRIPT
--- Pre-Deployment                             - DEVELOPER ONLY SCRIPT
+--Beth's version of this script
 --
--- Contains the necessary system properties to start 1.0
---
--- SQLRUNNER:NO_RUN
--- DEVELOPER ONLY SCRIPT
-
-
-----------------------------------------------------------
---   BEGIN COMMON USER SPECIFIC CONFIGURATION SECTION   --
---                                                      --
--- Replace all %CHANGE_ME% placeholders with your       --
--- environment specific settings.  Once complete,       --
--- uncomment the 'USE pa' statement to fix the script   --
--- to allow for successful execution.                   --
-----------------------------------------------------------
 
 USE pa;
 
--- Default to null if not specified
+-- localhost pod setup
+
+INSERT INTO pods (pod_number, architecture1_port, architecture1_sub_domain, architecture1_tls_port, architecture2_port, architecture2_sub_domain, architecture2_tls_port, created_by, created_date, last_updated_by, last_updated_date, web_services_sub_domain, webservices_port) 
+VALUES (1,8080,'',8443,9080,'',9443,'3',1409467201983,'18214998',1411410282265,'',8444);
+
+INSERT INTO pods (pod_number, architecture1_port, architecture1_sub_domain, architecture1_tls_port, architecture2_port, architecture2_sub_domain, architecture2_tls_port, created_by, created_date, last_updated_by, last_updated_date, web_services_sub_domain, webservices_port) 
+VALUES (2,28080,'',28443,29080,'',29443,'3',1409467201983,'18214998',1411410282265,'',8444);
+
+
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('siteBaseDomain', 'localhost', 'site base domain (typically localhost in development or peopleanswers.com in production)', 1, '18214998', DATEOF(NOW()),
-        '18214998', DATEOF(NOW()));
+VALUES ('siteBaseDomain', 'localhost', 'site base domain (typically localhost in development or peopleanswers.com in production)', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+
+INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
+VALUES ('sharedDataCookieDomain', 'localhost', 'cookie domain to use for shared session', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+
+-----end of pod setup
 
 -- Default to null if not specified
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
@@ -39,22 +33,20 @@ VALUES ('siteBasePath', '/home/bstevens', '', 1, '18214998', DATEOF(NOW()), '182
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
 VALUES ('reportBasePath', '/home/bstevens/Reports', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
-INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('log4JPropertyFileName', '/home/bstevens/bethrepo/log4j.properties', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -- database
 -- Required: needs user config
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('databaseURLCommon', 'jdbc:sqlserver://10.48.48.200:1794;DatabaseName=panswersBeth', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('databaseURLCommon', 'jdbc:sqlserver://192.168.50.12:1433;DatabaseName=panswersBeth_Common', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -- Required: needs user config
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('databaseURLPodMain', 'jdbc:sqlserver://10.48.48.200:1794;DatabaseName=panswersBeth', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('databaseURLPodMain', 'jdbc:sqlserver://192.168.50.12:1433;DatabaseName=panswersBeth_Pod_Main_1', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -- Required: needs user config
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
 VALUES
-  ('databaseURLPodLogging', 'jdbc:sqlserver://10.48.48.200:1794;DatabaseName=panswersBeth', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+  ('databaseURLPodLogging', 'jdbc:sqlserver://192.168.50.12:1433;DatabaseName=panswersBeth_Pod_Main_1', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -- Required
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
@@ -440,8 +432,6 @@ VALUES ('memcachedSecondsBetweenPeriodicReconnectAttempts', '60', '', 1, '182149
 
 -- other config options
 -- Defaults to true if not specified
-INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('turnOffProcessThreadsOnDevelopment', 'true', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -- Defaults to false if not specified
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
@@ -471,10 +461,6 @@ VALUES ('legacyServicesSecurityToken', '', 1, '18214998', DATEOF(NOW()), '182149
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
 VALUES ('cookieValuesCacheName', 'cookieValuesCacheName', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
--- Required if in production (.peopleanswers.com).  If in development/testing/staging, it may be okay.
-INSERT INTO default_system_configuration_properties (name, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('sharedDataCookieDomain', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
-
 -- Defaults to false if not specified
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
 VALUES ('cacheBridgeLoadTest', 'false', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
@@ -482,35 +468,28 @@ VALUES ('cacheBridgeLoadTest', 'false', '', 1, '18214998', DATEOF(NOW()), '18214
 INSERT INTO server_specific_system_configuration_properties ( name,  value,  description,  server_name,  categories,  created_by,  created_date,  last_updated_by,  last_updated_date)
 VALUES ('hostAddress', 'localhost', 'Server host address','localhost',null,'29769918',DATEOF(NOW()), '29769918', DATEOF(NOW()));
 
+INSERT INTO server_specific_system_configuration_properties ( name,  value,  description,  server_name,  categories,  created_by,  created_date,  last_updated_by,  last_updated_date)
+VALUES ('hostAddress', 'peopleanswers.com', 'Server host address','squid',null,'29769918',DATEOF(NOW()), '29769918', DATEOF(NOW()));
+
+INSERT INTO server_specific_system_configuration_properties ( name,  value,  description,  server_name,  categories,  created_by,  created_date,  last_updated_by,  last_updated_date)
+VALUES ('hostAddress', 'peopleanswers.com', 'Server host address','buffalo',null,'29769918',DATEOF(NOW()), '29769918', DATEOF(NOW()));
+
 ---------------NEEDED FOR INTEGRATIONS-------	
 -- paths
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
 VALUES ('databaseUpdatesPath', '/usr/local/web/peopleanswers.com/repos/', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
--- Required: needs user config
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
 VALUES ('systemUserBasePath', '/usr/local/web/peopleanswers.com/', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
--- Required: needs user config
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
 VALUES ('userBasePath', '/usr/local/web/peopleanswers.com/private/integrations', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
---sets up only one pod!
---INSERT INTO pods (pod_number, architecture1_port, architecture1_sub_domain, architecture1_tls_port, architecture2_port, architecture2_sub_domain, architecture2_tls_port, created_by, created_date, last_updated_by, last_updated_date, web_services_sub_domain, webservices_port) 
---VALUES (1,8080,'',8443,9080,'',9443,'3',1409467201983,'18214998',1411410282265,'',8444);
-
-
---Additions for multiple pods. this is the domain setup
-
-INSERT INTO pods (pod_number, architecture1_port, architecture1_sub_domain, architecture1_tls_port, architecture2_port, architecture2_sub_domain, architecture2_tls_port, created_by, created_date, last_updated_by, last_updated_date, web_services_sub_domain, webservices_port) 
-VALUES (1,8080,'squid',8443,9080,'squid',9443,'3',1409467201983,'18214998',1411410282265,'',8444);
-
-INSERT INTO pods (pod_number, architecture1_port, architecture1_sub_domain, architecture1_tls_port, architecture2_port, architecture2_sub_domain, architecture2_tls_port, created_by, created_date, last_updated_by, last_updated_date, web_services_sub_domain, webservices_port) 
-VALUES (2,28080,'buffalo',28443,9080,'buffalo',9443,'3',1409467201983,'18214998',1411410282265,'',8444);
-
-Update Default_System_Configuration_Properties with a valid domain.  Something like below.
+INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
+VALUES ('useStubWebServicesLayer', 'true', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('siteBaseDomain', 'bluenautilus.org', 'site base domain (typically localhost in development or peopleanswers.com in production)', 1, '18214998', DATEOF(NOW()),
-        '18214998', DATEOF(NOW()));
+VALUES ('turnOffProcessThreadsOnDevelopment', 'true', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+----------------END OF INTEGRATIONS-------------------
+
 

@@ -145,7 +145,7 @@
         <subsystem xmlns="urn:jboss:domain:datasources:1.1">
             <datasources>
                 <datasource jta="false" jndi-name="java:jboss/datasources/commonDS" pool-name="commonDS_Pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
-                    <connection-url>jdbc:sqlserver://10.48.48.200:1794;DatabaseName=panswersBeth</connection-url>
+                    <connection-url>jdbc:sqlserver://192.168.50.12:1433;DatabaseName=panswersBeth_Common</connection-url>
                     <driver>mssql</driver>
                     <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
                     <pool>
@@ -164,7 +164,7 @@
                     </validation>
                 </datasource>
                 <datasource jta="false" jndi-name="java:jboss/datasources/podMainDS" pool-name="podMainDS_Pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
-                    <connection-url>jdbc:sqlserver://10.48.48.200:1794;DatabaseName=panswersBeth</connection-url>
+                    <connection-url>jdbc:sqlserver://192.168.50.12:1433;DatabaseName=panswersBeth_Pod_Main_2</connection-url>
                     <driver>mssql</driver>
                     <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
                     <pool>
@@ -183,7 +183,7 @@
                     </validation>
                 </datasource>
                 <datasource jta="false" jndi-name="java:jboss/datasources/podLoggingDS" pool-name="podLoggingDS_Pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
-                    <connection-url>jdbc:sqlserver://10.48.48.200:1794;DatabaseName=panswersBeth</connection-url>
+                    <connection-url>jdbc:sqlserver://192.168.50.12:1433;DatabaseName=panswersBeth_Pod_Main_2</connection-url>
                     <driver>mssql</driver>
                     <transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
                     <pool>
@@ -409,4 +409,9 @@
         </outbound-socket-binding>
     </socket-binding-group>
 
+    <deployments>
+        <deployment name="pa-ear.ear" runtime-name="pa-ear.ear">
+            <fs-exploded path="/home/bstevens/repos/pa/pa-ear/target/pa-ear.ear"/>
+        </deployment>
+    </deployments>
 </server>
