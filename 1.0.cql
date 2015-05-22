@@ -468,11 +468,11 @@ VALUES ('cacheBridgeLoadTest', 'false', '', 1, '18214998', DATEOF(NOW()), '18214
 INSERT INTO server_specific_system_configuration_properties ( name,  value,  description,  server_name,  categories,  created_by,  created_date,  last_updated_by,  last_updated_date)
 VALUES ('hostAddress', 'localhost', 'Server host address','localhost',null,'29769918',DATEOF(NOW()), '29769918', DATEOF(NOW()));
 
-INSERT INTO server_specific_system_configuration_properties ( name,  value,  description,  server_name,  categories,  created_by,  created_date,  last_updated_by,  last_updated_date)
-VALUES ('hostAddress', 'peopleanswers.com', 'Server host address','squid',null,'29769918',DATEOF(NOW()), '29769918', DATEOF(NOW()));
+--INSERT INTO server_specific_system_configuration_properties ( name,  value,  description,  server_name,  categories,  created_by,  created_date,  last_updated_by,  last_updated_date)
+--VALUES ('hostAddress', 'peopleanswers.com', 'Server host address','squid',null,'29769918',DATEOF(NOW()), '29769918', DATEOF(NOW()));
 
-INSERT INTO server_specific_system_configuration_properties ( name,  value,  description,  server_name,  categories,  created_by,  created_date,  last_updated_by,  last_updated_date)
-VALUES ('hostAddress', 'peopleanswers.com', 'Server host address','buffalo',null,'29769918',DATEOF(NOW()), '29769918', DATEOF(NOW()));
+--INSERT INTO server_specific_system_configuration_properties ( name,  value,  description,  server_name,  categories,  created_by,  created_date,  last_updated_by,  last_updated_date)
+--VALUES ('hostAddress', 'peopleanswers.com', 'Server host address','buffalo',null,'29769918',DATEOF(NOW()), '29769918', DATEOF(NOW()));
 
 ---------------NEEDED FOR INTEGRATIONS-------	
 -- paths
