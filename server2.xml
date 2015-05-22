@@ -24,9 +24,11 @@
 
 <!-- POD settings --> 
        <!--  <Environment name="podNumber" type="java.lang.Integer" value="1"/> -->
-          <Environment name="serverName" type="java.lang.String" value="localhost"/> 
+       <!--   <Environment name="serverName" type="java.lang.String" value="localhost"/> -->
+
           <Environment name="databaseURLPodMain" type="java.lang.String" value="jdbc:sqlserver://192.168.50.12:1433;DatabaseName=panswersBeth_Pod_Main_2"/>
           <Environment name="databaseURLPodMain" type="java.lang.String" value="jdbc:sqlserver://192.168.50.12:1433;DatabaseName=panswersBeth_Pod_Main_2"/>
+
 <!-- cassandra settings -->
           <Environment name="cassandraServer1" type="java.lang.String" value="nucleus"/>
           <Environment name="cassandraServer2" type="java.lang.String" value="nucleus"/>

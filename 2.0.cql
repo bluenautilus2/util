@@ -1,25 +1,6 @@
---
--- 2014-10-02_14111608017_DEVELOPER_ONLY.cql  - DEVELOPER ONLY SCRIPT
--- PA-XXXXX                                   - DEVELOPER ONLY SCRIPT
--- Michael Raquet                             - DEVELOPER ONLY SCRIPT
--- DDL                                        - DEVELOPER ONLY SCRIPT
--- Pre-Deployment                             - DEVELOPER ONLY SCRIPT
---
--- Contains the necessary system properties to start 2.0
---
--- SQLRUNNER:NO_RUN
--- DEVELOPER ONLY SCRIPT
 
 USE pa;
 
-
-----------------------------------------------------------
---   BEGIN COMMON USER SPECIFIC CONFIGURATION SECTION   --
---                                                      --
--- Replace all %CHANGE_ME% placeholders with your       --
--- environment specific settings.  Once complete,       --
--- uncomment the 'USE pa' statement to fix the script   --
--- to allow for successful execution.                   --
 ----------------------------------------------------------
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
 VALUES ('com.pa.common.email.redirect.address', 'cephalo22@gmail.com', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
@@ -88,7 +69,7 @@ INSERT INTO default_system_configuration_properties (name, value, description, a
 VALUES ('com.pa.common.message.bus.username', 'pa', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('com.pa.site.baseDomain', 'localhost', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('com.pa.site.baseDomain', 'peopleanswers.com', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
 VALUES ('com.pa.site.legacyContextRoot', 'pa', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));

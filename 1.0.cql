@@ -7,17 +7,17 @@ USE pa;
 -- localhost pod setup
 
 INSERT INTO pods (pod_number, architecture1_port, architecture1_sub_domain, architecture1_tls_port, architecture2_port, architecture2_sub_domain, architecture2_tls_port, created_by, created_date, last_updated_by, last_updated_date, web_services_sub_domain, webservices_port) 
-VALUES (1,8080,'',8443,9080,'',9443,'3',1409467201983,'18214998',1411410282265,'',8444);
+VALUES (1,8080,'squid',8443,9080,'squid',9443,'3',1409467201983,'18214998',1411410282265,'',8444);
 
 INSERT INTO pods (pod_number, architecture1_port, architecture1_sub_domain, architecture1_tls_port, architecture2_port, architecture2_sub_domain, architecture2_tls_port, created_by, created_date, last_updated_by, last_updated_date, web_services_sub_domain, webservices_port) 
-VALUES (2,28080,'',28443,29080,'',29443,'3',1409467201983,'18214998',1411410282265,'',8444);
+VALUES (2,28080,'buffalo',28443,29080,'buffalo',29443,'3',1409467201983,'18214998',1411410282265,'',8444);
 
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('siteBaseDomain', 'localhost', 'site base domain (typically localhost in development or peopleanswers.com in production)', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('siteBaseDomain', 'peopleanswers.com', 'site base domain (typically localhost in development or peopleanswers.com in production)', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('sharedDataCookieDomain', 'localhost', 'cookie domain to use for shared session', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('sharedDataCookieDomain', 'peopleanswers.com', 'cookie domain to use for shared session', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -----end of pod setup
 
@@ -465,14 +465,15 @@ VALUES ('cookieValuesCacheName', 'cookieValuesCacheName', '', 1, '18214998', DAT
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
 VALUES ('cacheBridgeLoadTest', 'false', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
+----------this entry is for localhost only
+--INSERT INTO server_specific_system_configuration_properties ( name,  value,  description,  server_name,  categories,  created_by,  created_date,  last_updated_by,  last_updated_date)
+--VALUES ('hostAddress', 'localhost', 'Server host address','localhost',null,'29769918',DATEOF(NOW()), '29769918', DATEOF(NOW()));
+
 INSERT INTO server_specific_system_configuration_properties ( name,  value,  description,  server_name,  categories,  created_by,  created_date,  last_updated_by,  last_updated_date)
-VALUES ('hostAddress', 'localhost', 'Server host address','localhost',null,'29769918',DATEOF(NOW()), '29769918', DATEOF(NOW()));
+VALUES ('hostAddress', 'peopleanswers.com', 'Server host address','squid',null,'29769918',DATEOF(NOW()), '29769918', DATEOF(NOW()));
 
---INSERT INTO server_specific_system_configuration_properties ( name,  value,  description,  server_name,  categories,  created_by,  created_date,  last_updated_by,  last_updated_date)
---VALUES ('hostAddress', 'peopleanswers.com', 'Server host address','squid',null,'29769918',DATEOF(NOW()), '29769918', DATEOF(NOW()));
-
---INSERT INTO server_specific_system_configuration_properties ( name,  value,  description,  server_name,  categories,  created_by,  created_date,  last_updated_by,  last_updated_date)
---VALUES ('hostAddress', 'peopleanswers.com', 'Server host address','buffalo',null,'29769918',DATEOF(NOW()), '29769918', DATEOF(NOW()));
+INSERT INTO server_specific_system_configuration_properties ( name,  value,  description,  server_name,  categories,  created_by,  created_date,  last_updated_by,  last_updated_date)
+VALUES ('hostAddress', 'peopleanswers.com', 'Server host address','buffalo',null,'29769918',DATEOF(NOW()), '29769918', DATEOF(NOW()));
 
 ---------------NEEDED FOR INTEGRATIONS-------	
 -- paths
