@@ -39,6 +39,8 @@
         <property name="org.apache.catalina.connector.URI_ENCODING" value="UTF-8"/>
         <property name="org.apache.catalina.connector.USE_BODY_ENCODING_FOR_QUERY_STRING" value="true"/>
         <property name="org.jboss.as.logging.per-deployment" value="false"/>
+        <property name="javax.net.ssl.trustStore" value="/home/bstevens/truststore.jks"/>
+        <property name="javax.net.ssl.trustStorePassword" value="changeit"/>
     </system-properties>
 
 
@@ -361,11 +363,11 @@
             </configuration>
             <connector name="http" protocol="HTTP/1.1" scheme="http" socket-binding="http"/>
             <connector name="https" protocol="HTTP/1.1" scheme="https" socket-binding="https" secure="true">
-                <ssl/>
+                <ssl password="changeit" certificate-key-file="/home/bstevens/.keystore"/>
             </connector>
             <virtual-server name="default-host" enable-welcome-root="true">
-                <alias name="localhost"/>
-                <alias name="example.com"/>
+                <alias name="buffalo"/>
+                <alias name="peopleanswers.com"/>
             </virtual-server>
         </subsystem>
         <subsystem xmlns="urn:jboss:domain:webservices:1.1">
@@ -409,4 +411,9 @@
         </outbound-socket-binding>
     </socket-binding-group>
 
+    <deployments>
+        <deployment name="pa-ear.ear" runtime-name="pa-ear.ear">
+            <fs-exploded path="/home/bstevens/repos/pa/pa-ear/target/pa-ear.ear"/>
+        </deployment>
+    </deployments>
 </server>

@@ -309,6 +309,9 @@ INSERT INTO default_system_configuration_properties (name, value, description, a
 VALUES ('com.pa.services.document.converter.port', '10704', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 
+INSERT INTO default_system_configuration_properties (name, value, description, architecture,  created_by, created_date, last_updated_by, last_updated_date, sensitivity)
+VALUES ('com.pa.services.linkedin.recruiter.test.apikey', '78jzv0lh4e3jif', 'Recruiter API Key for all non-Prod Cross-Site Awareness testing', 2, '33928125', DATEOF(NOW()), '33928125', DATEOF(NOW()), null);
+
 
 
 

@@ -23,8 +23,8 @@
         <Context crossContext="false" debug="1" docBase="/home/bstevens/" fileEncoding="utf8" path="/pa" reloadable="false">
 
 <!-- POD settings --> 
-       <!--  <Environment name="podNumber" type="java.lang.Integer" value="1"/> -->
-       <!--   <Environment name="serverName" type="java.lang.String" value="localhost"/> -->
+         <Environment name="podNumber" type="java.lang.Integer" value="2"/> -->
+         <Environment name="serverName" type="java.lang.String" value="buffalo"/> -->
 
           <Environment name="databaseURLPodMain" type="java.lang.String" value="jdbc:sqlserver://192.168.50.12:1433;DatabaseName=panswersBeth_Pod_Main_2"/>
           <Environment name="databaseURLPodMain" type="java.lang.String" value="jdbc:sqlserver://192.168.50.12:1433;DatabaseName=panswersBeth_Pod_Main_2"/>
