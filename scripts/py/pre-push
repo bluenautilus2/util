@@ -1,0 +1,47 @@
+#!/usr/bin/env python
+
+import sys
+import subprocess
+
+z40='0000000000000000000000000000000000000000'
+no_input='Pre-push hook: no input'
+stdin = sys.stdin.readline()
+if stdin==None or stdin=="":
+	print(no_input)
+	sys.exit(0)
+
+inputArray = stdin.split()
+if len(inputArray)==0:
+	print(no_input)
+	sys.exit(0) 
+
+local_sha=inputArray[1]
+remote_sha=inputArray[3]
+
+if remote_sha==z40:
+	range=local_sha
+else:
+	range=remote_sha + ".." + local_sha
+
+print("Pre-push hook: range of commits being checked: " +range)
+
+topLevel = subprocess.Popen("git rev-parse --show-toplevel", shell=True, stdout=subprocess.PIPE).stdout.read()
+topLevel = topLevel.decode("utf-8").strip()
+oneline = subprocess.Popen("git diff-tree --no-commit-id --name-only -r " + range, shell=True, stdout=subprocess.PIPE).stdout.read()
+lines=oneline.splitlines()
+
+for line in lines:
+	line=line.decode("utf-8")
+	if(line.find('SQL_Update_Scripts/2')>0):
+		print("Pre-push hook: matched: "+line)
+		justsql=line.split('/')[2]
+		workingdir=topLevel+'/tools/SQL_Update_Scripts'
+		cmd=workingdir+'/checkDBNames.py '+justsql
+		output = subprocess.Popen(cmd,cwd=workingdir,shell=True,stdout=subprocess.PIPE)
+		print(output.stdout.read())
+		output.communicate()
+		if(output.returncode!=0):
+			print("Error, validation script returned code: " + str(output.returncode))
+			sys.exit(1)
+
+sys.exit(0)
