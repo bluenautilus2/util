@@ -30,8 +30,8 @@
           <Environment name="databaseURLPodMain" type="java.lang.String" value="jdbc:sqlserver://192.168.50.12:1433;DatabaseName=panswersBeth_Pod_Main_2"/>
 
 <!-- cassandra settings -->
-          <Environment name="cassandraServer1" type="java.lang.String" value="nucleus"/>
-          <Environment name="cassandraServer2" type="java.lang.String" value="nucleus"/>
+          <Environment name="cassandraServer1" type="java.lang.String" value="cassandra"/>
+          <Environment name="cassandraServer2" type="java.lang.String" value="cassandra"/>
           <Environment name="cassandraPort" type="java.lang.Integer" value="9042"/>
           <Environment name="cassandraKeyspace" type="java.lang.String" value="pa"/>
           <Environment name="cassandraCryptographyKey" type="java.lang.String" value="zu613V2CRGXvGL1KvB5MqN1D6dEGefMlyZ1atpcuBHY="/> 

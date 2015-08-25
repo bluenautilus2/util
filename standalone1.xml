@@ -29,8 +29,8 @@
     </extensions>
 
     <system-properties>
-        <property name="com.pa.persistence.cassandra.cluster.member1" value="nucleus"/>
-        <property name="com.pa.persistence.cassandra.cluster.member2" value="nucleus"/>
+        <property name="com.pa.persistence.cassandra.cluster.member1" value="cassandra"/>
+        <property name="com.pa.persistence.cassandra.cluster.member2" value="cassandra"/>
         <property name="com.pa.persistence.cassandra.cluster.port" value="9042"/>
         <property name="com.pa.persistence.cassandra.keyspace" value="pa"/>
         <property name="com.pa.persistence.cassandra.aes.key" value=" zu613V2CRGXvGL1KvB5MqN1D6dEGefMlyZ1atpcuBHY= "/>

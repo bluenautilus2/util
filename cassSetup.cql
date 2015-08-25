@@ -4,7 +4,7 @@
 
 USE pa;
 
--- localhost pod setup
+-- local pod setup
 
 INSERT INTO pods (pod_number, architecture1_port, architecture1_sub_domain, architecture1_tls_port, architecture2_port, architecture2_sub_domain, architecture2_tls_port, created_by, created_date, last_updated_by, last_updated_date, web_services_sub_domain, webservices_port) 
 VALUES (1,8080,'squid',8443,9080,'squid',9443,'3',1409467201983,'18214998',1411410282265,'',8444);
@@ -324,12 +324,12 @@ VALUES ('messageBrokerActive', 'true', '', 1, '18214998', DATEOF(NOW()), '182149
 
 -- Default to null if not specified
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('messageBrokerHostName1', 'nucleus', 'Must match [com.pa.common.message.bus.hostname1] in 2.0 config', 1, '18214998', DATEOF(NOW()), '18214998',
+VALUES ('messageBrokerHostName1', 'rabbitmq', 'Must match [com.pa.common.message.bus.hostname1] in 2.0 config', 1, '18214998', DATEOF(NOW()), '18214998',
         DATEOF(NOW()));
 
 -- Default to null if not specified
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('messageBrokerHostName2', 'nucleus', 'Must match [com.pa.common.message.bus.hostname2] in 2.0 config', 1, '18214998', DATEOF(NOW()), '18214998',
+VALUES ('messageBrokerHostName2', 'rabbitmq', 'Must match [com.pa.common.message.bus.hostname2] in 2.0 config', 1, '18214998', DATEOF(NOW()), '18214998',
         DATEOF(NOW()));
 
 -- Default to null if not specified
@@ -356,7 +356,7 @@ VALUES ('remoteFileStoreAuthenticationToken', 'catfox', '', 1, '18214998', DATEO
 
 -- Default to null if not specified
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('remoteFileStoreIpAddress1', 'nucleus', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('remoteFileStoreIpAddress1', 'blofeld', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -- Default to null if not specified
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
@@ -364,7 +364,7 @@ VALUES ('remoteFileStorePort1', '6811', '', 1, '18214998', DATEOF(NOW()), '18214
 
 -- Default to null if not specified
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('remoteFileStoreIpAddress2', 'nucleus', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('remoteFileStoreIpAddress2', 'blofeld', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -- Default to null if not specified
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
@@ -392,11 +392,11 @@ VALUES ('datagridUseJGroupsAWSConfiguration', 'false', '', 1, '18214998', DATEOF
 -- Document Converter Config
 -- Default to null if not specified
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('documentConverterHostName1', 'nucleus', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('documentConverterHostName1', 'jodconverter', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -- Default to null if not specified
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('documentConverterHostName2', 'nucleus', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('documentConverterHostName2', 'jodconverter', '', 1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 -- Default to null if not specified
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
@@ -406,7 +406,7 @@ VALUES ('documentConverterPort', '10704', '', 1, '18214998', DATEOF(NOW()), '182
 -- memcached settings
 -- Default to null if not specified
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('memcachedServerPort1', 'nucleus:11211',
+VALUES ('memcachedServerPort1', 'memcached:11211',
         'Must match [com.pa.web.company.sharedSession.server1] [com.pa.web.internal.sharedSession.server1] [com.pa.web.testing.sharedSession.server1] in 2.0 config',
         1, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
@@ -546,10 +546,10 @@ INSERT INTO default_system_configuration_properties (name, value, description, a
 VALUES ('com.pa.common.message.bus.active', 'true', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('com.pa.common.message.bus.hostname1', 'nucleus', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('com.pa.common.message.bus.hostname1', 'rabbitmq', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('com.pa.common.message.bus.hostname2', 'nucleus', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('com.pa.common.message.bus.hostname2', 'rabbitmq', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
 VALUES ('com.pa.common.message.bus.password', 'catfox', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
@@ -579,10 +579,10 @@ INSERT INTO default_system_configuration_properties (name, value, description, a
 VALUES ('com.pa.persistence.blofeld.clusterName', 'blofeld', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('com.pa.persistence.blofeld.ipAddress1', 'nucleus', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('com.pa.persistence.blofeld.ipAddress1', 'blofeld', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('com.pa.persistence.blofeld.ipAddress2', 'nucleus', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('com.pa.persistence.blofeld.ipAddress2', 'blofeld', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
 VALUES ('com.pa.persistence.blofeld.port1', '6811', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
@@ -609,7 +609,7 @@ INSERT INTO default_system_configuration_properties (name, value, description, a
 VALUES ('com.pa.persistence.solr.maxQueryTimeMillis', '30000', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('com.pa.persistence.solr.zookeeper.hosts', 'nucleus:2181', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('com.pa.persistence.solr.zookeeper.hosts', 'zookeeper:2181', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 
 -- insert com.pa.services default_system_configuration_properties data
@@ -668,7 +668,7 @@ INSERT INTO default_system_configuration_properties (name, value, description, a
 VALUES ('com.pa.web.testing.message.email.numberOfListenerThreads', '1', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('com.pa.web.testing.sharedSession.server1', 'nucleus:11211', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('com.pa.web.testing.sharedSession.server1', 'memcached:11211', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
 VALUES ('com.pa.web.testing.thawteseal.hostname', 'rc1.peopleanswers.com', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
@@ -703,7 +703,7 @@ INSERT INTO default_system_configuration_properties (name, value, description, a
 VALUES ('com.pa.web.company.message.email.numberOfListenerThreads', '1', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('com.pa.web.company.sharedSession.server1', 'nucleus:11211', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('com.pa.web.company.sharedSession.server1', 'memcached:11211', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
 VALUES ('com.pa.web.internal.legacyInternalLoginPath', 'pa/adminLogIn.do', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
@@ -718,7 +718,7 @@ INSERT INTO default_system_configuration_properties (name, value, description, a
 VALUES ('com.pa.web.internal.message.email.numberOfListenerThreads', '1', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('com.pa.web.internal.sharedSession.server1', 'nucleus:11211', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('com.pa.web.internal.sharedSession.server1', 'memcached:11211', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 
 -- insert com.pa.permalink default_system_configuration_properties data
@@ -792,10 +792,10 @@ INSERT INTO default_system_configuration_properties (name, value, description, a
 VALUES ('spring.profiles.active', 'local', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('com.pa.services.document.converter.hostname1', 'nucleus', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('com.pa.services.document.converter.hostname1', 'jodconverter', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
-VALUES ('com.pa.services.document.converter.hostname2', 'nucleus', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
+VALUES ('com.pa.services.document.converter.hostname2', 'jodconverter', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
 
 INSERT INTO default_system_configuration_properties (name, value, description, architecture, created_by, created_date, last_updated_by, last_updated_date)
 VALUES ('com.pa.services.document.converter.port', '10704', '', 2, '18214998', DATEOF(NOW()), '18214998', DATEOF(NOW()));
