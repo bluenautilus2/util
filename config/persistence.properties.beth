@@ -3,25 +3,25 @@ com.pa.persistence.cache.listener.log.detail=NONE
 com.pa.persistence.cryptography.aes.key=InEvLnRgAePAzUuOglqiQg==
 
 com.pa.persistence.pod.database.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
-com.pa.persistence.pod.database.url=jdbc\:sqlserver\://10.48.48.200\:1794;databaseName=panswersBeth
+com.pa.persistence.pod.database.url=jdbc\:sqlserver\://192.168.50.12\:1433;databaseName=panswersBeth_Pod_Main_1
 com.pa.persistence.pod.database.username=common
 com.pa.persistence.pod.database.password=xxxPA50
-com.pa.persistence.pod.database.servername=10.48.48.200
-com.pa.persistence.pod.database.port=1794
-com.pa.persistence.pod.database.databasename=panswersBeth
+com.pa.persistence.pod.database.servername=192.168.50.12
+com.pa.persistence.pod.database.port=1433
+com.pa.persistence.pod.database.databasename=panswersBeth_Pod_Main_1
 
 com.pa.persistence.common.database.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
-com.pa.persistence.common.database.url=jdbc\:sqlserver\://10.48.48.200\:1794;databaseName=panswersBeth
+com.pa.persistence.common.database.url=jdbc\:sqlserver\://192.168.50.12\:1433;databaseName=panswersBeth_Common
 com.pa.persistence.common.database.username=common
 com.pa.persistence.common.database.password=xxxPA50
-com.pa.persistence.common.database.servername=10.48.48.200
-com.pa.persistence.common.database.port=1794
-com.pa.persistence.common.database.databasename=panswersBeth
+com.pa.persistence.common.database.servername=192.168.50.12
+com.pa.persistence.common.database.port=1433
+com.pa.persistence.common.database.databasename=panswersBeth_Common
 
 com.pa.persistence.ehcache.aws.config=false
 com.pa.persistence.cassandra.cluster.port=9042
-com.pa.persistence.cassandra.cluster.member1=nucleus
-com.pa.persistence.cassandra.cluster.member2=nucleus
+com.pa.persistence.cassandra.cluster.member1=cassandra
+com.pa.persistence.cassandra.cluster.member2=cassandra
 com.pa.persistence.cassandra.keyspace=pa
 com.pa.persistence.cassandra.aes.key=zu613V2CRGXvGL1KvB5MqN1D6dEGefMlyZ1atpcuBHY=
 com.pa.persistence.blofeld.clusterName=blofeld

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#/usr/bin/env python
 
 import sys
 import subprocess
@@ -27,7 +27,7 @@ print("Pre-push hook: range of commits being checked: " +range)
 
 topLevel = subprocess.Popen("git rev-parse --show-toplevel", shell=True, stdout=subprocess.PIPE).stdout.read()
 topLevel = topLevel.decode("utf-8").strip()
-oneline = subprocess.Popen("git diff-tree --no-commit-id --name-only -r " + range, shell=True, stdout=subprocess.PIPE).stdout.read()
+oneline = subprocess.Popen("git diff-tree --diff-filter AMXB --no-commit-id --name-only -r " + range, shell=True, stdout=subprocess.PIPE).stdout.read()
 lines=oneline.splitlines()
 
 for line in lines:
