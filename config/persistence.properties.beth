@@ -26,10 +26,10 @@ com.pa.persistence.cassandra.keyspace=pa
 com.pa.persistence.cassandra.aes.key=zu613V2CRGXvGL1KvB5MqN1D6dEGefMlyZ1atpcuBHY=
 com.pa.persistence.blofeld.clusterName=blofeld
 com.pa.persistence.blofeld.authenticationToken=catfox
-com.pa.persistence.blofeld.ipAddress1=girt.infor.com
+com.pa.persistence.blofeld.ipAddress1=blofeld
 com.pa.persistence.blofeld.port1=6811
-com.pa.persistence.blofeld.ipAddress2=girt.infor.com
+com.pa.persistence.blofeld.ipAddress2=blofeld
 com.pa.persistence.blofeld.port2=6811
 com.pa.persistence.blofeld.aes.key=HyzVYAgFn3CWG7imtuzmxPBVEjA3IH01J8saQz6RtII=
-com.pa.persistence.solr.zookeeper.hosts=girt.infor.com:2181
+com.pa.persistence.solr.zookeeper.hosts=zookeeper:2181
 com.pa.persistence.solr.maxQueryTimeMillis=30000
