@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cd ~/tsDockerCompose/Dse4.7/; docker-compose up -d
+cd ~/tsDockerCompose/Nucleus/; docker-compose up -d
+cd ~/tsDockerCompose/devTomcatJboss/jboss; docker-compose up -d
+cd ~/tsDockerCompose/devTomcatJboss/tomcat; docker-compose up -d
+

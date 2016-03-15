@@ -73,7 +73,7 @@ def init_language_output_files(output_dir):
 
 # main program
 
-totranslate = visit_all_files('/home/bstevens/repos/pa')
+totranslate = visit_all_files('/opt/develWorkspace/Source/App/Tomcat_PA')
 output_dir = os.path.join(os.path.realpath('.'), str(int(time.time())))
 os.mkdir(output_dir)
 languagefiles = init_language_output_files(output_dir)

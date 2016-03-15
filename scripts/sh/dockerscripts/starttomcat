@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd ~/tsDockerCompose/devTomcatJboss/tomcat; docker-compose up -d 
+

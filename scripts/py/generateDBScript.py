@@ -43,18 +43,17 @@ fh.write('--\n')
 fh.write('-- Brief Description of what this script does\n')
 fh.write('--\n')
 fh.write('-- TYPE: DDL/DML\n')
+fh.write('--\n')
 if not cass:
-    fh.write('--\n')
     fh.write('-- TARGET: POD_MAIN/COMMON/POD_LOGGING\n')
-
+else:
+    fh.write('-- TARGET: PA/REGIONAL\n')
 fh.write('--\n')
 fh.write('-- EXECUTION_PLAN: PRE-DEPLOYMENT/POST-DEPLOYMENT/OUTAGE\n')
 fh.write('--\n')
 fh.write('-- AUTHOR: First Last (youremail@infor.com) \n')
 fh.write('--\n')
 fh.write('\n')
-if cass:
-    fh.write('use pa;\n')
 fh.write('\n')
 
 if not cass:
@@ -73,11 +72,20 @@ rh = open(rollbackFileString, 'w')
 rh.write('--\n')
 rh.write('-- Rollback for Script ' + fileString + '\n')
 rh.write('--\n')
+rh.write('-- PA-123456 Jira Title Here\n')
+rh.write('--\n')
+rh.write('-- TYPE: DDL/DML\n')
+rh.write('--\n')
+if not cass:
+    rh.write('-- TARGET: POD_MAIN/COMMON/POD_LOGGING\n')
+else:
+    rh.write('-- TARGET: PA/REGIONAL\n')
+rh.write('--\n')
+rh.write('-- EXECUTION_PLAN: PRE-DEPLOYMENT/POST-DEPLOYMENT/OUTAGE\n')
+rh.write('--\n')
 rh.write('-- AUTHOR: First Last (youremail@infor.com) \n')
 rh.write('--\n')
 rh.write('\n')
-if cass:
-    rh.write('use pa;\n')
 rh.write('\n')
 
 if not cass:

@@ -1,0 +1,11 @@
+
+
+======TRANSLATIONS FOR FILE: ce/pa/pa-common/src/main/resources/messages_fr.properties========
+
+msg.seventeen=seventeen
+
+
+======TRANSLATIONS FOR FILE: ce/pa/pa-common-web/src/main/resources/META-INF/i18n/textmessages_fr.properties========
+
+msg.screening.profile.title=Profile Import
+msg.country.unitedStates.metroCityFieldName=Metro/City
