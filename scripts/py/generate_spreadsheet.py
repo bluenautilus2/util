@@ -4,6 +4,7 @@ import os
 import time
 import random
 import string
+import sys
 
 
 def coin_toss():
@@ -14,14 +15,14 @@ def coin_toss():
 		return False
 
 # main program #
-NUMBER_CANDIDATES = 100
+number_candidates = int(sys.argv[1])
 
 lf = open('generated_spreadsheet.tdf', 'a')
 lf.write('First Name\tLast Name\tCompany_Candidate_ID\tEmail\tSSN\tBirth Year\tPhone Number\n')
 first_name_len = random.randint(3, 15)
 last_name_len = random.randint(5, 20)
 
-for num in range(0, NUMBER_CANDIDATES):
+for num in range(0, number_candidates):
 
 	first_name = random.choice(string.ascii_uppercase)
 	last_name = random.choice(string.ascii_uppercase)
