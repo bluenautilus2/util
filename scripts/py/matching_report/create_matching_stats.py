@@ -4,15 +4,16 @@ import os
 import pprint
 import time
 
-#Time to read in spreadsheet - SREAD
-#First Query: - QUERY1
-#Built 2137917 BeanMatchingCandidates - BUILD
-	#Time to execute second query on 500 candidates - QUERY2
-	#Actual matching in JVM memory for batch of 500 - MATCH
-#Time to save all candidate matching data for batch of 1500 - SAVE
+
+# Time to read in spreadsheet - SREAD
+# First Query: - QUERY1
+# Built 2137917 BeanMatchingCandidates - BUILD
+# Time to execute second query on 500 candidates - QUERY2
+# Actual matching in JVM memory for batch of 500 - MATCH
+# Time to save all candidate matching data for batch of 1500 - SAVE
 
 
-#_collector=*prd.app.ts.*  _sourceHost=paprod*tomcat*  _SourceCategory=application.tomcat  "#@#STATS "
+# _collector=*prd.app.ts.*  _sourceHost=paprod*tomcat*  _SourceCategory=application.tomcat  "#@#STATS "
 
 class Header:
 	sread_time = 1
@@ -42,7 +43,6 @@ def get_session(map, session_id):
 
 def do_save(in_line, session_obj):
 	temp = in_line.split()
-	#print('session: ' + temp[0] + 'save: ' + temp[2])
 	session_obj[Header.save_time] = temp[2]
 	return session_obj
 
@@ -73,22 +73,23 @@ def do_query1(in_line, session_obj):
 	start_index = in_line.find('$$$')
 	end_index = in_line.rfind('$$$')
 	session_obj[Header.query1_text] = in_line[start_index + 3:end_index]
-	temptime = in_line[end_index + 3:]
-	session_obj[Header.query1_time] = temptime.strip()
+	no_query_string = in_line[:start_index]
+	temp = no_query_string.split()
+	session_obj[Header.query1_time] = temp[2]
 	return session_obj
 
 
 def do_build(in_line, session_obj):
 	temp = in_line.split()
-	session_obj[Header.num_found] = temp[2]
-	session_obj[Header.build_time] = temp[3]
+	session_obj[Header.num_found] = temp[3]
+	session_obj[Header.build_time] = temp[2]
 	return session_obj
 
 
 def do_sread(in_line, session_obj):
 	temp = in_line.split()
-	session_obj[Header.sread_rows] = temp[2]
-	session_obj[Header.sread_time] = temp[3]
+	session_obj[Header.sread_rows] = temp[3]
+	session_obj[Header.sread_time] = temp[2]
 	return session_obj
 
 
@@ -149,7 +150,8 @@ for key in my_map:
 		query2_total = query2_total + int(query)
 	avg_query = query2_total / len(query2_array)
 
-	total_total = int(session_obj[Header.sread_time]) + int(session_obj[Header.query1_time]) + int(session_obj[Header.build_time]) + query2_total + match_total + int(session_obj[Header.save_time])
+	total_total = int(session_obj[Header.sread_time]) + int(session_obj[Header.query1_time]) + int(
+		session_obj[Header.build_time]) + query2_total + match_total + int(session_obj[Header.save_time])
 
 	of.write(key + "\t")
 	of.write(str(total_total) + "\t")
@@ -165,6 +167,5 @@ for key in my_map:
 	of.write(str(match_total) + "\t")
 	of.write(session_obj[Header.save_time] + "\t")
 	of.write("\n")
-
 
 of.close()
