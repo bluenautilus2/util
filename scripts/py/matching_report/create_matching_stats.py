@@ -150,6 +150,8 @@ for key in my_map:
 		query2_total = query2_total + int(query)
 	avg_query = query2_total / len(query2_array)
 
+        print ('bad session: '+ key)
+
 	total_total = int(session_obj[Header.sread_time]) + int(session_obj[Header.query1_time]) + int(
 		session_obj[Header.build_time]) + query2_total + match_total + int(session_obj[Header.save_time])
 
