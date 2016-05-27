@@ -1,4 +1,5 @@
 #!/bin/sh
 
-cd ~/tsDockerCompose/devTomcatJboss/tomcat; docker-compose stop 
+cd ~/ts2DockerCompose/devTomcatJboss/tomcat/mint; docker-compose stop 
+cd ~/ts2DockerCompose/devTomcatJboss/tomcat/basalt; docker-compose stop 
 

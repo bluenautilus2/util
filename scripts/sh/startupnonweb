@@ -1,5 +1,5 @@
 #!/bin/sh
 
-cd ~/tsDockerCompose/Dse4.7/; docker-compose up -d
-cd ~/tsDockerCompose/Nucleus/; docker-compose up -d
+cd ~/ts2DockerCompose/Dse4.7/; docker-compose up -d
+cd ~/ts2DockerCompose/Nucleus/; docker-compose up -d
 

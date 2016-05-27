@@ -1,4 +1,5 @@
 #!/bin/sh
 
-cd ~/tsDockerCompose/devTomcatJboss/jboss; docker-compose up -d
+cd ~/ts2DockerCompose/devTomcatJboss/jboss/basil; docker-compose up -d
+cd ~/ts2DockerCompose/devTomcatJboss/jboss/shale; docker-compose up -d
 

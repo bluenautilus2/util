@@ -1,5 +1,0 @@
-#!/bin/sh
-
-cd ~/tsDockerCompose/devTomcatJboss/jboss; docker-compose restart 
-cd ~/tsDockerCompose/devTomcatJboss/tomcat; docker-compose restart 
-

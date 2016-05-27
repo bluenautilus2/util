@@ -1,7 +1,6 @@
 #!/bin/sh
 
-cd ~/tsDockerCompose/Dse4.7/; docker-compose stop
-cd ~/tsDockerCompose/Nucleus/; docker-compose stop
-cd ~/tsDockerCompose/devTomcatJboss/jboss; docker-compose stop
-cd ~/tsDockerCompose/devTomcatJboss/tomcat; docker-compose stop
-
+cd ~/ts2DockerCompose/Dse4.7/; docker-compose stop
+cd ~/ts2DockerCompose/Nucleus/; docker-compose stop
+shutdowntomcat
+shutdownjboss

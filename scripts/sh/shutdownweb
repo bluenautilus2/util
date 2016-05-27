@@ -1,5 +1,4 @@
 #!/bin/sh
 
-cd ~/tsDockerCompose/devTomcatJboss/jboss; docker-compose stop 
-cd ~/tsDockerCompose/devTomcatJboss/tomcat; docker-compose stop 
-
+shutdowntomcat
+shutdownjboss
