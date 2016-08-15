@@ -52,6 +52,7 @@ for old_key in old_map:
 	if 'assessment' in old_key:
 		old_value = old_map[old_key].strip()
 		new_value = new_map[old_key].strip()
+
 		if old_value != new_value:
 			fh.write(old_key + "=" + old_value+'\n')
 			fh.write(old_key + "=" + new_value+'\n')

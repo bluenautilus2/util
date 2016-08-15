@@ -9,3 +9,4 @@ select * from default_system_configuration_properties where name='turnOffProcess
 Select * from default_system_configuration_properties where name='turnOffProcessThreadsOnDevelopment' and architecture=1;
 
 --update default_system_configuration_properties set value='false' where name='turnOffProcessThreadsOnDevelopment' and architecture=1;
+update default_system_configuration_properties set value='true' where name='canBeReportServer' and architecture=2;

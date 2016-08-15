@@ -33,18 +33,10 @@ def get_keys_and_values(full_filename):
 	return map_to_return
 
 
-def fix_nbsp(old_string, new_string):
+def fix_nbsp(new_string):
+	my_string = new_string.replace("\xc2\xa0", "&nbsp;")
+	return my_string
 
-	if '&nbsp' in old_string:
-		try:
-			my_string = new_string.replace("\xc2\xa0", " ")
-			return my_string
-		except UnicodeDecodeError:
-			print '\nUnicodeDecodeError old string: ========================='
-			print old_string
-			print '\nnew string ============================='
-			print new_string
-	return new_string
 # main program
 
 output_dir = os.path.join(os.path.realpath('.'), str(int(time.time())))
@@ -57,7 +49,7 @@ consolidated_map = {}
 for old_key in old_map:
 	if old_key in new_map:
 		# overwrite old stuff with new stuff
-		new_value = fix_nbsp(old_map[old_key], new_map[old_key])
+		new_value = fix_nbsp(new_map[old_key])
 		consolidated_map[old_key] = new_value
 	else:
 		# keep old keys that weren't translated
