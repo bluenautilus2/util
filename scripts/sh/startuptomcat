@@ -1,5 +1,0 @@
-#!/bin/sh
-
-cd ~/ts2DockerCompose/devTomcatJboss/tomcat/basalt; docker-compose up -d 
-cd ~/ts2DockerCompose/devTomcatJboss/tomcat/mint; docker-compose up -d 
-

@@ -1,3 +1,4 @@
+
 from cassandra.cluster import Cluster
 from cassandra.query import dict_factory
 import sys;
@@ -27,7 +28,9 @@ GLOBAL_KEYSPACE = 'global.'
 REGIONAL_KEYSPACE = 'pa.'
 SELECT_STATEMENT = 'SELECT * FROM '
 TABLES_BEING_MIGRATED = {
-	'default_system_configuration_properties': [REGIONAL_KEYSPACE, 'default_system_configuration_properties_1'], 'server_specific_system_configuration_properties': [REGIONAL_KEYSPACE, 'server_specific_system_configuration_property_1']
+	'default_system_configuration_properties': [REGIONAL_KEYSPACE, 'default_system_configuration_properties_1'], 
+	'server_specific_system_configuration_properties': [REGIONAL_KEYSPACE, 'server_specific_system_configuration_property_1'],
+	'pods': [REGIONAL_KEYSPACE, 'pods_1']
 }
 
 # Change IP in Cluster constructor, if necessary
