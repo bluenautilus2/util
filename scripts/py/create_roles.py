@@ -102,6 +102,8 @@ for i in range(0, len(roles)):
 
 features_descriptions = {}
 features_roles = {}
+roles_to_feature_list = {}
+features_to_user_types = {}
 
 # now get the features/permissions
 for line in lines:
@@ -115,13 +117,39 @@ for line in lines:
     features_descriptions[feature_id] = description
     features_roles[feature_id] = split_line
 
-of = make_output_file()
-
 #for stuff in features_descriptions:
 #    print stuff, features_descriptions[stuff]
 
 #for morestuff in features_roles:
-#    print morestuff, (features_roles[morestuff])
+ #   print morestuff, (features_roles[morestuff])
+
+for feature_id in features_roles:
+    role_array = features_roles[feature_id]
+    for x in range(0, len(role_array)):
+        if role_array[x] == '1':
+            role_affected = roles_map[x]
+            role_id = role_affected['role_id']
+            user_type = role_affected['user_type']
+            feature_list = []
+            if role_id in roles_to_feature_list:
+                feature_list = roles_to_feature_list[role_id]
+            feature_list.append(feature_id)
+            roles_to_feature_list[role_id] = feature_list
+            user_types_list = []
+            if role_id in features_to_user_types:
+                user_types_list = features_to_user_types[feature_id]
+            if user_type not in user_types_list:
+                user_types_list.append(user_type)
+            features_to_user_types[feature_id] = user_types_list
+
+#for stuff in roles_to_feature_list:
+#    print stuff, roles_to_feature_list[stuff]
+
+for stuff in features_to_user_types:
+    print stuff, features_to_user_types[stuff]
+
+of = make_output_file()
+
 
 
 
