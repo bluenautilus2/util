@@ -5,19 +5,6 @@ import pprint
 import time
 
 
-
-class Header:
-    permission_id = 1
-    perm_description = 2
-
-
-def make_output_file():
-    output_dir = os.path.join(os.path.realpath('.'), str(int(time.time())))
-    os.mkdir(output_dir)
-    new_file = os.path.join(output_dir, "insert.sql")
-    return open(new_file, 'w')
-
-
 def get_session(map, session_id):
     if session_id not in map:
         new_session = {}
@@ -25,56 +12,21 @@ def get_session(map, session_id):
     return map[session_id]
 
 
-def do_save(in_line, session_obj):
-    temp = in_line.split()
-    session_obj[Header.save_time] = temp[2]
-    return session_obj
+def make_output_file():
+    output_dir = os.path.join(os.path.realpath('.'), str(int(time.time())))
+    os.mkdir(output_dir)
+    new_file = os.path.join(output_dir, "report.txt")
+    return open(new_file, 'w')
 
 
-def do_match(in_line, session_obj):
-    temp = in_line.split()
-    if Header.match_time_array not in session_obj:
-        session_obj[Header.match_time_array] = []
-
-    time_array = session_obj[Header.match_time_array]
-    time_array.append(temp[2])
-    session_obj[Header.match_time_array] = time_array
-    return session_obj
+#  list[-1]  ,,-last
 
 
-def do_query2(in_line, session_obj):
-    temp = in_line.split()
-    if Header.query2_time_array not in session_obj:
-        session_obj[Header.query2_time_array] = []
-
-    time_array = session_obj[Header.query2_time_array]
-    time_array.append(temp[2])
-    session_obj[Header.query2_time_array] = time_array
-    return session_obj
-
-
-def do_query1(in_line, session_obj):
-    start_index = in_line.find('$$$')
-    end_index = in_line.rfind('$$$')
-    session_obj[Header.query1_text] = in_line[start_index + 3:end_index]
-    no_query_string = in_line[:start_index]
-    temp = no_query_string.split()
-    session_obj[Header.query1_time] = temp[2]
-    return session_obj
-
-
-def do_build(in_line, session_obj):
-    temp = in_line.split()
-    session_obj[Header.num_found] = temp[3]
-    session_obj[Header.build_time] = temp[2]
-    return session_obj
-
-
-def do_sread(in_line, session_obj):
-    temp = in_line.split()
-    session_obj[Header.sread_rows] = temp[3]
-    session_obj[Header.sread_time] = temp[2]
-    return session_obj
+def print_user_types(type_array):
+    correct_quotes = []
+    for little_string in type_array:
+        correct_quotes.append('"' + little_string + '"')
+    return '[' + (','.join(correct_quotes)) + ']'
 
 
 # main program
@@ -97,7 +49,7 @@ for i in range(0, len(roles)):
     temp_split = temp.split('#')
     roles_map[i] = {'role_id': temp_split[0], 'user_type': temp_split[1]}
 
-#for key in roles_map:
+# for key in roles_map:
 #    print str(key), str(roles_map[key])
 
 features_descriptions = {}
@@ -117,11 +69,11 @@ for line in lines:
     features_descriptions[feature_id] = description
     features_roles[feature_id] = split_line
 
-#for stuff in features_descriptions:
+# for stuff in features_descriptions:
 #    print stuff, features_descriptions[stuff]
 
-#for morestuff in features_roles:
- #   print morestuff, (features_roles[morestuff])
+# for morestuff in features_roles:
+#   print morestuff, (features_roles[morestuff])
 
 for feature_id in features_roles:
     role_array = features_roles[feature_id]
@@ -136,24 +88,37 @@ for feature_id in features_roles:
             feature_list.append(feature_id)
             roles_to_feature_list[role_id] = feature_list
             user_types_list = []
-            if role_id in features_to_user_types:
+            if feature_id in features_to_user_types:
                 user_types_list = features_to_user_types[feature_id]
             if user_type not in user_types_list:
                 user_types_list.append(user_type)
             features_to_user_types[feature_id] = user_types_list
 
-#for stuff in roles_to_feature_list:
-#    print stuff, roles_to_feature_list[stuff]
+for stuff in roles_to_feature_list:
+     print stuff, roles_to_feature_list[stuff]
 
-for stuff in features_to_user_types:
-    print stuff, features_to_user_types[stuff]
+# for stuff in features_to_user_types:
+#    print stuff, features_to_user_types[stuff]
 
 of = make_output_file()
 
+# create and insert the permissions
+for feature_id in features_descriptions:
+    json_string = '{"userType": ' + print_user_types(
+        features_to_user_types[feature_id]) + ', "permissions": [' + feature_id + ']}'
+    of.write('INSERT INTO agencyuser.feature VALUES (' + feature_id + ', \'' + features_descriptions[
+        feature_id] + '\',\'' + json_string + '\',now());\n')
+    of.write('INSERT INTO agencyuser.permission VALUES (' + feature_id + ', \'' + features_descriptions[
+        feature_id] + '\',now(), now());\n\n')
 
+# create and insert role-permissions
 
+for stuff in roles_to_feature_list:
+     of.write('--Relationships: this is documentation. Role id to list of permission ids\n')
+     of.write('--' + stuff + ": " + str(roles_to_feature_list[stuff]) + '\n\n')
 
-
-
+for role_id in roles_to_feature_list:
+    for feature_id in (roles_to_feature_list[role_id]):
+        of.write('INSERT INTO agencyuser.role_permission VALUES (nextval(\'agencyuser.role_permission_role_permission_id_seq\'), '+ role_id +', '+ feature_id +', now());\n')
 
 of.close()
