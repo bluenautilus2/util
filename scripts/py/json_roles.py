@@ -15,11 +15,8 @@ def get_session(map, session_id):
 def make_output_file():
     output_dir = os.path.join(os.path.realpath('.'), str(int(time.time())))
     os.mkdir(output_dir)
-    new_file = os.path.join(output_dir, "generated.sql")
+    new_file = os.path.join(output_dir, "features.json")
     return open(new_file, 'w')
-
-
-#  list[-1]  ,,-last
 
 
 def print_user_types(type_array):
@@ -111,25 +108,15 @@ for feature_id in features_roles:
 
 of = make_output_file()
 
-of.write('--BEGIN GENERATED INSERTS------\n\n')
+of.write('{\n')
 
 # create and insert the permissions
 for feature_id in features_descriptions:
     json_string = '{"userType": ' + print_user_types(
         features_to_user_types[feature_id]) + ', "permissions": [' + feature_id + ']}'
-    of.write('INSERT INTO agencyuser.feature (feature_id, description, map, feature_key, created_ts, modified_ts) VALUES (' + feature_id + ', \'' + features_descriptions[
-        feature_id] + '\',\'' + json_string + '\', \'' + features_feature_key[feature_id] + '\',now(), now());\n')
-    of.write('INSERT INTO agencyuser.permission (permission_id, description, created_ts, modified_ts) VALUES (' + feature_id + ', \'' + features_descriptions[
-        feature_id] + '\',now(), now());\n\n')
+    key_string = features_feature_key[feature_id]
+    of.write('"' + key_string + '": ' + json_string + ',\n')
 
-# create and insert role-permissions
-of.write('--Relationships: this is documentation. Role id to list of permission ids\n')
-for stuff in roles_to_feature_list:
-     of.write('--' + stuff + ": " + str(roles_to_feature_list[stuff]) + '\n')
 
-for role_id in roles_to_feature_list:
-    for feature_id in (roles_to_feature_list[role_id]):
-        of.write('INSERT INTO agencyuser.role_permission (role_permission_id, role_id, permission_id, created_ts, modified_ts) VALUES (nextval(\'agencyuser.role_permission_role_permission_id_seq\'), '+ role_id +', '+ feature_id +', now(), now());\n')
-
-of.write('--END GENERATED INSERTS------\n\n')
+of.write('}')
 of.close()
