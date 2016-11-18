@@ -1,0 +1,3 @@
+run ifconfig to find it
+
+10.48.25.104
