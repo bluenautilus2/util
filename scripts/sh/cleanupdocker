@@ -1,0 +1,5 @@
+#!/bin/sh
+
+docker rm $(docker stop $(docker ps -a -q --filter ancestor=websphere-liberty --format="{{.ID}}"))
+docker rmi user-image
+docker rmi alg-webserver

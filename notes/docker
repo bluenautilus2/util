@@ -1,0 +1,4 @@
+
+peek inside a running container
+
+docker exec -it <container id> bash
