@@ -1,0 +1,22 @@
+
+cd /config/apps/
+
+if [ ! -r ./user.war ]
+then
+  echo "Did not find war on local machine. Contacting Jenkins..."
+  wget --auth-no-challenge --user=estevens --password=59d487052b17c501c02228a7ebb133a9 --secure-protocol=TLSv1 "http://uds-ci-jenkins-001.dal09.softlayer:8080/view/CI-Build-War/job/(CI-Build-War)_User_Service/lastSuccessfulBuild/artifact/user/target/user.war"
+  cd /logs
+  echo "user.war succesfully copied from Jenkins CI build `date`" > war_last_downloaded.txt
+else
+  echo "Found war on local machine.  Starting websphere..."
+fi
+
+if [ ! -r ./user.war ]
+then
+  cd /logs
+  echo "Error! Could not find war. Not starting websphere"
+  echo "user.war not found, and couldn't copy one from Jenkins `date`" > server_failed_start.txt
+  exit 1
+fi
+
+/opt/ibm/docker/docker-server run defaultServer
