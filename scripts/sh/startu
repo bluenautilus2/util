@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cd /Users/estevens/dev/alg-source/dev-environment/uds-server; JVM_DEBUG=1 docker-compose up -d uds-hermes-proxy 

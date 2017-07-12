@@ -1,0 +1,321 @@
+dn: dc=peopleanswers,dc=com
+objectClass: dcObject
+objectClass: organization
+o: Infor PeopleAnswers
+dc: peopleanswers
+
+dn: ou=people,dc=peopleanswers,dc=com
+objectClass: top
+objectClass: OrganizationalUnit
+ou: people
+
+dn: ou=groups,dc=peopleanswers,dc=com
+objectclass:organizationalunit
+ou: groups
+description: generic groups branch
+
+dn: cn=Abdunnassar Usman,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Abdunnassar Usman
+sn: Usman
+uid: ausman
+userpassword: gab4ever
+mail: Abdunnassar.Usman@infor.com
+ou: Product Development
+
+dn: cn=Addison Beyer,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Addison Beyer
+sn: Beyer
+uid: abeyer
+userpassword: gab4ever
+mail: Addison.Beyer@infor.com
+ou: Product Development
+
+dn: cn=AZ Zayan,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: AZ Zayan
+sn: Zayan
+uid: azayan
+userpassword: gab4ever
+mail: AZ.Zayan@infor.com
+ou: Product Development
+
+dn: cn=Beth Stevens,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Beth Stevens
+sn: Stevens
+uid: bstevens
+userpassword: gab4ever
+mail: Beth.Stevens@infor.com
+ou: Product Development
+
+dn: cn=Brian Chin,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Brian Chin
+sn: Chin
+uid: bchin
+userpassword: gab4ever
+mail: Brian.Chin@infor.com
+ou: Product Development
+
+dn: cn=Chris Keller,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Chris Keller
+sn: Keller
+uid: ckeller
+userpassword: gab4ever
+mail: Chris.Keller@infor.com
+ou: Product Development
+
+dn: cn=Clark Brown,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Clark Brown
+sn: Brown
+uid: cbrown
+userpassword: gab4ever
+mail: Clark.Brown@infor.com
+ou: Product Development
+
+dn: cn=Daniel Yu,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Daniel Yu
+sn: Yu
+uid: dyu
+userpassword: gab4ever
+mail: Daniel.Yu@infor.com
+ou: Product Development
+
+dn: cn=Darrell Burgan,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Darrell Burgan
+sn: Burgan
+uid: dburgan
+userpassword: gab4ever
+mail: Darrell.Burgan@infor.com
+ou: Product Development
+
+dn: cn=David Haraburda,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: David Haraburda
+sn: Haraburda
+uid: dharaburda
+userpassword: gab4ever
+mail: David.Haraburda@infor.com
+ou: Product Development
+
+dn: cn=EJ Capetillo,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: EJ Capetillo
+sn: Capetillo
+uid: ecapetillo
+userpassword: gab4ever
+mail: EJ.Capetillo@infor.com
+ou: Product Development
+
+dn: cn=Estrella Richardson,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Estrella Richardson
+sn: Richardson
+uid: erichardson
+userpassword: gab4ever
+mail: Estrella.Richardson@infor.com
+ou: Product Development
+
+dn: cn=George Follis,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: George Follis
+sn: Follis
+uid: gfollis
+userpassword: gab4ever
+mail: George.Follis@infor.com
+ou: Product Development
+
+dn: cn=Jeff Haskovec,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Jeff Haskovec
+sn: Haskovec
+uid: jhaskovec
+userpassword: gab4ever
+mail: Jeff.Haskovec@infor.com
+ou: Product Development
+
+dn: cn=Jeffrey Mendez,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Jeffrey Mendez
+sn: Mendez
+uid: jmendez
+userpassword: gab4ever
+mail: Jeffrey.Mendez@infor.com
+ou: Product Development
+
+dn: cn=Josh Allen,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Josh Allen
+sn: Allen
+uid: jallen
+userpassword: gab4ever
+mail: Josh.Allen@infor.com
+ou: Product Development
+
+dn: cn=Kat Unverdi,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Kat Unverdi
+sn: Unverdi
+uid: kunverdi
+userpassword: gab4ever
+mail: Kat.Unverdi@infor.com
+ou: Product Development
+
+dn: cn=Luke Nezda,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Luke Nezda
+sn: Nezda
+uid: lnezda
+userpassword: gab4ever
+mail: Luke.Nezda@infor.com
+ou: Product Development
+
+dn: cn=Mark Ellis,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Mark Ellis
+sn: Ellis
+uid: mellis
+userpassword: gab4ever
+mail: Mark.Ellis@infor.com
+ou: Product Development
+
+dn: cn=Mez Gebreyes,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Mez Gebreyes
+sn: Gebreyes
+uid: mgebreyes
+userpassword: gab4ever
+mail: Mez.Gebreyes@infor.com
+ou: Product Development
+
+dn: cn=Michael Raquet,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Michael Raquet
+sn: Raquet
+uid: mraquet
+userpassword: gab4ever
+mail: Michael.Raquet@infor.com
+ou: Product Development
+
+dn: cn=Mike Cook,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Mike Cook
+sn: Cook
+uid: mcook
+userpassword: gab4ever
+mail: Mike.Cook@infor.com
+ou: Product Development
+
+dn: cn=Nelson Cheng,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Nelson Cheng
+sn: Cheng
+uid: ncheng
+userpassword: gab4ever
+mail: Nelson.Cheng@infor.com
+ou: Product Development
+
+dn: cn=Nick Chevsky,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Nick Chevsky
+sn: Chevsky
+uid: nchevsky
+userpassword: gab4ever
+mail: Nick.Chevsky@infor.com
+ou: Product Development
+
+dn: cn=Peter Sutherland,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Peter Sutherland
+sn: Sutherland
+uid: psutherland
+userpassword: gab4ever
+mail: Peter.Sutherland@infor.com
+ou: Product Development
+
+dn: cn=Sean Malone,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Sean Malone
+sn: Malone
+uid: smalone
+userpassword: gab4ever
+mail: Sean.Malone@infor.com
+ou: Product Development
+
+dn: cn=Sruthi Varahabhatla,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Sruthi Varahabhatla
+sn: Varahabhatla
+uid: svarahabhatla
+userpassword: gab4ever
+mail: Sruthi.Varahabhatla@infor.com
+ou: Product Development
+
+dn: cn=Sui Ruan,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Sui Ruan
+sn: Ruan
+uid: sruan
+userpassword: gab4ever
+mail: Sui.Ruan@infor.com
+ou: Product Development
+
+dn: cn=Swathi Chandrasekar,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Swathi Chandrasekar
+sn: Chandrasekar
+uid: schandrasekar
+userpassword: gab4ever
+mail: Swathi.Chandrasekar@infor.com
+ou: Product Development
+
+dn: cn=Jenkins Jenkins,ou=people,dc=peopleanswers,dc=com
+objectclass: inetOrgPerson
+cn: Jenkins Jenkins
+sn: Jenkins
+uid: jjenkins
+userpassword: gab4ever
+mail: Jenkins@fakeemail.com
+ou: Product Development
+
+dn: cn=developers,ou=groups,dc=peopleanswers,dc=com
+objectclass: groupofnames
+cn: developers
+description: regular gerrit access
+member: cn=Abdunnassar Usman,ou=people,dc=peopleanswers,dc=com
+member: cn=Addison Beyer,ou=people,dc=peopleanswers,dc=com
+member: cn=AZ Zayan,ou=people,dc=peopleanswers,dc=com
+member: cn=Beth Stevens,ou=people,dc=peopleanswers,dc=com
+member: cn=Brian Chin,ou=people,dc=peopleanswers,dc=com
+member: cn=Chris Keller,ou=people,dc=peopleanswers,dc=com
+member: cn=Clark Brown,ou=people,dc=peopleanswers,dc=com
+member: cn=Daniel Yu,ou=people,dc=peopleanswers,dc=com
+member: cn=Darrell Burgan,ou=people,dc=peopleanswers,dc=com
+member: cn=David Haraburda,ou=people,dc=peopleanswers,dc=com
+member: cn=EJ Capetillo,ou=people,dc=peopleanswers,dc=com
+member: cn=Estrella Richardson,ou=people,dc=peopleanswers,dc=com
+member: cn=George Follis,ou=people,dc=peopleanswers,dc=com
+member: cn=Jeff Haskovec,ou=people,dc=peopleanswers,dc=com
+member: cn=Jeffrey Mendez,ou=people,dc=peopleanswers,dc=com
+member: cn=Josh Allen,ou=people,dc=peopleanswers,dc=com
+member: cn=Kat Unverdi,ou=people,dc=peopleanswers,dc=com
+member: cn=Luke Nezda,ou=people,dc=peopleanswers,dc=com
+member: cn=Mark Ellis,ou=people,dc=peopleanswers,dc=com
+member: cn=Mez Gebreyes,ou=people,dc=peopleanswers,dc=com
+member: cn=Michael Raquet,ou=people,dc=peopleanswers,dc=com
+member: cn=Mike Cook,ou=people,dc=peopleanswers,dc=com
+member: cn=Nelson Cheng,ou=people,dc=peopleanswers,dc=com
+member: cn=Nick Chevsky,ou=people,dc=peopleanswers,dc=com
+member: cn=Peter Sutherland,ou=people,dc=peopleanswers,dc=com
+member: cn=Sean Malone,ou=people,dc=peopleanswers,dc=com
+member: cn=Sruthi Varahabhatla,ou=people,dc=peopleanswers,dc=com
+member: cn=Sui Ruan,ou=people,dc=peopleanswers,dc=com
+member: cn=Swathi Chandrasekar,ou=people,dc=peopleanswers,dc=com
+member: cn=Jenkins Jenkins,ou=people,dc=peopleanswers,dc=com
+

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd /Users/estevens/dev/alg-source/dev-environment/uds-server/bizops-service; docker-compose stop bizops-service 
+docker rm bizops-service 

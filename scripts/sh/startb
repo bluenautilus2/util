@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cd /Users/estevens/dev/alg-source/dev-environment/uds-server/bizops-service; JVM_DEBUG=1 docker-compose up -d bizops-service 
