@@ -1,0 +1,19 @@
+collection: inventory
+
+{
+   day : "2016-05-18T16:00:00Z"   <--- index
+   roomCategory : "string",     <--- index
+   hotelId : 123,
+   ratePlanCode : "DERP",
+   bookingLimit : 50   <--- the actual count
+   lengthOfStay : {
+      MinLOS : 5       <-- in days
+      MaxLOS : 4
+      ForwardMinStay: 4   <--  we don't care about forward max stay
+   }
+   restrictionStatus: {              <-- we could rename this to what you called it yesterday
+      MaxAdvancedBookingOffset : 4
+      MinAdvancedBookingOffset : 6
+   }
+
+}
