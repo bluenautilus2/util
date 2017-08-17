@@ -2,6 +2,6 @@
 echo "cd to folder..."
 cd /Users/estevens/dev/alg-source/dev-environment/uds-server
 echo "kill container..."
-docker kill hbsi-processor-hotel-supply
+docker kill hotel-processor
 echo "rm container"
-docker rm hbsi-processor-hotel-supply
+docker rm hotel-processor
