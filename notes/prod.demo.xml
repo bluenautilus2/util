@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OTA_HotelAvailNotifRQ xmlns="http://www.opentravel.org/OTA/2003/05" TimeStamp="2005-10-05T13:56:52+02:00" Target="Test"
+                       Version="1.003" PrimaryLangID="en-us">
+    <POS>
+        <Source>
+            <RequestorID Type="TI" ID="HBSI"/>
+            <BookingChannel Type="2" Primary="true">
+                <CompanyName>Travel Impressions</CompanyName>
+            </BookingChannel>
+        </Source>
+    </POS>
+    <AvailStatusMessages HotelCode="THEX002738" HotelCityCode="CUN">
+        <AvailStatusMessage Override="true" BookingLimitMessageType="SetLimit" BookingLimit="50">
+            <StatusApplicationControl Override="true" Start="2017-10-21" End="2017-10-24" RatePlanCode="TESTH2738C1"
+                                      InvCodeApplication="InvCode" InvCode="TESTH2738C1" IsRoom="true"
+                                      RatePlanCodeType="RatePlanCode"/>
+            <RestrictionStatus Restriction="Arrival" Status="Close"/>
+        </AvailStatusMessage>
+    </AvailStatusMessages>
+</OTA_HotelAvailNotifRQ>

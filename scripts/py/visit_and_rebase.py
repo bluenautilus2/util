@@ -47,9 +47,9 @@ for d in dirty_branches:
     fh.write("This repo has uncommitted work: " + d + "\n")
 
 fh.write("\n---------Rebase Report------------\n")
-fh.write("Rebased: " + c + "\n")
+fh.write("Rebased: ")
 for c in clean_branches:
     fh.write(" " + c + ", ")
-    report = subprocess.check_output(["git", "-C", c, "rebase"])
+    report = subprocess.call(["git", "-C", c, "rebase"])
 fh.write("\n")
 subprocess.check_output(["cat", newfile])

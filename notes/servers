@@ -18,9 +18,11 @@ uds-stage-app-ops-001.dal09.softlayer
 uds-stage-app-comm-001.dal09.softlayer
 uds-stage-app-package-001.dal09.softlayer
 uds-stage-app-hermes-proxy-001.dal09.softlayer
-uds-app-hbsi-adaptor.appleleisuregroup.com
 uds-stage-app-bizops-listener-001.dal09.softlayer
 uds-stage-app-hbsi-processor-001.dal09.softlayer
+
+uds-stage-app-hbsi-adaptor-001.dal09.softlayer
+uds-app-hbsi-adaptor.appleleisuregroup.com
 
 uap-stage-web-disp-001.dal09.softlayer
 uap-stage-web-pub-001.dal09.softlayer
@@ -32,7 +34,17 @@ uds-stage-db-pay-001.dal09.softlayer
 uds-stage-db-trip-001.dal09.softlayer
 uds-stage-db-user-001.dal09.softlayer
 uds-stage-db-ops-001.dal09.softlayer 
-
 bop-stage-web-001.dal09.softlayer
 bop-stage-web-002.dal09.softlayer
 
+uds-prod-app-hbsi-processor-001.dal09.softlayer
+uds-prod-app-bizops-001.dal09.softlayer
+uds-prod-app-hotel-supply-001.dal09.softlayer
+uds-prod-app-hotel-processor-001.dal09.softlayer
+uds-app-hotel-supply.appleleisuregroup.com
+
+uds-stage-app-hotel-processor-001.dal09.softlayer
+uds-stage-app-hotel-supply-001.dal09.softlayer
+uds-stage-app-hotel-supply.appleleisuregroup.com
+
+uds-cloud-config-001.dal09.softlayer

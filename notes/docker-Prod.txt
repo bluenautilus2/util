@@ -1,0 +1,38 @@
+docker deployment in production notes
+
+- when containers have data inside them, it can be a security risk.
+- when the hosts has data that the containers need, it can be a security risk also
+
+  host, container
+
+- bare metal hosts weren't that expensive  
+
+- the enterprise docker stuff, were you talking about AWS? 
+
+Docker Swarm vs. Kubernetes
+
+  - Swarm assumes that you want all the hosts and servers talking to each other all the time, even across realms and across data centers.  
+  - (Swarm) When you turn on the rollback feature, it holds onto the last set of containers, and they can suck
+  up memory and disk.
+  - On the outbound connections, the docker host is acutally only one server with one TCP/IP stack. It can't handle a billion outbound connections.  They were reusing the ports to get around this, and so the firewall started freaking out because the ports were open too long.  65k ports is not enough ports
+  - fine-tune retries, timeouts, for connections and sockets. Don't just throw the old applications into containers
+  - "zombie containers" Don't allow automatic OS patching to happen to a running docker container.  Don't allow kernel patches.
+  - You have to stop all processes on a host and run the OS updates and kernel upgrades first, and then release it back into the swarm.
+
+  - every docker host has an engine, you need compose, the registry, it's a lot of new software to patch and upgrade
+
+  - you must have good logging and monitoring tools before you move everything to production. Apps need to log important stuff.  you can no longer just ssh into the host
+
+  - "trusted registry" allows him to see exactly what patches are on the app/hosts/containers
+  - they still use chef to install the hosts 
+  - The databases were not running docker at all, only the apps are. 
+  - Not saving money on hosting, do see better dev productivity. 
+  - Miso-sphere was too much disruption to his system.
+  - they tried the existing splunk docker driver and it broke all their existing reports. They don't really use the docker logs.
+  - AWS doesn't support docker 1.11, they won't use docker swarm.   (will bluemix?)
+
+  - docker swarm for service discovery
+
+  - AWS integrates with swarm so that you can deploy a docker swarm and control it in a docker way instead of the AWS way. But Bluemix only works with Kubernetes and does it in a very IBM way, so be careful because you might end up being tied to bluemix permanently.
+
+  - went with docker enterprise so they could get support in the middle of the night and get patches and fixes when they had issues.

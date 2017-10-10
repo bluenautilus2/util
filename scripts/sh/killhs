@@ -1,0 +1,7 @@
+#!/bin/sh
+echo "cd to folder..."
+cd /Users/estevens/dev/alg-source/dev-environment/uds-server
+echo "kill container..."
+docker kill hotel-supply
+echo "rm container"
+docker rm hotel-supply
