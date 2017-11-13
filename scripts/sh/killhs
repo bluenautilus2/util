@@ -5,3 +5,4 @@ echo "kill container..."
 docker kill hotel-supply
 echo "rm container"
 docker rm hotel-supply
+docker rmi alda9lcddkr01.applevac.com/hotel-supply:latest
