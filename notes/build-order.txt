@@ -1,0 +1,13 @@
+alg-service-common
+alg-domain
+alg-common-data
+ari-client
+pricing-client
+ari-data
+alg-data
+bizops-parent
+hotel
+pricing-data 
+pricing 
+bizops-service 
+ari-service

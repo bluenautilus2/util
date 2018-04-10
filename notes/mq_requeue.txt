@@ -1,0 +1,17 @@
+from
+
+HBSI.HotelAvailable.Hotel-Supply.1_0.DLQ
+
+to
+ 
+ ex: HBSI.Notification
+ key: HBSI.HotelAvailNotif
+
+-------------------
+from 
+HBSI.RateChange.Hotel-Supply.1_0.DLQ
+
+to ex: HBSI.Notification
+   key: HBSI.HotelRateAmountNotif
+
+

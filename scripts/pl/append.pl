@@ -9,7 +9,7 @@ print "File: ".$file."\n";
 print "executing..\n";
 print "\n\n";
 open FILEIO, $file;
-
+print "StringBuilder sb = new StringBuilder();\n";
 while(my $line = <FILEIO>){
   chomp $line;
   my $len = length($line);
