@@ -1,3 +1,0 @@
-
-cms/cms-base/cms-sites/cms-uap/uap-view/uap-app/src/content/jcr_root/apps/site/uap.config/config/com.alg.cms.uap.common.configuration.siteconfigurationimpl.xml
-

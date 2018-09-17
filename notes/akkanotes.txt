@@ -1,0 +1,5 @@
+ A "cluster singleton" is where only one type of an actor comes up and
+it is responsible for directing requests to other actors.
+
+"Event sourcing" is when you keep track of events and can re-create
+the current situation by replaying them.

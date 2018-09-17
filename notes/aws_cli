@@ -1,0 +1,14 @@
+
+clearaws
+setaws default
+getawsmfa <type 6 digits>
+aws s3 ls –region us-east-1
+
+swa-train1-586586045711-bethstevens-17207
+
+bucket ARN:   arn:aws:s3:::swa-train1-586586045711-bethstevens-17207
+
+my arn: 
+arn:aws:iam::586586045711:user/beth.stevens@wnco.com
+
+ssh -i bethstevenswncocom.pem  ec2-user@34.236.254.151

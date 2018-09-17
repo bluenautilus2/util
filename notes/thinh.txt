@@ -1,3 +1,0 @@
-December 27th,  last sprint thinh only checked in a few lines of code. There were four merge requestsfor 4 servers. He tested, but basically Ravi had to do all his work. Ravi also made sure that Thinh tested with Docker.
-This morning (December 27th) Thinh revealed that he had not done any work yesterday (Monday the 26th).
-

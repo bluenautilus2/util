@@ -1,0 +1,2 @@
+option key:  ⌥
+command key: ⌘

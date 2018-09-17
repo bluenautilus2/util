@@ -1,4 +1,0 @@
- update agencyuser.authentication
-  set password='CHvva6t1KskZm3v9sx9e6k7SETX9i9W', password_salt='$2y$12$fMQ.T6mg6M1kQLfj9KTBq.';
-
-  "password":"Password1",

@@ -1,9 +1,0 @@
-estevens
-59d487052b17c501c02228a7ebb133a9
-
-http://<username>@<api key>:<hostname>
-
-
-http://estevens@59d487052b17c501c02228a7ebb133a9:uds-ci-jenkins-001.dal09.softlayer:8080/view/CI-Build-War/job/(CI-Build-War)_Agency_Service/lastSuccessfulBuild/artifact/
-
-"http://estevens@i59d487052b17c501c02228a7ebb133a9:uds-ci-jenkins-001.dal09.softlayer:8080/view/CI-Build-War/job/(CI-Build-War)_Booking_Service/lastSuccessfulBuild/artifact/booking/target/booking.war"

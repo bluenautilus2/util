@@ -1,0 +1,14 @@
+ OPSSTE-17364
+
+ asvm_aircraft   assignedAircraftTail
+
+ `server-opssuite-prod2.cache.xml` and `server-opssuite-sat3.cache.xml`
+
+
+ query --query='select * from /asvm_lines where key.dateString='2018-08-01' and assignedAircraftTail = 'N737WN' LIMIT 1'
+
+ query --query='select * from /asvm_lines where key.dateString='2018-09-11' and assignedAircraftTail = 'N205WN' LIMIT 1'
+
+ query --query='<trace> select * from /asvm_lines where key.dateString='2018-09-11' and assignedAircraftTail = 'N205WN' LIMIT 1'
+
+ create index --name=asvmLineAssignedAircraftTail --expression='assignedAircraftTail' --region='/asvm_lines'

@@ -1,0 +1,6 @@
+bethstevens:~/dev/swa/fleet-and-schedule-management/opssuite-recovery:>>gradle cargoRunLocal -i -Pgemfire_remote --continue --profile --console plain
+
+
+bethstevens:~/dev/swa/opssuite-all/opssuite:>>gradle cargoRunLocal -i -Pgemfire_remote --continue --profile --console plain
+
+

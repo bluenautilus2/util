@@ -10,5 +10,5 @@ open FILEIO1, $file1;
 while(my $line = <FILEIO1>){
   chomp $line;
   print $line; 
-  #`$line`;
+  `$line`;
 }
