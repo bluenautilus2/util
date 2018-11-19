@@ -1,0 +1,6 @@
+
+billing notification:
+
+arn:aws:sns:us-east-1:470857370220:NotifyMe:1a91a1bf-19b6-4652-adb2-5d0f838e01b3  ($12 usd)
+
+

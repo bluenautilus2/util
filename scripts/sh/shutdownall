@@ -1,6 +1,0 @@
-#!/bin/sh
-
-cd ~/ts2DockerCompose/Dse4.7/; docker-compose down 
-cd ~/ts2DockerCompose/Nucleus/; docker-compose down 
-shutdowntomcat
-shutdownjboss

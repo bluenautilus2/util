@@ -1,4 +1,0 @@
-#!/bin/sh
-
-cd /Users/estevens/dev/alg-source/dev-environment/uds-server; docker-compose stop uds-hermes-proxy 
-docker rm uds-hermes-proxy

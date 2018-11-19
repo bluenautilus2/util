@@ -1,5 +1,0 @@
-#!/bin/sh
-
-cd ~/ts2DockerCompose/devTomcatJboss/jboss/basil; docker-compose down 
-cd ~/ts2DockerCompose/devTomcatJboss/jboss/shale; docker-compose down 
-

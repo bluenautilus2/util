@@ -1,7 +1,0 @@
-#!/bin/sh
-echo "cd to folder..."
-cd /Users/estevens/dev/alg-source/dev-environment/uds-server
-echo "kill container..."
-docker stop hbsi-consumer
-echo "rm container"
-docker rm hbsi-consumer
