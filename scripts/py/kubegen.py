@@ -1,6 +1,4 @@
 #!/usr/bin/python
-
-import thread
 import os 
 import subprocess
 import json 
@@ -12,16 +10,25 @@ if not AWS_token:
   print "AWS_ACCESS_KEY_ID not set, are you logged into the AWS CLI?"
   sys.exit()
 
+configfile = sys.argv[1]
+if not configfile:
+  configfile = "~/.kube/config.current"
+
+roleJSON = subprocess.Popen('aws sts get-caller-identity', shell=True, stdout=subprocess.PIPE).stdout.read()
+
+roleDict = json.loads(roleJSON.strip())
+stsarn = roleDict['Arn']
+role = (stsarn[stsarn.rfind(":"):].split("/"))[1] 
+account = roleDict['Account']
 clusterJSON = subprocess.Popen('aws eks list-clusters', shell=True, stdout=subprocess.PIPE).stdout.read()
 jsonclusters = json.loads(clusterJSON.strip())
-
 myconfig = {}
 myconfig['apiVersion'] = "v1"
 myconfig['clusters'] = []
+myconfig['current-context'] = jsonclusters['clusters'][0]
 myconfig['contexts'] = []
 myconfig['kind'] = "Config"
 myconfig['users'] = []
-
 
 for cluster_name in jsonclusters['clusters']:
   describeJSON = subprocess.Popen('aws eks describe-cluster --name '+cluster_name, shell=True, stdout=subprocess.PIPE).stdout.read() 
@@ -42,12 +49,17 @@ for cluster_name in jsonclusters['clusters']:
   user['user'] = {}
   user['user']['exec'] = {}
   user['user']['exec']['apiVersion'] = "client.authentication.k8s.io/v1alpha1"
-  user['user']['exec']['args'] = ["token","-i",cluster_name,"-r","arn:aws:iam::988101568216:role/swa/SWACSDeveloper"] 
+  user['user']['exec']['args'] = ["token","-i",cluster_name,"-r","arn:aws:iam::"+account+":role/swa/"+role] 
   user['user']['exec']['command'] = "heptio-authenticator-aws" 
   myconfig['clusters'].append(clust)
   myconfig['contexts'].append(context)
   myconfig['users'].append(user)
   myconfig['env'] = "null"
 
-print yaml.safe_dump(myconfig, default_flow_style=False, encoding=None)
+config_text = yaml.safe_dump(myconfig, default_flow_style=False, encoding=None)
+#print config_text
+newConfig = open(configfile,"w+")
+newConfig.write(config_text)
+newConfig.close()
+print "Settings successfully saved for Kubernetes. Current context: "+myconfig['current-context']+"\n"
 
