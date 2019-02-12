@@ -1,0 +1,6 @@
+
+docker run -d -p 88:8080 swaggerapi/swagger-editor
+
+http://localhost
+
+
