@@ -34,14 +34,13 @@ API endpoint:   https://api.sys.wtcdev2.paas.fedex.com (API version: 2.120.0)
 User:           elizabethstevens.osv@fedex.com
 Org:            3535136
 Space:          development
-bethstevens:~:>>ls
-Applications/         Downloads/            Library/              Pictures/             dev/                  sql/
-Desktop/              Dropbox (projekt202)/ Movies/               Public/               node_modules/         temp/
-Documents/            IT Help Desk-Support/ Music/                awscli-bundle/        package-lock.json
-bethstevens:~:>>godev
-bethstevens:~/dev/fedex:>>cd fxo-document-metadata/
-bethstevens:~/dev/fedex/fxo-document-metadata:>>ls
-README.md                 pom.xml                   src/
-jenkinsfile               sonar-project.properties  target/
-bethstevens:~/dev/fedex/fxo-document-metadata:>>
+
+then
+
+cf push -f manifest/manifest-dev-int.yml
+
+then you can hit
+
+https://fxo-document-metadata-sandbox.app.wtcdev2.paas.fedex.com/v1/metadata/document/23434
+
 
