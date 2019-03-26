@@ -1,0 +1,9 @@
+
+--------------------
+schema name: FXOECOMM_SVC1_L2
+host: udb00284.fxodev.office.fedex.com
+port: 1526
+user: FXOECOMM_APP
+db name: FXOECOMM_SVC1.fxodev.office.fedex.com
+pass:  HCnH2epDBW7n3fw79QTSFJMgr
+

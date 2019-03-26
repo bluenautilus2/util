@@ -1,0 +1,21 @@
+THE EAS L2 Database. Dunc calls EAS, eas puts in DB.
+--------------------
+schema name: FXOECOMM_SVC1_L2
+host: udb00284.fxodev.office.fedex.com
+port: 1526
+user: FXOECOMM_APP
+db name: FXOECOMM_SVC1.fxodev.office.fedex.com
+pass:  HCnH2epDBW7n3fw79QTSFJMgr
+table: DOC_RESRC
+constraint: DR_UI_FK1
+
+THE Metadata database. L1 oracle
+Application login:             FXODOCUMENT_APP
+Password:                          YSccjTFw6bRiNgDG76S1JtoOj
+OID connection string:    FXODOCUMENT_SVC1_L1
+JDBC:                    jdbc:oracle:thin:@ldap://oid.inf.fedex.com:3060/FXODOCUMENT_SVC1_L1,cn=OracleContext,dc=ute,dc=fedex,dc=com
+ 
+
+
+
+

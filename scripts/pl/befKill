@@ -27,7 +27,7 @@ my $cmd1 = "ps -ef | grep ".$phrase;
 my @procs = `$cmd1`;
 
 my $procnum = scalar @procs;
-print " Processes Found ".$procnum."\n\n";
+print " Processes Found ".($procnum-3)."\n\n";
 
 sub isRoot{
   my $currentPid = $_[0];
@@ -56,6 +56,7 @@ sub isRoot{
 
 my @pidlist;
 my $count = 0;
+@procs = @procs[ 0 .. ($#procs-3)];
 foreach my $proc(@procs){
     my $printy = substr($proc, 0, 256);
     print $printy."\n";    

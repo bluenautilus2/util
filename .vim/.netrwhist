@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/bethstevens/dev/swa/dmi-reference/dmi-adapter/build'
+let g:netrw_dirhist_2='/Users/bethstevens/dev/swa/otis-adapter/docker/otis-adapter-service'
+let g:netrw_dirhist_3='/Users/bethstevens/temp'
+let g:netrw_dirhist_4='/Users/bethstevens/dev/swa/dmi-reference/local-env'
+let g:netrw_dirhist_5='/Users/bethstevens/dev/swa/baker-functions/lambda'
+let g:netrw_dirhist_6='/Users/bethstevens/dev/fedex/dev-guide/examples'
