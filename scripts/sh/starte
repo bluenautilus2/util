@@ -1,0 +1,13 @@
+#!/bin/sh
+
+cd /Users/bethstevens/dev/fedex/docker
+
+if wget http://localhost:8090/health ; then
+  echo "Config server up"
+else
+  java -jar ~/dev/fedex/edu-cloud-configuration-server/build/libs/edu-cloud-configuration-server-0.0.1-SNAPSHOT.jar &
+fi
+
+wget --retry-connrefused --tries=20 --waitretry=6 http://localhost:8090/health -O /dev/null
+
+java -DEDU_CONFIG_SERVER=http://localhost:8090 -Dspring.profiles.active=local -agentlib:jdwp=transport=dt_socket,address=56752,suspend=n,server=y -javaagent:/Users/bethstevens/Library/Caches/IntelliJIdea2018.2/groovyHotSwap/gragent.jar -Dcom.fedex.framework.security.client.credentials.password=HpUJsSL5LkoeogpB45D1f9FoJ -Dspring.datasource.username=educxs_app -Dspring.datasource.password=educxsdev1 -jar  /Users/bethstevens/dev/fedex/enterprise-document-upload-service/build/libs/enterprise-document-upload-service-1.2.0.jar &

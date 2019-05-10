@@ -1,0 +1,2 @@
+#!/bin/sh
+java -Dspring.profiles.active=noauth -Dspring.datasource.url=jdbc:oracle:thin:FXODOCUMENT_APP/YSccjTFw6bRiNgDG76S1JtoOj@ldap://oid.inf.fedex.com:3060/FXODOCUMENT_SVC1_L1,cn=OracleContext,dc=ute,dc=fedex,dc=com -Dspring.datasource.username=FXODOCUMENT_APP -Dspring.datasource.password=YSccjTFw6bRiNgDG76S1JtoOj -jar /Users/bethstevens/dev/fedex/apps/fxo-document-metadata/target/fxo-document-metadata-0.0.1-SNAPSHOT.jar

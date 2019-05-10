@@ -1,0 +1,15 @@
+#!/bin/sh
+
+cd /Users/bethstevens/dev/fedex/docker
+
+docker-compose up -d oracle
+
+if wget http://localhost:8090/health ; then
+  echo "Config server up"
+else
+  java -jar ~/dev/fedex/edu-cloud-configuration-server/build/libs/edu-cloud-configuration-server-0.0.1-SNAPSHOT.jar &
+fi
+
+wget --retry-connrefused --tries=20 --waitretry=6 http://localhost:8090/health -O /dev/null
+
+java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=56752  -DEDU_CONFIG_SERVER=http://localhost:8090 -Dspring.profiles.active=local -Dcom.fedex.framework.security.client.credentials.password=HpUJsSL5LkoeogpB45D1f9FoJ -Dspring.datasource.username=educxs_app -Dspring.datasource.password=educxsdev1 -Dspring.datasource.url=jdbc:oracle:thin:@localhost:1521:OraDoc -jar  /Users/bethstevens/dev/fedex/enterprise-document-upload-service/build/libs/enterprise-document-upload-service-1.2.0.jar 

@@ -13,16 +13,8 @@ def find_current_branch(array_branches):
             return array_branches[counter + 1]
         counter += 1
 
-def print_both(string, fh):
-    fh.write(string)
-    print(string)
- 
 #main program
 paths = glob.glob('*/')
-output_dir = os.path.join(os.path.realpath('../../temp'), str(int(time.time())))
-os.mkdir(output_dir)
-newfile = os.path.join(output_dir, "report")
-fh = open(newfile, 'w')
 
 dirty_branches = []
 clean_branches = []
@@ -46,15 +38,14 @@ for a in paths:
             clean_branches.append(a)
         subprocess.check_output(["git", "-C", a, "fetch"])
 
-print_both("\n---------Uncommitted Work------------\n",fh)
+print("\n---------Uncommitted Work------------\n")
 for d in dirty_branches:
-    print_both("This repo has uncommitted work: " + d + "\n",fh)
+    print("This repo has uncommitted work: " + d + "\n")
 
-print_both("\n---------Rebase Report------------\n",fh)
-print_both("Rebased: ",fh)
+print("\n---------Rebase Report------------\n")
+print("Rebased: ")
 for c in clean_branches:
-    print_both(" " + c + ", ", fh)
+    print(" " + c + ", ")
     report = subprocess.call(["git", "-C", c, "rebase"])
-print_both("\n",fh)
-subprocess.check_output(["cat", newfile])
+print("\n")
 

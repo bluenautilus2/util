@@ -1,0 +1,38 @@
+
+
+mvn liquibase:updateSQL <-run any new migrations
+mvn liquibase:tag -Dliquibase.tag=greendeploy
+mvn liquibase:rollback -Dliquibase.rollbackTag=greendeploy
+
+mvn liquibase:rollback -Dliquibase.rollbackCount=1
+
+IMPORTANT: if you have a series of changes and some of them can't be rolled back, and no
+rollback has been provided, liquibase will happily stop the rollback and not execute anything
+earlier than the "show-stopping" change. and give a positive status.
+
+---------------------
+1 - when a script fails, does it go on to the next in the list?
+2 - when a script fails, and the changeset is run again, does it attempt it a second time with no updates?
+3 - when a script runs correctly, and the changeset is updated, does it attempt it a second time?
+4 - when a script fails, and the database itself is changed, does that affect liquibase's behavior?
+5 - when a script fails and stops, and doesn't run any more scripts, what happens the second time the set is run?
+*6 - if someone puts in a changeSet into a section that was already run succesfully, what does liquibase do?
+6 - how are rollbacks targeted and run?
+
+7 - what happens when a rollback fails?
+8 - when a rollback fails, are subsequent scripts run?
+
+answers:
+1a - If there are any format issues in a changeSet, and the beans for liquibase can't be created, NO changesets are run. So if a teammate checks one in that's wrong, no one can run any changesets until it's fixed, not even the ones before the one with the formatting issue
+1b - If a script fails, that script is not entered into the databasechangelog table at all. (not even with an error).
+Any scripts after it are not executed. Scripts before it are, though.
+2 - yes  
+3 - No, and in fact liquibase detects the change and comes to a complete stop because it changed, and nothing else is attempted.
+4 - No, because there's no record of the script failing the first time
+5 - Fails again
+6 - 
+
+If you turn on the rollbacks for the DSL, are they generated and put somewhere?
+
+
+

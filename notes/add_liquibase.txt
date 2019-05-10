@@ -1,0 +1,75 @@
+-------------------------
+add to pom.xml
+
+     <!--liquibase-->
++        <dependency>
++            <groupId>org.liquibase</groupId>
++            <artifactId>liquibase-core</artifactId>
++            <version>3.5.5</version>
++        </dependency>
+
+
+
+   <plugin>
+       <groupId>org.liquibase</groupId>
+       <artifactId>liquibase-maven-plugin</artifactId>
+       <version>3.5.5</version>
+       <configuration>
+           <changeLogFile>src/main/resources/db/db.changelog.yaml</changeLogFile>
+           <driver>oracle.jdbc.OracleDriver</driver>
+           <url>jdbc:oracle:thin:@localhost:1521:oradoc</url>
+           <username>scott</username>
+           <password>tiger</password>
+           <logging>info</logging>
+       </configuration>
+   </plugin>
+
+----------------------
+add to properties file
+
+
++  liquibase:
++    url: jdbc:oracle:thin:@localhost:1521:oradoc
++    user: scott
++    password: tiger
++    change-log: classpath:db/db.changelog.yaml
++
+-----------------------
+Add to test properties file:
+
++  liquibase:
++    enabled: false # Disable liquibase
+
+-----------------------------------------------
+add db folder to resources directory and add file db.changelog.yaml
+
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: bstevens
+    changes:
+    - createTable:
+        catalogName: scott
+        columns:
+        - column:
+            name: artist
+            type: varchar(255)
+        - column:
+            name: year
+            type: number(8)
+        - column:
+            name: title
+            type: varchar(255)
+        remarks: a new table
+        schemaName: scott
+        tableName: albums
+        tablespace: scott
+
+--------
+In Jenkinsfile:
+
+before you deploy the new green server run:
+mvn liquibase:tag -Dliquibase.tag=greendeploy
+
+then if it fails:
+mvn liquibase:rollback -Dliquibase.rollbackTag=greendeploy
