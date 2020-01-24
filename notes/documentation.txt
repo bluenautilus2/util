@@ -1,0 +1,55 @@
+
+Documentation Meeting
+------------
+Our pain points and/or issues
+
+- Need a list of viewer tools to view complex file types, esp. architecture diagrams like omnigrapple. 
+  - follow up question: should we try to standardize on any specific diagramming tools?
+- Customer requests and issues lose details along the way;  QA often doesn't know if the implemented solution is what was asked for
+- Sales has good documentation/presentation for customer flows and use cases that we can't get to
+- Documentation is out of sync with our software versions
+- Portability - some content is not shared with team
+- Some docs have no place to go - Ex: meeting minutes
+- Desire for docs to live closer to the code, apart from ongoing issues documented in Jira
+- Jira is missing important conversations about what was decided
+- Slack channels are helpful in the short term but proliferate over time
+- Updating the docs in Github is painful because they are tied to features
+
+Solutions Mentioned
+
+- Evernote
+- Confluence/Wiki
+- Madcap Flare
+- Adobe Framemaker
+- XMetal
+
+Two paths forward:
+
+- Our workflow: how/when we stop to write down what we're working on and guidelines for it
+- Getting to our content: finding the things we need across the different tools
+
+List of content 
+-----
+Email - Design conversations, cross-team communications
+Jira - Bug descriptions, Features, Acceptance criteria, investigations
+Support Station - customer-facing documentation
+GitHub - Docs files, README's, code comments, standalone wikis, swagger
+Sharepoint - Manifests, Design docs, presentations, meeting minutes
+Slack - Investigations, discussions, decisions
+Swagger Docs - APIs
+
+----- People present
+Charles
+Grayson
+Michael
+Alfredo
+Dolly
+Ankita
+Sui
+Harsha
+Scott
+Tony
+----- People not present but included moving forward
+Decray
+Dan 
+Matt Taylor

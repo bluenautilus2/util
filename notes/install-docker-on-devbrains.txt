@@ -1,0 +1,5 @@
+Russ says;
+
+if you add the role: docker-ce to this file /etc/salt/minion.d/_grains.conf  it will take affect in 15 min automatically
+of you can run salt-call state.apply roles.docker-ce
+

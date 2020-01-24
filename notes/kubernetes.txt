@@ -1,0 +1,36 @@
+
+Important, need to know now
+----------------
+
+- Servers auto-detecting each other (auto-discovery)
+
+- In what cases does App act as the master node, and what is our solution for distributing that work out?
+
+- If something happens to the filesystem, what would actually happen and how would our software recover from it? (invoke the backups)
+
+- How can we be more stateless, meaning how much work is it to eliminate logic that depends on in-memory datastructures?
+
+- 
+
+
+Need to know, should be easy to determine
+----------------
+- If a server comes up and expected filesystems aren't present, is it straightforward to poll and wait for availability?  Also- what data needs to be on the filesystem for our app to think it's in a good state?
+- Server needs to be able to come up without a database and poll for it
+- Can we ship with no plugins?
+- How will log aggregation work?
+
+
+--------------
+
+1) What parts of our app should be named volumes?
+   - basisTech
+   - the PostGres volume
+2) What is the best way to pull down the named, versioned volumes?
+3) Do we need to run batchTools as a container that comes up, lives and dies? Otherwise it might destabilize the Analytics service when it runs.  
+
+
+
+-------
+
+Things to consider

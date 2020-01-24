@@ -1,0 +1,22 @@
+Test for pulling Cmml Control Sets from Relativity
+
+1) Log into the Relativity instance for your dataset
+2) Go into Brainspace and make a new connected Cmml Classifier. Note the external ID in the GUI.
+3) Create a control set. At the bottom of the control set dialogue, make sure to change the size to something manageable, like 20 documents or less.
+4) Go into Relativity and find the BD CMML Saved Searches (under Documents, and click on the magnifying glass)
+5) In the BD CMML Saved searches, click on "All Control Set documents" and you'll see the documents appear on the right.
+6) Go down to the bottom-middle of the realativity page and click on "Edit". You'll notice lots of fields, but your Control Set field is not there. Let's add it.
+7) At the top left corner of the "edit documents" page there's a little pencil. Click on it. Agree to lose unsaved changes.
+8) You should now be in the "Edit Layour Information" panel. Go to the left-hand side and look in the fields list. Find the field that reads "BD CMML ControlSet Postive <externalId>"  that matches your Cmml Session. Click on that row and DRAG it into the Coding Fields panel.
+9) Click save and close at the top
+10) Your field should now appear in the "Edit Documents" panel. Click "cancel" to exit the panel.
+11) Look at your list of documents in the control set. Click the checkbox next to several. Click on "edit". 
+12) In the "Edit documents" panel go down to your control set field and check the box to te left of it. Then click on the box to the right of it until a checkmark (✓) appears.  These are your Responsive documents. Click save at the top.
+13) Go back to your list of documents and repeat the process, but this time, mark the documents with a square (■).  These are your non-responsive documents. Click on Save.
+14) Look at your control set documents in Relativity and write down the number of documents that have "yes", "no", and are unchecked.
+15) Call the endpoint to pull in the counts: https://localhost:9443/rest/dataset/1/cmml/16/control-set/pull-third-party
+16) In Brainspace, check that the numbers are correct.  If the GUI is confusing this database query can help: `select c.* from document_tags_choices c 
+left outer join documents d on c.document_id = d.id where c.tag_id=73;`
+17) Now go back to Relativity and tag ALL of the documents
+18) Call the endpoint again and make sure that the control set processing happened and there is now a control set card.
+19) Go back into Relativity and UNTAG several of the documents. Change around some of the yes's and no's.  Pull again. Make sure that Brainspace updates the tags appropriately, including the untagged documents. They should no longer be tagged with that document choice. 

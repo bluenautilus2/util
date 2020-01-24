@@ -1,0 +1,194 @@
+
+Beth Stevens:nyan: 8:39 AM
+God I hate Matt Taylor. If you like him that’s cool but I avoid him as much as possible. just wanted to vent he’s been extra pompous and lazy lately
+Ryan Dobrynski 8:41 AM
+Interesting. My interactions with him have largely been confined to talking with him about how things should work, and providing him access to things. I do like him, but I don’t do any actual work with him so I don’t have any exposure to the things you mention.
+Whats he been up to?
+Beth Stevens:nyan: 8:44 AM
+He condescends to the other devs, and treats us like children. However, his technical skills are not better than ours. It’s a cognitive dissonance.  So he’s constantly saying stuff that’s not right and then being dismissive when scott, me, or Grayson tries to tell him he’s wrong.  He’s sexist and assumes all the women in the office are incompetent, emotionally volatile idiots.  So basically, every single dev just avoids him. We don’t include him in discussions and avoid working with him.  However, as i said above, he wants total control over everything. So the way he reacts to being excluded is to continally make new channels and broadcast everything he’s doing, write documents that nobody reads, has meetings that people try to avoid attending
+he loves the sound of his own voice
+as soon as someone suggests something he doesn’t like, or doesn’t understand he immediately wants to have a big long, drawn out discussion, and talking to him is so painful and pointless that we mostly just ignore him
+Before Grayson quit he was working hard to try to help him understand how he came across but the guy is like 50 if he hasn’t gotten it by now, i dunno
+If I was asked to work on something that he was “in charge of” i would quit. right now he’s the self-appointed devops expert and i want nothing to do with him
+Ryan Dobrynski 8:48 AM
+thats a very useful bit of info.
+Beth Stevens:nyan: 8:48 AM
+he also won’t work on anything he’s not in total control of.  We all desparately need help with ACS and 6.3 and he’s refusing to work on it
+Ryan Dobrynski 8:48 AM
+lets come back to that in a few minutes. (the devops expert part).
+Beth Stevens:nyan: 8:49 AM
+he has NO fucking clue what he’s doing
+like basic conversations about IAM roles and Cloudformation he doesn’t even want to learn it
+i’m sorry
+i have about a month’s worth of pent-up rage coming out
+Ryan Dobrynski 8:50 AM
+Yeah Russ has mentioned he felt like Matt “gets it” with what we are trying to do as far as dev infrastructure and i keep trying to point out “if you offer to give devs console access and free reign to create anything they want, they will all ‘get it’ ”
+Beth Stevens:nyan: 8:50 AM
+if you guys are happy with him, that’s cool
+Ryan Dobrynski 8:50 AM
+nobody “doesn’t get it” when you say “here, you’re a responsible adult, you drive”
+Beth Stevens:nyan: 8:51 AM
+but he alienates and frustrates the rest of us, so please don’t assume he speaks for the rest of dev
+several times he’s been asked to work on something that a senior dev should be responsible for and if he’s not in charge and calling all the shots, he just doesn’t fucking do it
+i want to kill him
+when we get a new manager i’m hoping we can get it fixed
+Ryan Dobrynski 8:52 AM
+this is all useful info.
+I have to ask this though. because it was a pretty interesting thing and i wonder how far it actually reaches.
+Beth Stevens:nyan: 8:53 AM
+he’s thinks he’s God’s Gift to Development and that his every word is gold. He probably loves working with you guys because you don’t know he’s full of shit
+yeah that’s fair.  Sui and Marlowe have confessed to me that they don’t like him and avoid him
+Matt shows open disrespect for Scott and Scott will tend to come to other people before he asks matt. he doesn’t avoid matt, but i’ve noticed he asks others first
+Grayson liked matt, but wouldn’t work with him
+Grayson liked matt personally but they had huge conflicts discussing tech (edited) 
+Ryan Dobrynski 8:55 AM
+I had asked Matt about “Drive by” work.. why does the dev team participate in that? why not just say “toss it on the backlog and we’ll groom it”
+he told me that when you are working normal backlog work different stakeholder interests will try to pull you this way and that, but when you get handed a drive-by task, you are off limits working on something for Ravi and you just get to go heads down and crunch away on it. It’s like getting a break from the chaos. Which was interesting to me for a few reasons.. firstly, thats how scrum should always work.. once that shit is on the sprint backlog and being worked, you leave the person alone and let them work. but it also explains why dev screams bloody murder about Ravi, but also simultaneously protects him.
+Beth Stevens:nyan: 8:55 AM
+Matt also openly hated Matt DeKrey and would say nasty things about him.  I have no idea if DeKrey avoided matt
+Ryan Dobrynski 8:55 AM
+So I’m wondering if that is a Matt opinion or a dev opinion.
+Beth Stevens:nyan: 8:56 AM
+No, that’s BS.  Matt literally had nothing to work on
+he was supposed to help stand up a test tool with new, cool technology, that everyone really needed, but instead he wrote more documentation for Native file analysis
+it was the only thing he had to work on, no other obligations
+for CMML, it’s not a drive by, his team, Maverick squad, was supposed to work on Auto-mode.
+Ryan Dobrynski 8:57 AM
+Maverick squad… holy shit dude..
+Beth Stevens:nyan: 8:57 AM
+he specifically was supposed to design it. again, the only thing he was supposed to be working on
+he dumped everything on Sui
+Ryan Dobrynski 8:57 AM
+I like Sui.
+She pretty solid?
+Beth Stevens:nyan: 8:58 AM
+well anyways, you asked how the team felt and the only person i haven’t gotten a first-hand opinion from is Scott Robey (on Matt and thier dislike of him)
+yeah, Sui is solid. She just goes with the flow
+she’s the opposite of Matt, basically
+I’m praying that Matt is going to get this AWS experience on his resume and then use it to get a better job.
+Ryan Dobrynski 9:00 AM
+That would be sweet.
+Beth Stevens:nyan: 9:01 AM
+i’m sorry i’ve really gone off the rails
+Ryan Dobrynski 9:01 AM
+No it’s fine.
+It helps to vent, and like I said, my interactions with him are somewhat limited so I don’t get a complete picture of him.
+Beth Stevens:nyan: 9:02 AM
+i just see the crap he writes in slack and it drives me up the wall because he’s so pompous. In his mind, he’s a benevolent, wise, tech lead showing the rest of us dumbasses the light
+just… if he says something that doesn’t sound right, and then claims to know what “the team” wants, don’t believe him.  He’s not our real leader
+double-check if you think it might cause an issue
+Ryan Dobrynski 9:03 AM
+He DEFINITELY has that benevolent wise tech lead demeanor. that only works if you are actually benevolent and wise though.
+Beth Stevens:nyan: 9:03 AM
+he is so NOT WISE
+Ryan Dobrynski 9:04 AM
+Yeah I did notice one thing that was sort of itching at my skull about the aws transition.
+Beth Stevens:nyan: 9:05 AM
+and if you challenge him, the response is “oh you’re just an emotional woman that doesn’t understand” and he LITERALLY  will slow down his speech.  Switch to a high-pitched voice. Use small, simple words, and hold his hands up in the air when he answers you.  as if I was a little kid
+that’s the main reason i want to murder him (edited) 
+while i’ve gone off the rails, i actually started looking for a new job specifically because of him
+now i’m trying to hold on and hope he’s gone by summer
+Ryan Dobrynski 9:06 AM
+I put together a quick and dirty wiki page listing a bunch of the tools that are generally used. Most of those tools rely on boto3, so i included that library as well.. and to be fair, MOST of the code I write is boto3 stuff.. But I do odd stuff with the aws api (like seek and destroy stuff, and billing calculations, etc). I would never use boto3 to deploy workloads directly, there are WAY better tools for that. I would use the higher level abstractions like Terraform or Cloudformation. He just completely ignored them and went for boto3.
+Beth Stevens:nyan: 9:06 AM
+he just does whatever he wants. he absolutely refuses to learn other tools or API’s.  he wants to write all the code himself
+we tried to show him postman, and instead of learning a simple tool like postman, he re-wrote everything as curl commands
+i couldn’t believe it
+the guy has his head up his ass
+Ryan Dobrynski 9:07 AM
+Yeah. it’s like driving down the highway and reaching into the transmission to shift the gears by feel. That was an outlier but now i’m watching to see if thats a repeating pattern, because someone I trust has now told me it is.
+Well.. I hope you don’t leave. In my discussions with DMV we typically refer to you as the teams “empathy all star”
+Beth Stevens:nyan: 9:08 AM
+yeah. time after time, he will forgo learning and roll his own more primitive version.  I told Grayson he is a “write only” developer.  He loves writing his own code but is literally incapable of reading other people’s code. That’s why he’s refusing to help with CMML ACS
+There’s a lot of good stuff, and I’m actually pretty happy as long as i can continue to ignore matt
+Ryan Dobrynski 9:09 AM
+What does code review look like here at brainspace?
+Beth Stevens:nyan: 9:09 AM
+would you do me a favor and force him to use cloud formation
+when you need a code review, you put it in slack.  If someone has time, they review the code. If no one has time, Scott Robey will drop what he’s doing and help you out
+Ryan Dobrynski 9:10 AM
+does anyone review Matts code?
+Beth Stevens:nyan: 9:10 AM
+NO
+NO
+NO DUDE
+that’s just fucking it
+Ryan Dobrynski 9:11 AM
+so we have golden geese who are above review then?
+Beth Stevens:nyan: 9:11 AM
+oh my god I’m about to throw my laptop off a cliff
+no the problem is, his code makes no fucking sense. and if you question it, he just digs in and treats you like an idoit for questioning his choices
+it’s SO PAINFUL
+so no one reviews his code because he HATE dealing with his shit
+Ryan Dobrynski 9:12 AM
+thats toxic.
+Beth Stevens:nyan: 9:12 AM
+yeah. like i said at the beginning we all just avoid him
+In his mind, he’s the only one that knows “the true way”
+Ryan Dobrynski 9:13 AM
+im preaching to the choir here, but code review is a beautiful thing if everyone gets to be a first class citizen, but the minute you add a hierarchy to it, it turns into a way of reinforcing that hierarchy elsewhere. it can go bad easily.
+Beth Stevens:nyan: 9:13 AM
+but that way… isn’t real.  He doesn’t actually have the experience to know what’s right.  “The way” is what he’s just come up with in his own head. He’s even admitted that to me when i tried to explain to him about how AWS costs are calculated
+Because of the nasty way Matt condescends to me, my number one priority is to avoid him
+my only strategy is to stay far away from anything he’s working on
+otherwise I think I’ll lose my shit and behave unprofessionally
+Ryan Dobrynski 9:15 AM
+So here is what I’ll say about cloudformation.
+I’ve experimented with various ways of de-silo’ing dev and ops and helping teams actually adopts dev-ops practices quite a bit, and one of my tenants is “I will never tell anyone what tool they HAVE to use”. it’s never worked for me, and sticking hard to that rule has paid in spades with building trust. I won’t do it..
+BUT.. I also won’t help anyone else do it either.. Matt can use whatever the fuck he wants as far as I’m concerned. The rest of the team is free to use what they want.
+It’s not our intention that Matt is the “tony” of dev <-> devops.
+Beth Stevens:nyan: 9:16 AM
+ok. I really want to log into AWS and look at what you’re doing, but I’m on the hook for coding ACS
+that’s the worst part. Everyone on the team is under the gun EXCEPT MATT SOMEHOW to get Cmml ACS finished because the 6.3 delivery is a year late
+Ryan Dobrynski 9:17 AM
+So if you guys want to use cloudformation, we will help you build out cloudformation. if he wants to do all boto3 shit, we’ll help him figure that out. If anyone in dev says “this is the only way we will do it” let me know, because that is 100% missing the point. I’ve never seen a dev team that all used one thing.. ever.. never..
+Beth Stevens:nyan: 9:17 AM
+we’re all working hard on it, and we don’t really have time to do anything else
+Ryan Dobrynski 9:18 AM
+Whenever you have time for AWS, toss an @Ryan into the #aws-ops channel and I’ll get you a login and you will have all the access you need. the intention is that you NOT be bottlenecked by a human between you and your infra. it’s meant to be self serve for all devs.
+Beth Stevens:nyan: 9:19 AM
+I think what I’ll have to do is as soon as ACS can go Beta, i’ll have to come back and figure out if what he wrote is that bad
+Ryan Dobrynski 9:19 AM
+it’s not intended that one person will build all the tooling for the devs.. it’s intended that each dev figures out what works best for them, and we help them put that together.
+Beth Stevens:nyan: 9:19 AM
+that would be in like March though
+ok
+i understand and agree with your approach
+Ryan Dobrynski 9:20 AM
+I’m really pushing to get Brad in the door here. He was a pretty big key to pulling off this transformation at catbird. I think you guys will really like him. He’s a rare full stack ninja, but he’ll never tell you that. (edited) 
+Beth Stevens:nyan: 9:20 AM
+will Brad be in Dallas?
+Ryan Dobrynski 9:20 AM
+Remote from calgary.
+Beth Stevens:nyan: 9:20 AM
+What’s his last name?
+Ryan Dobrynski 9:20 AM
+Hafichuk
+Beth Stevens:nyan: 9:21 AM
+ok whew
+Ryan Dobrynski 9:21 AM
+lol
+Beth Stevens:nyan: 9:21 AM
+sorry was worried it was another brad i used to know
+thanks for listening to me vent
+Ryan Dobrynski 9:22 AM
+No problem. It’s helpful for both of us.
+Beth Stevens:nyan: 9:22 AM
+i gotta go work on the before-mentioned ACS stuff
+Ryan Dobrynski 9:22 AM
+I don’t have eyes/ears in the office.
+Beth Stevens:nyan: 9:22 AM
+I try to be a fair person, and it took me a good 4 months to finally come to grips with my issues with Matt
+yeah. I realised reading slack that he was presenting himself to you guys (ops) as the know-all benevolent  Brainspace Tech God
+Looking forward to meeting Brad
+Ryan Dobrynski 9:24 AM
+so it’s very likely Brad is the contractor that gets brought in. And at that point he and I will basically be dedicated full time to building out the new pipeline in aws, and transitioning you guys there. I’m talking a full rebuild, not just “move what we have” and that includes a complete rewrite of all the build code. But not in a silo.. You’ll see that work done through the backlog and we will appear to be part of the dev team for the duration of that work. We’re gonna run this like a proper devops process.
+Beth Stevens:nyan: 9:25 AM
+a complete rewrite of all the build code
+dude that sounds AWESOME
+I completely trust you
+new messages
+Ryan Dobrynski 9:26 AM
+That means that it won’t be “what me and brad think is best”.. that means it will be designed and reviewed by the full dev team. Not just one or two people, but the WHOLE team. Brad and I have no requirement to observe any sort of hierarchy of opinion. one dev, one vote.
+Beth Stevens:nyan: 9:26 AM
+that sounds good
