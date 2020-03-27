@@ -2,3 +2,4 @@ option key:  ⌥
 command key: ⌘
 music  ♪ ♫ 
 check ✓
+tm   ™
