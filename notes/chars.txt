@@ -3,3 +3,4 @@ command key: ⌘
 music  ♪ ♫ 
 check ✓
 tm   ™
+lambda  λ
