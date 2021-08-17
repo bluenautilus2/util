@@ -1,0 +1,33 @@
+Authentication calls
+
+Phoenix - bridge:
+
+curl --location --request POST 'https://phx001-api-dev.codehaus.es/api/draft/examtaker/meid' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "studentId": "lossStudent20k1066",
+    "password": "Password!123",
+    "institutionCode": "302"
+}'
+
+
+
+Legacy: bridge
+
+curl --location --request POST 'https://phx001-api-dev.codehaus.es/api/draft/examtaker/meid' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "studentId": "lossStudent20k1066",
+    "password": "Password!123",
+    "institutionCode": "302"
+}'
+
+
+
+
+curl --location --request DELETE 'https://phx001-api-dev.codehaus.es/v1/users/delete' \
+--header 'Content-Type: application/json' \
+--header 'authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aWVyMXN1cHBvcnRAZXhhbXNvZnR0ZXN0LmNvbSIsIlVzZXJJZCI6MTU1LCJJbnN0aXR1dGlvbklkIjozMDIsIlN1cHBvcnRVc2VyIjp0cnVlLCJpYXQiOjE2MTE3NzE1ODYsImV4cCI6MTYxMTg1Nzk4Nn0.cp7hUMOAnbX0TmB95WiNJfPN4KUypZQlTcYT7rtkCK8' \
+--data-raw '{ 
+    "userIds": [456402]
+}'
