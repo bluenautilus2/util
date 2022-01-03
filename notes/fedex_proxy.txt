@@ -1,2 +1,0 @@
-internet.proxy.fedex.com:3128
-for both https and http

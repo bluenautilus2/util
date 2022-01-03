@@ -1,0 +1,13 @@
+curl -i --location --request PUT 'https://phx001-api-dev.codehaus.es/v1/users/set-as-api-integration-user' \
+--header 'authority: phx001-api-dev.codehaus.es' \
+--header 'accept: application/json, text/plain, */*' \
+--header 'authorization: Bearer eyJhbGciIiOiJ0aWVyMXN1cHBvcnRAZXhhbXNvZnR0ZXN0LmNvbSIsIlVzZXJJZCI6MTU1LCJJbnN0aXR1dGlvbklkIjozMzAsIlN1cHBvcnRVc2VyIjp0cnVlLCJpYXQiOjE2MjQzMDk1OTEsImV4cCI6MTYyNDMzODM5MX0.SejXooqsdSIA8g6RLkCQ1gr7asxfrMq8asH20vZlc3k' \
+--header 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36' \
+--header 'origin: https://phx001-ui-dev.codehaus.es' \
+--header 'sec-fetch-site: same-site' \
+--header 'sec-fetch-mode: cors' \
+--header 'sec-fetch-dest: empty' \
+--header 'referer: https://phx001-ui-dev.codehaus.es/users/admins' \
+--header 'accept-language: en-US,en;q=0.9' \
+--header 'Content-Type: application/json' \
+--data-raw '{"userIds":[473753]}'
