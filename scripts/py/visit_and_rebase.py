@@ -27,14 +27,14 @@ for a in paths:
         branchlist = subprocess.check_output(["git", "-C", a, "branch"])
         splitlist = branchlist.split()
         current_branch = find_current_branch(splitlist)
-        if(current_branch=="master"):
+        if(current_branch=="master" or current_branch=="main"):
             my_good_branches.append(a)
         branchlist = subprocess.check_output(["git", "-C", a, "diff"])
         if branchlist != "":
-            print "--------------------------------Dirty: " + a 
+            print("--------------------------------Dirty: " + a) 
             dirty_branches.append(a)
         else:
-            print "Clean: " + a
+            print("Clean: " + a)
             clean_branches.append(a)
         subprocess.check_output(["git", "-C", a, "fetch"])
 
@@ -48,4 +48,5 @@ for c in clean_branches:
     print(" " + c + ", ")
     report = subprocess.call(["git", "-C", c, "rebase"])
 print("\n")
+
 

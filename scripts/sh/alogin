@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo $1
+
+aws sso login --profile $1
+export AWS_DEFAULT_PROFILE=$1
