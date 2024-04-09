@@ -5,3 +5,4 @@ check ✓
 tm   ™
 lambda  λ
 shift ⇧
+append    † 
